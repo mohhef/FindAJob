@@ -1,4 +1,4 @@
-**Contributers**
+**Contributors**
 
 Mohamed Hefny  
 Aloys Portafaix  
