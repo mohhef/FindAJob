@@ -62,6 +62,8 @@ DROP TABLE IF EXISTS `book_order`;
 CREATE TABLE `book_order` (
   `order_id` varchar(10) NOT NULL,
   `ISBN` varchar(50) NOT NULL,
+  `qty` int,
+  `received` varchar(10),
   PRIMARY KEY (`order_id`,`ISBN`),
   KEY `ISBN` (`ISBN`),
   CONSTRAINT `book_order_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
@@ -158,27 +160,6 @@ CREATE TABLE `orders` (
 
 
 --
--- Table structure for table `processed_by`
---
-
-DROP TABLE IF EXISTS `processed_by`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `processed_by` (
-  `branch_name` varchar(50) NOT NULL,
-  `ISBN` varchar(50) NOT NULL,
-  `order_id` varchar(10) NOT NULL,
-  `publisher_number` int NOT NULL,
-  PRIMARY KEY (`branch_name`,`publisher_number`,`ISBN`,`order_id`),
-  KEY `ISBN` (`ISBN`),
-  KEY `order_id` (`order_id`),
-  CONSTRAINT `processed_by_ibfk_1` FOREIGN KEY (`branch_name`, `publisher_number`) REFERENCES `publisher_branch` (`branch_name`, `publisher_number`),
-  CONSTRAINT `processed_by_ibfk_2` FOREIGN KEY (`ISBN`) REFERENCES `book` (`ISBN`),
-  CONSTRAINT `processed_by_ibfk_3` FOREIGN KEY (`order_id`) REFERENCES `special_order` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Table structure for table `publisher`
 --
 
@@ -210,12 +191,12 @@ DROP TABLE IF EXISTS `publisher_branch`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `publisher_branch` (
   `branch_name` varchar(50) NOT NULL,
+  `publisher_number` int NOT NULL,
   `telephone_number` varchar(50) DEFAULT NULL,
   `rep_email_address` varchar(50) DEFAULT NULL,
   `province` varchar(50) DEFAULT NULL,
   `address` varchar(50) DEFAULT NULL,
   `postal_code` varchar(50) DEFAULT NULL,
-  `publisher_number` int NOT NULL,
   PRIMARY KEY (`branch_name`,`publisher_number`),
   KEY `publisher_number` (`publisher_number`),
   KEY `rep_email_address` (`rep_email_address`),
@@ -286,9 +267,14 @@ CREATE TABLE `special_order` (
   `order_id` varchar(10) NOT NULL,
   `order_date` date DEFAULT NULL,
   `Quantity` int(11) DEFAULT NULL,
-  `cid` varchar(10) NOT NULL
+  `cid` varchar(10) NOT NULL,
+  `branch_name` varchar(50) NOT NULL,
+  `publisher_number` int NOT NULL,
+  `ISBN` varchar(50) NOT NULL,
   PRIMARY KEY (`order_id`),
-  CONSTRAINT `special_order_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `customer` (`cid`)
+  CONSTRAINT `special_order_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `customer` (`cid`),
+  CONSTRAINT `special_order_ibfk_2` FOREIGN KEY (`branch_name`,`publisher_number`) REFERENCES `publisher_branch`(`branch_name`,`publisher_number`),
+  CONSTRAINT `special_order_ibfk_3` FOREIGN KEY (`ISBN`) REFERENCES `book`(`ISBN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
