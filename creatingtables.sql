@@ -38,7 +38,7 @@ DROP TABLE IF EXISTS `book`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `book` (
   `ISBN` varchar(50) NOT NULL,
-  `publisher_number` varchar(50) NOT NULL,
+  `publisher_number` int NOT NULL,
   `title` varchar(50) DEFAULT NULL,
   `cost_price` decimal(10,0) DEFAULT NULL,
   `book_subject` varchar(50) DEFAULT NULL,
@@ -133,7 +133,7 @@ DROP TABLE IF EXISTS `order_from`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `order_from` (
   `branch_name` varchar(50) NOT NULL,
-  `publisher_number` varchar(50) NOT NULL,
+  `publisher_number` int NOT NULL,
   `order_id` varchar(10) NOT NULL,
   PRIMARY KEY (`branch_name`,`publisher_number`,`order_id`),
   KEY `order_id` (`order_id`),
@@ -184,7 +184,7 @@ CREATE TABLE `processed_by` (
   `branch_name` varchar(50) NOT NULL,
   `ISBN` varchar(50) NOT NULL,
   `order_id` varchar(10) NOT NULL,
-  `publisher_number` varchar(50) NOT NULL,
+  `publisher_number` int NOT NULL,
   PRIMARY KEY (`branch_name`,`publisher_number`,`ISBN`,`order_id`),
   KEY `ISBN` (`ISBN`),
   KEY `order_id` (`order_id`),
@@ -202,7 +202,7 @@ DROP TABLE IF EXISTS `publisher`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `publisher` (
-  `publisher_number` varchar(50) NOT NULL,
+  `publisher_number` int NOT NULL,
   `address` varchar(300) DEFAULT NULL,
   `telephone_number` varchar(50) DEFAULT NULL,
   `company_name` varchar(50) DEFAULT NULL,
@@ -231,7 +231,7 @@ CREATE TABLE `publisher_branch` (
   `province` varchar(50) DEFAULT NULL,
   `address` varchar(50) DEFAULT NULL,
   `postal_code` varchar(50) DEFAULT NULL,
-  `publisher_number` varchar(50) NOT NULL,
+  `publisher_number` int NOT NULL,
   PRIMARY KEY (`branch_name`,`publisher_number`),
   KEY `publisher_number` (`publisher_number`),
   KEY `rep_email_address` (`rep_email_address`),
