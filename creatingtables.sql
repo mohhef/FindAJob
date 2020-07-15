@@ -92,7 +92,7 @@ DROP TABLE IF EXISTS `customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `customer` (
-  `cid` mediumint(9) NOT NULL AUTO_INCREMENT,
+  `cid` varchar(10) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
   `company_name` varchar(50) DEFAULT NULL,
@@ -116,7 +116,7 @@ DROP TABLE IF EXISTS `interested_in`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `interested_in` (
   `category_name` varchar(50) NOT NULL,
-  `cid` mediumint(9) NOT NULL AUTO_INCREMENT,
+  `cid` varchar(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`category_name`,`cid`),
   KEY `cid` (`cid`),
   CONSTRAINT `interested_in_ibfk_1` FOREIGN KEY (`category_name`) REFERENCES `reader_interest` (`category_name`),
@@ -165,7 +165,7 @@ DROP TABLE IF EXISTS `places`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `places` (
   `order_id` varchar(10) NOT NULL,
-  `cid` mediumint(9) NOT NULL AUTO_INCREMENT,
+  `cid` varchar(10) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`order_id`,`cid`),
   KEY `cid` (`cid`),
   CONSTRAINT `places_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `special_order` (`order_id`),
@@ -280,7 +280,7 @@ DROP TABLE IF EXISTS `sale_to`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sale_to` (
   `ISBN` varchar(50) NOT NULL,
-  `cid` mediumint(9) NOT NULL AUTO_INCREMENT,
+  `cid` varchar(10) NOT NULL AUTO_INCREMENT,
   `Transaction_id` int(11) NOT NULL,
   `Quantity` int(11) DEFAULT NULL,
   `Order_date` date DEFAULT NULL,
