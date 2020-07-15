@@ -156,22 +156,6 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `places`
---
-
-DROP TABLE IF EXISTS `places`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `places` (
-  `order_id` varchar(10) NOT NULL,
-  `cid` varchar(10) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`order_id`,`cid`),
-  KEY `cid` (`cid`),
-  CONSTRAINT `places_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `special_order` (`order_id`),
-  CONSTRAINT `places_ibfk_2` FOREIGN KEY (`cid`) REFERENCES `customer` (`cid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `processed_by`
@@ -302,7 +286,9 @@ CREATE TABLE `special_order` (
   `order_id` varchar(10) NOT NULL,
   `order_date` date DEFAULT NULL,
   `Quantity` int(11) DEFAULT NULL,
-  PRIMARY KEY (`order_id`)
+  `cid` varchar(10) NOT NULL
+  PRIMARY KEY (`order_id`),
+  CONSTRAINT `special_order_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `customer` (`cid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

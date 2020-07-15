@@ -11,15 +11,13 @@ insert into customer (cid, first_name, last_name, company_name, telephone_number
 insert into customer (cid, first_name, last_name, company_name, telephone_number, address, province, postal_code, city, email, cumulative_purchases) values ("c10", 'Rob', 'Sailes', 'Voonix', '255-310-8617', '81727 Loomis Road', 'quebec', 'G3E2C3', 'Xiongzhang', 'rsailes9@topsy.com', 10);
 
 /*special order*/
-insert into special_order (order_id, order_date, qty) values ('sp1', '4/3/2020', 5);
-insert into special_order (order_id, order_date, qty) values ('sp2', '3/14/2020', 2);
-insert into special_order (order_id, order_date, qty) values ('sp3', '6/29/2020', 3);
-insert into special_order (order_id, order_date, qty) values ('sp4', '1/14/2020', 2);
-insert into special_order (order_id, order_date, qty) values ('sp5', '2/2/2020', 3);
-insert into special_order (order_id, order_date, qty) values ('sp6', '3/11/2020', 5);
-insert into special_order (order_id, order_date, qty) values ('sp7', '1/18/2020', 2);
-insert into special_order (order_id, order_date, qty) values ('sp8', '4/6/2020', 4);
-insert into special_order (order_id, order_date, qty) values ('sp9', '1/26/2020', 3);
-insert into special_order (order_id, order_date, qty) values ('sp10', '7/4/2020', 4);
-
-/*places*/
+insert into special_order (order_id, order_date, qty) values ('so1', '4/3/2020', 5, 'c1');
+insert into special_order (order_id, order_date, qty) values ('so2', '3/14/2020', 2, 'c4');
+insert into special_order (order_id, order_date, qty) values ('so3', '6/29/2020', 3, 'c3');
+insert into special_order (order_id, order_date, qty) values ('so4', '1/14/2020', 2, 'c2');
+insert into special_order (order_id, order_date, qty) values ('so5', '2/2/2020', 3, 'c7');
+insert into special_order (order_id, order_date, qty) values ('so6', '3/11/2020', 5, 'c6');
+insert into special_order (order_id, order_date, qty) values ('so7', '1/18/2020', 2, 'c5');
+insert into special_order (order_id, order_date, qty) values ('so8', '4/6/2020', 4, 'c8');
+insert into special_order (order_id, order_date, qty) values ('so9', '1/26/2020', 3, 'c9');
+insert into special_order (order_id, order_date, qty) values ('so10', '7/4/2020', 4, 'c10');
