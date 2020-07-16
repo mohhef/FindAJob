@@ -38,7 +38,7 @@ DROP TABLE IF EXISTS `book`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `book` (
   `ISBN` varchar(50) NOT NULL,
-  `publisher_number` int NOT NULL,
+  `publisher_number` varchar(10) NOT NULL,
   `title` varchar(50) DEFAULT NULL,
   `cost_price` decimal(10,0) DEFAULT NULL,
   `book_subject` varchar(50) DEFAULT NULL,
@@ -94,7 +94,7 @@ DROP TABLE IF EXISTS `customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `customer` (
-  `cid` varchar(10) NOT NULL AUTO_INCREMENT,
+  `cid` varchar(10),
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
   `company_name` varchar(50) DEFAULT NULL,
@@ -118,7 +118,7 @@ DROP TABLE IF EXISTS `interested_in`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `interested_in` (
   `category_name` varchar(50) NOT NULL,
-  `cid` varchar(10) NOT NULL AUTO_INCREMENT,
+  `cid` varchar(10) NOT NULL,
   PRIMARY KEY (`category_name`,`cid`),
   KEY `cid` (`cid`),
   CONSTRAINT `interested_in_ibfk_1` FOREIGN KEY (`category_name`) REFERENCES `reader_interest` (`category_name`),
@@ -135,7 +135,7 @@ DROP TABLE IF EXISTS `order_from`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `order_from` (
   `branch_name` varchar(50) NOT NULL,
-  `publisher_number` int NOT NULL,
+  `publisher_number` varchar(10) NOT NULL,
   `order_id` varchar(10) NOT NULL,
   PRIMARY KEY (`branch_name`,`publisher_number`,`order_id`),
   KEY `order_id` (`order_id`),
@@ -167,7 +167,7 @@ DROP TABLE IF EXISTS `publisher`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `publisher` (
-  `publisher_number` int NOT NULL,
+  `publisher_number` varchar(10) NOT NULL,
   `address` varchar(300) DEFAULT NULL,
   `telephone_number` varchar(50) DEFAULT NULL,
   `company_name` varchar(50) DEFAULT NULL,
@@ -191,7 +191,7 @@ DROP TABLE IF EXISTS `publisher_branch`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `publisher_branch` (
   `branch_name` varchar(50) NOT NULL,
-  `publisher_number` int NOT NULL,
+  `publisher_number` varchar(10) NOT NULL,
   `telephone_number` varchar(50) DEFAULT NULL,
   `rep_email_address` varchar(50) DEFAULT NULL,
   `province` varchar(50) DEFAULT NULL,
@@ -245,7 +245,7 @@ DROP TABLE IF EXISTS `sale_to`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sale_to` (
   `ISBN` varchar(50) NOT NULL,
-  `cid` varchar(10) NOT NULL AUTO_INCREMENT,
+  `cid` varchar(10) NOT NULL ,
   `Transaction_id` int(11) NOT NULL,
   `Quantity` int(11) DEFAULT NULL,
   `Order_date` date DEFAULT NULL,
@@ -269,7 +269,7 @@ CREATE TABLE `special_order` (
   `Quantity` int(11) DEFAULT NULL,
   `cid` varchar(10) NOT NULL,
   `branch_name` varchar(50) NOT NULL,
-  `publisher_number` int NOT NULL,
+  `publisher_number` varchar(10) NOT NULL,
   `ISBN` varchar(50) NOT NULL,
   PRIMARY KEY (`order_id`),
   CONSTRAINT `special_order_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `customer` (`cid`),
