@@ -24,22 +24,22 @@ insert into book (ISBN, publisher_number, title, cost_price, book_subject, selli
 insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bookstore_name) values ('205217918-6', 'p10', 'Last Stand, The', 61, 'Mirounga leonina', 89, 'BetterBook');
 
 /*special order*/
-insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so1', 4/3/2020, 5, 'c1','b1','p1','958599307-4');
-insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so2', 3/14/2020, 2, 'c4','b2','p2','173127435-1');
-insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so3', 6/29/2020, 3, 'c3','b3','p3','240258028-3');
-insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so4', 1/14/2020, 2, 'c2','b4','p4','346111992-X');
-insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so5', 2/2/2020, 3, 'c7','b5','p5','549652903-4');
-insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so6', 3/11/2020, 5, 'c6','b6','p6','326314786-2');
-insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so7', 1/18/2020, 2, 'c5','b7','p7','698507015-9');
-insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so8', 4/6/2020, 4, 'c8','b8','p8','266608745-X');
-insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so9', 1/26/2020, 3, 'c9','b9','p9','272521287-1');
-insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so10', 7/4/2020, 4, 'c10','b10','p10','205217918-6');
+insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so1', '2020-4-3', 5, 'c1','b1','p1','958599307-4');
+insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so2', '2020-2-4', 2, 'c4','b2','p1','173127435-1');
+insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so3', '2020-1-3', 3, 'c3','b3','p1','240258028-3');
+insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so4', '2020-5-3', 2, 'c2','b4','p4','346111992-X');
+insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so5', '2020-6-3', 3, 'c7','b5','p5','549652903-4');
+insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so6', '2020-7-3', 5, 'c6','b6','p6','326314786-2');
+insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so7', '2020-8-3', 2, 'c5','b7','p7','698507015-9');
+insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so8', '2020-9-3', 4, 'c8','b8','p8','266608745-X');
+insert into special_order (order_id, order_date, Quantity, cid, branch_name, spublisher_number, ISBN) values ('so9', '2020-10-3', 3, 'c9','b9','p9','272521287-1');
+insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so10', '2020-4-1', 4, 'c10','b10','p10','205217918-6');
 
 
 /*publisher branch*/
 insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b1','p1', '819-277-8936', 'mhise0@msu.edu', 'Garoua Boulaï', '58 Westerfield Court', 'c7S6b1');
-insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b2','p2', '329-585-5963', 'lsteels1@spotify.com', 'Itaqui', '6637 Clove Trail', 'F6o1j2');
-insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b3','p3', '626-379-7430', 'ccopestake2@walmart.com', 'Siedlce', '010 Esker Road', 'V5r8W3');
+insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b2','p1', '329-585-5963', 'lsteels1@spotify.com', 'Itaqui', '6637 Clove Trail', 'F6o1j2');
+insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b3','p1', '626-379-7430', 'ccopestake2@walmart.com', 'Siedlce', '010 Esker Road', 'V5r8W3');
 insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b4','p4', '254-589-3862', 'scurley3@kickstarter.com', 'Malaruhatan', '1 Northfield Court', 'J0w7v9');
 insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b5','p5', '737-842-3513', 'dsylvaine4@csmonitor.com', 'Kibonsod', '8 Eliot Hill', 'S3q9Q5');
 insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b6','p6', '194-757-9650', 'aormrod5@friendfeed.com', 'São Brás de Alportel', '281 Bartillon Avenue', 'f4t8n8');
@@ -47,3 +47,29 @@ insert into publisher_branch (branch_name, publisher_number, telephone_number, r
 insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b8','p8', '322-435-4367', 'athrift7@deviantart.com', 'Noginsk', '3 Dunning Junction', 'W5j9L3');
 insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b9','p9', '307-331-2906', 'astennett8@phpbb.com', 'Idi Iroko', '46911 Anhalt Circle', 'N5c1M4');
 insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b10','p10', '611-720-7818', 'rbirdis9@weather.com', 'Bryukhovetskaya', '39138 Atwood Street', 'y8d0z1');
+
+/*sale to*/
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c1', 't1', 94, '2020-09-05');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('272521287-1', 'c2', 't2', 56, '2020-05-04');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('346111992-X', 'c3', 't3', 55, '2020-05-08');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c4', 't4', 31, '2020-00-02');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c5', 't5', 38, '2020-08-07');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c6', 't6', 16, '2020-01-03');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c7', 't7', 3, '2020-00-05');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c8', 't8', 61, '2020-02-08');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('698507015-9', 'c0', 't9', 86, '2020-01-09');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c10', 't10', 24, '2020-00-08');
+
+/*publisher*/
+
+/*publisher*/
+insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p1', '71 Menomonie Circle', '405-470-3544', 'Dabfeed', 'Oklahoma City', '73135', 'Oklahoma', 'gmuir0@e-recht24.de', 'www.biqao.com');
+insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p2', '6 Park Meadow Circle', '212-666-7532', 'Tanoodle', 'New York City', '10090', 'New York', 'mgreensides1@sohu.com', 'www.alofl.com');
+insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p3', '2 Lien Park', '309-295-5825', 'Vinder', 'Carol Stream', '60158', 'Illinois', 'apiolli2@oakley.com', 'www.pbfkm.com');
+insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p4', '35506 Clove Way', '478-359-5219', 'Yadel', 'Macon', '31210', 'Georgia', 'mrunnett3@e-recht24.de', 'www.zhsic.com');
+insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p5', '22 Fuller Point', '404-151-1774', 'Rhycero', 'Atlanta', '31132', 'Georgia', 'vedbrooke4@nps.gov', 'www.cfytu.com');
+insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p6', '79 Di Loreto Terrace', '816-412-9068', 'Eayo', 'Kansas City', '64109', 'Missouri', 'dpinnocke5@nhs.uk', 'www.uviya.com');
+insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p7', '49 Waubesa Alley', '505-326-2708', 'Yodoo', 'Albuquerque', '87105', 'New Mexico', 'msimmgen6@google.com', 'www.ibpby.com');
+insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p8', '1574 Roxbury Road', '515-425-8942', 'Camimbo', 'Des Moines', '50305', 'Iowa', 'fkinleyside7@friendfeed.com', 'www.orvra.com');
+insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p9', '270 Jay Terrace', '414-848-8492', 'Dynabox', 'Milwaukee', '53263', 'Wisconsin', 'rmcmurtyr8@naver.com', 'www.kwuox.com');
+insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p10', '71073 Mccormick Road', '619-795-7469', 'Livetube', 'San Diego', '92186', 'California', 'tabade9@reverbnation.com', 'www.xrnkq.com');
