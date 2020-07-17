@@ -29,6 +29,24 @@ CREATE TABLE `author` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+
+--
+-- Table structure for table `bookstore`
+--
+
+DROP TABLE IF EXISTS `bookstore`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bookstore` (
+  `bs_id` varchar(10) NOT NULL,
+  `phone_number` varchar(50) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `bookstore_name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`bs_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
 --
 -- Table structure for table `book`
 --
@@ -37,18 +55,18 @@ DROP TABLE IF EXISTS `book`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `book` (
+    `bs_id` varchar(10) NOT NULL,
   `ISBN` varchar(50) NOT NULL,
   `publisher_number` varchar(10) NOT NULL,
   `title` varchar(50) DEFAULT NULL,
   `cost_price` decimal(10,0) DEFAULT NULL,
   `book_subject` varchar(50) DEFAULT NULL,
   `Selling_price` varchar(50) DEFAULT NULL,
-  `bookstore_name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`ISBN`),
   KEY `publisher_number` (`publisher_number`),
-  KEY `bookstore_name` (`bookstore_name`),
+  KEY `bs_id` (`bs_id`),
   CONSTRAINT `book_ibfk_1` FOREIGN KEY (`publisher_number`) REFERENCES `publisher_branch` (`publisher_number`),
-  CONSTRAINT `book_ibfk_2` FOREIGN KEY (`bookstore_name`) REFERENCES `bookstore` (`bookstore_name`)
+  CONSTRAINT `book_ibfk_2` FOREIGN KEY (`bs_id`) REFERENCES `bookstore` (`bs_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -71,20 +89,6 @@ CREATE TABLE `book_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `bookstore`
---
-
-DROP TABLE IF EXISTS `bookstore`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `bookstore` (
-  `phone_number` varchar(50) DEFAULT NULL,
-  `address` varchar(50) DEFAULT NULL,
-  `bookstore_name` varchar(50) NOT NULL,
-  PRIMARY KEY (`bookstore_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `customer`
@@ -215,10 +219,10 @@ DROP TABLE IF EXISTS `reader_interest`;
 CREATE TABLE `reader_interest` (
   `category_name` varchar(50) NOT NULL,
   `interest_description` varchar(200) DEFAULT NULL,
-  `bookstore_name` varchar(50) NOT NULL,
+  `bs_id` varchar(10) NOT NULL,
   PRIMARY KEY (`category_name`),
-  KEY `bookstore_name` (`bookstore_name`),
-  CONSTRAINT `reader_interest_ibfk_1` FOREIGN KEY (`bookstore_name`) REFERENCES `bookstore` (`bookstore_name`)
+  KEY `bs_id` (`bs_id`),
+  CONSTRAINT `reader_interest_ibfk_1` FOREIGN KEY (`bs_id`) REFERENCES `bookstore` (`bs_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -287,11 +291,11 @@ DROP TABLE IF EXISTS `stores`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `stores` (
   `ISBN` varchar(50) NOT NULL,
-  `bookstore_name` varchar(50) NOT NULL,
+  `bs_id` varchar(10) NOT NULL,
   `Quantity_on_hand` int(11) DEFAULT NULL,
-  PRIMARY KEY (`ISBN`,`bookstore_name`),
-  KEY `bookstore_name` (`bookstore_name`),
-  CONSTRAINT `stores_ibfk_1` FOREIGN KEY (`bookstore_name`) REFERENCES `bookstore` (`bookstore_name`),
+  PRIMARY KEY (`ISBN`,`bs_id`),
+  KEY `bs_id` (`bs_id`),
+  CONSTRAINT `stores_ibfk_1` FOREIGN KEY (`bs_id`) REFERENCES `bookstore` (`bs_id`),
   CONSTRAINT `stores_ibfk_2` FOREIGN KEY (`ISBN`) REFERENCES `book` (`ISBN`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
