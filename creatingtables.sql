@@ -55,13 +55,14 @@ DROP TABLE IF EXISTS `book`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `book` (
-    `bs_id` varchar(10) NOT NULL,
   `ISBN` varchar(50) NOT NULL,
   `publisher_number` varchar(10) NOT NULL,
   `title` varchar(50) DEFAULT NULL,
   `cost_price` decimal(10,0) DEFAULT NULL,
   `book_subject` varchar(50) DEFAULT NULL,
   `Selling_price` varchar(50) DEFAULT NULL,
+  `bs_id` varchar(10) NOT NULL,
+
   PRIMARY KEY (`ISBN`),
   KEY `publisher_number` (`publisher_number`),
   KEY `bs_id` (`bs_id`),
