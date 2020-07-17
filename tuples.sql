@@ -35,7 +35,6 @@ insert into special_order (order_id, order_date, Quantity, cid, branch_name, pub
 insert into special_order (order_id, order_date, Quantity, cid, branch_name, spublisher_number, ISBN) values ('so9', '2020-10-3', 3, 'c9','b9','p9','272521287-1');
 insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so10', '2020-4-1', 4, 'c10','b10','p10','205217918-6');
 
-
 /*publisher branch*/
 insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b1','p1', '819-277-8936', 'mhise0@msu.edu', 'Garoua Boulaï', '58 Westerfield Court', 'c7S6b1');
 insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b2','p1', '329-585-5963', 'lsteels1@spotify.com', 'Itaqui', '6637 Clove Trail', 'F6o1j2');
@@ -59,8 +58,6 @@ insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('2
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c8', 't8', 61, '2020-02-08');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('698507015-9', 'c0', 't9', 86, '2020-01-09');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c10', 't10', 24, '2020-00-08');
-
-/*publisher*/
 
 /*publisher*/
 insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p1', '71 Menomonie Circle', '405-470-3544', 'Dabfeed', 'Oklahoma City', '73135', 'Oklahoma', 'gmuir0@e-recht24.de', 'www.biqao.com');
