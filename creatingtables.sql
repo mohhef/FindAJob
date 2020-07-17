@@ -246,7 +246,7 @@ DROP TABLE IF EXISTS `sale_to`;
 CREATE TABLE `sale_to` (
   `ISBN` varchar(50) NOT NULL,
   `cid` varchar(10) NOT NULL ,
-  `Transaction_id` int(11) NOT NULL,
+  `Transaction_id` varchar(10) NOT NULL,
   `Quantity` int(11) DEFAULT NULL,
   `Order_date` date DEFAULT NULL,
   PRIMARY KEY (`ISBN`,`cid`,`Transaction_id`),
