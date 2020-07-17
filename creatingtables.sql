@@ -104,7 +104,7 @@ CREATE TABLE `customer` (
   `postal_code` varchar(50) DEFAULT NULL,
   `city` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `cumulative_purchases` mediumint(9) DEFAULT NULL,
+  `cumulative_purchases` int DEFAULT NULL,
   PRIMARY KEY (`cid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -214,7 +214,7 @@ DROP TABLE IF EXISTS `reader_interest`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `reader_interest` (
   `category_name` varchar(50) NOT NULL,
-  `interest_description` varchar(50) DEFAULT NULL,
+  `interest_description` varchar(200) DEFAULT NULL,
   `bookstore_name` varchar(50) NOT NULL,
   PRIMARY KEY (`category_name`),
   KEY `bookstore_name` (`bookstore_name`),
