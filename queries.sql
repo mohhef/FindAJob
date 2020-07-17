@@ -7,13 +7,12 @@ group by isbn) detail
 where b.isbn=detail.isbn
 order by quantity_sold desc
 
-
 /*ii. Get details of all back orders for a given publisher.*/
 
 
 
 /*iii. For a given customer, get details of all his/her special orders.*/
-select c.cid,c.first_name,so.order_id,so.order_date,so.qty
+select c.cid,c.first_name,so.order_id,so.order_date,so.quantity
 from customer c, special_order so
 where c.cid=so.cid
 
@@ -56,5 +55,6 @@ have never been a purchase for that specific book.*/
 
 
 /*x. Get details of all books that are in the inventory for a given author.*/
-
-
+select b.title, b.isbn, b.cost_price, b.book_subject, a.author_name, a.email as author_email
+from book b, author a,written_by bi, stores s
+where b.isbn=bi.isbn and bi.email = a.email and bi.isbn = s.isbn and a.email="pkennally8@engadget.com"

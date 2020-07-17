@@ -12,16 +12,16 @@ insert into customer (cid, first_name, last_name, company_name, telephone_number
 insert into customer (cid, first_name, last_name, company_name, telephone_number, address, province, postal_code, city, email, cumulative_purchases) values ("c10", 'Rob', 'Sailes', null, '255-310-8617', '81727 Loomis Road', 'quebec', 'G3E2C3', 'Xiongzhang', 'rsailes9@topsy.com', 10);
 
 /*book*/
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bookstore_name) values ('958599307-4', 'p1', 'Better Than Sex', 44, 'Diomedea irrorata', 38, 'BetterBook');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bookstore_name) values ('173127435-1', 'p2', 'Master of Disguise, The', 20, 'Geochelone elegans', 20, 'BetterBook');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bookstore_name) values ('240258028-3', 'p3', 'Old Man Made in Spain (Abuelo made in Spain)', 80, 'Laniarius ferrugineus', 52, 'BetterBook');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bookstore_name) values ('346111992-X', 'p4', 'Dark City', 83, 'Psittacula krameri', 77, 'BetterBook');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bookstore_name) values ('549652903-4', 'p5', 'To the Limit (Am Limit)', 6, 'Varanus salvator', 82, 'BetterBook');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bookstore_name) values ('326314786-2', 'p6', 'Spy in Black, The', 31, 'Geochelone elephantopus', 39, 'BetterBook');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bookstore_name) values ('698507015-9', 'p7', 'Last Time I Saw Archie, The', 45, 'Gyps fulvus', 52, 'BetterBook');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bookstore_name) values ('266608745-X', 'p8', 'Maze, The', 43, 'Castor canadensis', 18, 'BetterBook');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bookstore_name) values ('272521287-1', 'p9', 'A Story of Children and Film', 55, 'Anas bahamensis', 74, 'BetterBook');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bookstore_name) values ('205217918-6', 'p10', 'Last Stand, The', 61, 'Mirounga leonina', 89, 'BetterBook');
+insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('958599307-4', 'p1', 'Better Than Sex', 44, 'Diomedea irrorata', 38, 'BS1');
+insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('173127435-1', 'p2', 'Master of Disguise, The', 20, 'Geochelone elegans', 20, 'BS1');
+insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('240258028-3', 'p3', 'Old Man Made in Spain (Abuelo made in Spain)', 80, 'Laniarius ferrugineus', 52, 'BS1');
+insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('346111992-X', 'p4', 'Dark City', 83, 'Psittacula krameri', 77, 'BS1');
+insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('549652903-4', 'p5', 'To the Limit (Am Limit)', 6, 'Varanus salvator', 82, 'BS1');
+insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('326314786-2', 'p6', 'Spy in Black, The', 31, 'Geochelone elephantopus', 39, 'BS1');
+insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('698507015-9', 'p7', 'Last Time I Saw Archie, The', 45, 'Gyps fulvus', 52, 'BS1');
+insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('266608745-X', 'p8', 'Maze, The', 43, 'Castor canadensis', 18, 'BS1');
+insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('272521287-1', 'p9', 'A Story of Children and Film', 55, 'Anas bahamensis', 74, 'BS1');
+insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('205217918-6', 'p10', 'Last Stand, The', 61, 'Mirounga leonina', 89, 'BS1');
 
 /*special order*/
 insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so1', '2020-4-3', 5, 'c1','b1','p1','958599307-4');
@@ -32,7 +32,7 @@ insert into special_order (order_id, order_date, Quantity, cid, branch_name, pub
 insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so6', '2020-7-3', 5, 'c6','b6','p6','326314786-2');
 insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so7', '2020-8-3', 2, 'c5','b7','p7','698507015-9');
 insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so8', '2020-9-3', 4, 'c8','b8','p8','266608745-X');
-insert into special_order (order_id, order_date, Quantity, cid, branch_name, spublisher_number, ISBN) values ('so9', '2020-10-3', 3, 'c9','b9','p9','272521287-1');
+insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so9', '2020-10-3', 3, 'c9','b9','p9','272521287-1');
 insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so10', '2020-4-1', 4, 'c10','b10','p10','205217918-6');
 
 /*publisher branch*/
@@ -70,3 +70,43 @@ insert into publisher (publisher_number, address, telephone_number, company_name
 insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p8', '1574 Roxbury Road', '515-425-8942', 'Camimbo', 'Des Moines', '50305', 'Iowa', 'fkinleyside7@friendfeed.com', 'www.orvra.com');
 insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p9', '270 Jay Terrace', '414-848-8492', 'Dynabox', 'Milwaukee', '53263', 'Wisconsin', 'rmcmurtyr8@naver.com', 'www.kwuox.com');
 insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p10', '71073 Mccormick Road', '619-795-7469', 'Livetube', 'San Diego', '92186', 'California', 'tabade9@reverbnation.com', 'www.xrnkq.com');
+
+/*written_by*/
+insert into written_by (ISBN, email) values ('958599307-4', 'kedmonstone0@rambler.ru');
+insert into written_by (ISBN, email) values ('173127435-1', 'rbickerdike1@aol.com');
+insert into written_by (ISBN, email) values ('240258028-3', 'ebruyns2@linkedin.com');
+insert into written_by (ISBN, email) values ('346111992-X', 'gflacknell3@t-online.de');
+insert into written_by (ISBN, email) values ('549652903-4', 'emaple4@geocities.jp');
+insert into written_by (ISBN, email) values ('326314786-2', 'wbale5@de.vu');
+insert into written_by (ISBN, email) values ('698507015-9', 'agoldson6@marriott.com');
+insert into written_by (ISBN, email) values ('266608745-X', 'nnovak7@berkeley.edu');
+insert into written_by (ISBN, email) values ('272521287-1', 'pkennally8@engadget.com');
+insert into written_by (ISBN, email) values ('205217918-6', 'jismail9@fda.gov');
+
+/*author*/
+insert into author (author_name, email) values ('Row Havill', 'kedmonstone0@rambler.ru');
+insert into author (author_name, email) values ('Upton Southerton', 'rbickerdike1@aol.com');
+insert into author (author_name, email) values ('Nadine Rubinfajn', 'ebruyns2@linkedin.com');
+insert into author (author_name, email) values ('Germain Byrd', 'gflacknell3@t-online.de');
+insert into author (author_name, email) values ('Kirby Micka', 'emaple4@geocities.jp');
+insert into author (author_name, email) values ('Kennan Dunkerton', 'wbale5@de.vu');
+insert into author (author_name, email) values ('Feliks Casperri', 'agoldson6@marriott.com');
+insert into author (author_name, email) values ('Hamnet Ebbins', 'nnovak7@berkeley.edu');
+insert into author (author_name, email) values ('Junia Gillow', 'pkennally8@engadget.com');
+insert into author (author_name, email) values ('Jacqueline Duer', 'jismail9@fda.gov');
+
+/*store*/
+insert into stores (isbn, quantity_on_hand, bs_id) values ('958599307-4', 99, 'b1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('173127435-1', 61, 'b1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('240258028-3', 61, 'b1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('346111992-X', 82, 'b1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('549652903-4', 36, 'b1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('326314786-2', 69, 'b1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('698507015-9', 21, 'b1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('266608745-X', 41, 'b1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('272521287-1', 72, 'b1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('205217918-6', 27, 'b1');
+
+/*bookstore*/
+
+insert into stores (bs_id, phone_number, address, bookstore_name) values ('b1', '170-792-1904', '24806 Golden Leaf Parkway', 'betterbook');
