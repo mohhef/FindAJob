@@ -53,11 +53,11 @@ where pub2.publisher_number=b.publisher_number
 
 /*ix. Get details of books that are in the inventory for at least one year but there
 have never been a purchase for that specific book.*/
-
-select st.isbn 
+select bo.isbn
+from book_order bo, orders o, stores s
+where bo.order_id=o.order_id and bo.isbn not in(select st.isbn 
 from sale_to st
-where st.order_date between  '2019-07-17' and '2020-07-17'
-
+where st.order_date between  '2019-07-17' and '2020-07-17') and bo.isbn=s.isbn
 
 /*x. Get details of all books that are in the inventory for a given author.*/
 select b.title, b.isbn, b.cost_price, b.book_subject, a.author_name, a.email as author_email
