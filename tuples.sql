@@ -147,7 +147,17 @@ insert into written_by (ISBN, email) values ('266608745-X', 'nnovak7@berkeley.ed
 insert into written_by (ISBN, email) values ('272521287-1', 'pkennally8@engadget.com');
 insert into written_by (ISBN, email) values ('205217918-6', 'jismail9@fda.gov');
 
-
+/* order_from */
+insert into order_from (branch_name, publisher_number, order_id) values ('b1', 'p1', 'o1');
+insert into order_from (branch_name, publisher_number, order_id) values ('b2', 'p1', 'o2');
+insert into order_from (branch_name, publisher_number, order_id) values ('b3', 'p1', 'o3');
+insert into order_from (branch_name, publisher_number, order_id) values ('b4', 'p4', 'o4');
+insert into order_from (branch_name, publisher_number, order_id) values ('b5', 'p5', 'o5');
+insert into order_from (branch_name, publisher_number, order_id) values ('b6', 'p6', 'o6');
+insert into order_from (branch_name, publisher_number, order_id) values ('b6', 'p6', 'o7');
+insert into order_from (branch_name, publisher_number, order_id) values ('b1', 'p1', 'o8');
+insert into order_from (branch_name, publisher_number, order_id) values ('b2', 'p1', 'o9');
+insert into order_from (branch_name, publisher_number, order_id) values ('b1', 'p1', 'o10');
 
 
 
