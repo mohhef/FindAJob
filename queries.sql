@@ -20,7 +20,7 @@ where c.cid=so.cid
 specific period of time from a given branch.*/
 select c.cid, c.first_name, st.transaction_id, st.quantity, st.order_date, b.title, b.isbn, b.cost_price, b.book_subject
 from customer c, sale_to st, book b
-where  c.cid = st.cid and st.isbn = b.isbn and st.order_date between '2020-02-02' and '2020-09-09'
+where  c.cid = st.cid and st.isbn = b.isbn and st.order_date between '2020-02-02' and '2020-09-09' and c.cid='c1'
 
 /*v. Give a report of sales during a specific period of time for a given branch.*/
 
@@ -32,8 +32,10 @@ where  c.cid = st.cid and st.isbn = b.isbn and st.order_date between '2020-02-02
 
 /*vii. Give details of books that are supplied by a given publisher ordered by
 their sale price in increasing order.*/
-
-
+select b.title, b.isbn, b.cost_price, b.book_subject, b.selling_price
+from book b
+where b.publisher_number="p3"
+order by b.selling_price
 
 /*viii. For all publishers who have at least three branches, get details of the head
 office and all the branches for those publishers.*/
