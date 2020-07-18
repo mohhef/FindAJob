@@ -102,26 +102,26 @@ insert into publisher_branch (branch_name, publisher_number, telephone_number, r
 insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b10','p10', '611-720-7818', 'rbirdis9@weather.com', 'Bryukhovetskaya', '39138 Atwood Street', 'y8d0z1');
 
 /*representative*/
-insert into representative (email_address, representative_name) values ('mhise0@msu.edu','');
-insert into representative (email_address, representative_name) values ( 'lsteels1@spotify.com','' );
-insert into representative (email_address, representative_name) values ( 'ccopestake2@walmart.com','');
-insert into representative (email_address, representative_name) values ( 'scurley3@kickstarter.com','');
-insert into representative (email_address, representative_name) values ('dsylvaine4@csmonitor.com','');
-insert into representative (email_address, representative_name) values ( 'aormrod5@friendfeed.com','');
-insert into representative (email_address, representative_name) values ( 'pwhyatt6@plala.or.jp','');
-insert into representative (email_address, representative_name) values ( 'athrift7@deviantart.com','');
-insert into representative (email_address, representative_name) values ('astennett8@phpbb.com','');
-insert into representative (email_address, representative_name) values ('rbirdis9@weather.com','');
-insert into representative (email_address, representative_name) values ('gmuir0@e-recht24.de','');
-insert into representative (email_address, representative_name) values ( 'mgreensides1@sohu.com','' );
-insert into representative (email_address, representative_name) values ( 'apiolli2@oakley.com','');
-insert into representative (email_address, representative_name) values ( 'mrunnett3@e-recht24.de','');
-insert into representative (email_address, representative_name) values ('vedbrooke4@nps.gov','');
-insert into representative (email_address, representative_name) values ( 'dpinnocke5@nhs.uk','');
-insert into representative (email_address, representative_name) values ( 'msimmgen6@google.com','');
-insert into representative (email_address, representative_name) values ( 'fkinleyside7@friendfeed.com','');
-insert into representative (email_address, representative_name) values ('rmcmurtyr8@naver.com','');
-insert into representative (email_address, representative_name) values ('tabade9@reverbnation.com','');
+insert into representative (email_address, representative_name) values ('mhise0@msu.edu','mohamed');
+insert into representative (email_address, representative_name) values ( 'lsteels1@spotify.com','amr' );
+insert into representative (email_address, representative_name) values ( 'ccopestake2@walmart.com','yas');
+insert into representative (email_address, representative_name) values ( 'scurley3@kickstarter.com','roby');
+insert into representative (email_address, representative_name) values ('dsylvaine4@csmonitor.com','john');
+insert into representative (email_address, representative_name) values ( 'aormrod5@friendfeed.com','cat');
+insert into representative (email_address, representative_name) values ( 'pwhyatt6@plala.or.jp','sara');
+insert into representative (email_address, representative_name) values ( 'athrift7@deviantart.com','jas');
+insert into representative (email_address, representative_name) values ('astennett8@phpbb.com','yas');
+insert into representative (email_address, representative_name) values ('rbirdis9@weather.com','bob');
+insert into representative (email_address, representative_name) values ('gmuir0@e-recht24.de','bobby');
+insert into representative (email_address, representative_name) values ( 'mgreensides1@sohu.com','hefny' );
+insert into representative (email_address, representative_name) values ( 'apiolli2@oakley.com','carle');
+insert into representative (email_address, representative_name) values ( 'mrunnett3@e-recht24.de','carly');
+insert into representative (email_address, representative_name) values ('vedbrooke4@nps.gov','noha');
+insert into representative (email_address, representative_name) values ( 'dpinnocke5@nhs.uk','tara');
+insert into representative (email_address, representative_name) values ( 'msimmgen6@google.com','bortol');
+insert into representative (email_address, representative_name) values ( 'fkinleyside7@friendfeed.com','mohanad');
+insert into representative (email_address, representative_name) values ('rmcmurtyr8@naver.com','jasmine');
+insert into representative (email_address, representative_name) values ('tabade9@reverbnation.com','yasmine');
 
 /*reader_interest*/
 
