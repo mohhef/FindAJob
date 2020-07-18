@@ -49,11 +49,11 @@ insert into publisher_branch (branch_name, publisher_number, telephone_number, r
 insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b10','p10', '611-720-7818', 'rbirdis9@weather.com', 'Bryukhovetskaya', '39138 Atwood Street', 'y8d0z1');
 
 /*sale to*/
-insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c1', 't1', 94, '2020-09-05');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c1', 't1', 94, '2020-06-05');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('272521287-1', 'c2', 't2', 56, '2020-05-04');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('346111992-X', 'c3', 't3', 55, '2020-05-08');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c4', 't4', 31, '2020-00-02');
-insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c5', 't5', 38, '2020-08-07');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c5', 't5', 38, '2020-06-07');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c6', 't6', 16, '2020-01-03');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c7', 't7', 3, '2020-00-05');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c8', 't8', 61, '2020-02-08');
@@ -97,17 +97,21 @@ insert into author (author_name, email) values ('Junia Gillow', 'pkennally8@enga
 insert into author (author_name, email) values ('Jacqueline Duer', 'jismail9@fda.gov');
 
 /*store*/
-insert into stores (isbn, quantity_on_hand, bs_id) values ('958599307-4', 99, 'b1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('173127435-1', 61, 'b1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('240258028-3', 61, 'b1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('346111992-X', 82, 'b1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('549652903-4', 36, 'b1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('326314786-2', 69, 'b1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('698507015-9', 21, 'b1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('266608745-X', 41, 'b1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('272521287-1', 72, 'b1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('205217918-6', 27, 'b1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('958599307-4', 99, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('173127435-1', 61, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('240258028-3', 61, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('346111992-X', 82, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('549652903-4', 36, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('326314786-2', 69, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('698507015-9', 21, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('266608745-X', 41, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('272521287-1', 72, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('205217918-6', 27, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('305217918-6', 17, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('432217918-6', 87, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('921729318-6', 47, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('324259918-6', 57, 'bs1');
 
 /*bookstore*/
 
-insert into bookstore (bs_id, phone_number, address, bookstore_name) values ('b1', '170-792-1904', '24806 Golden Leaf Parkway', 'betterbook');
+insert into bookstore (bs_id, phone_number, address, bookstore_name) values ('bs1', '170-792-1904', '24806 Golden Leaf Parkway', 'betterbook');
