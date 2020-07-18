@@ -119,7 +119,7 @@ insert into special_order (order_id, order_date, Quantity, cid, branch_name, pub
 insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so9', '2020-10-3', 3, 'c9','b9','p9','272521287-1');
 insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so10', '2020-4-1', 4, 'c10','b10','p10','205217918-6');
 
-/*store*/
+/*stores*/
 insert into stores (isbn, quantity_on_hand, bs_id) values ('958599307-4', 99, 'bs1');
 insert into stores (isbn, quantity_on_hand, bs_id) values ('173127435-1', 61, 'bs1');
 insert into stores (isbn, quantity_on_hand, bs_id) values ('240258028-3', 61, 'bs1');
