@@ -96,7 +96,7 @@ insert into author (author_name, email) values ('Hamnet Ebbins', 'nnovak7@berkel
 insert into author (author_name, email) values ('Junia Gillow', 'pkennally8@engadget.com');
 insert into author (author_name, email) values ('Jacqueline Duer', 'jismail9@fda.gov');
 
-/*store*/
+/*stores*/
 insert into stores (isbn, quantity_on_hand, bs_id) values ('958599307-4', 99, 'bs1');
 insert into stores (isbn, quantity_on_hand, bs_id) values ('173127435-1', 61, 'bs1');
 insert into stores (isbn, quantity_on_hand, bs_id) values ('240258028-3', 61, 'bs1');
