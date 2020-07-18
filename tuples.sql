@@ -54,6 +54,17 @@ insert into customer (cid, first_name, last_name, company_name, telephone_number
 /*interested_in*/
 
 /*order_from*/
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b1','p1','o1');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b2','p1','o2');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b3','p1','o3');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b2','p1','o4');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b4','p4','o5');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b4','p4','o6');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b5','p5','o7');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b6','p6','o8');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b7','p7','o9');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b8','p8','o10');
+
 
 /*orders*/
 insert into orders (order_id, order_date) values ('o1', '2019-11-07');
@@ -94,6 +105,26 @@ insert into publisher_branch (branch_name, publisher_number, telephone_number, r
 /*reader_interest*/
 
 /*representative*/
+insert into representative (email_address, representative_name) values ('mhise0@msu.edu','');
+insert into representative (email_address, representative_name) values ( 'lsteels1@spotify.com','' );
+insert into representative (email_address, representative_name) values ( 'ccopestake2@walmart.com','');
+insert into representative (email_address, representative_name) values ( 'scurley3@kickstarter.com','');
+insert into representative (email_address, representative_name) values ('dsylvaine4@csmonitor.com','');
+insert into representative (email_address, representative_name) values ( 'aormrod5@friendfeed.com','');
+insert into representative (email_address, representative_name) values ( 'pwhyatt6@plala.or.jp','');
+insert into representative (email_address, representative_name) values ( 'athrift7@deviantart.com','');
+insert into representative (email_address, representative_name) values ('astennett8@phpbb.com','');
+insert into representative (email_address, representative_name) values ('rbirdis9@weather.com','');
+insert into representative (email_address, representative_name) values ('gmuir0@e-recht24.de','');
+insert into representative (email_address, representative_name) values ( 'mgreensides1@sohu.com','' );
+insert into representative (email_address, representative_name) values ( 'apiolli2@oakley.com','');
+insert into representative (email_address, representative_name) values ( 'mrunnett3@e-recht24.de','');
+insert into representative (email_address, representative_name) values ('vedbrooke4@nps.gov','');
+insert into representative (email_address, representative_name) values ( 'dpinnocke5@nhs.uk','');
+insert into representative (email_address, representative_name) values ( 'msimmgen6@google.com','');
+insert into representative (email_address, representative_name) values ( 'fkinleyside7@friendfeed.com','');
+insert into representative (email_address, representative_name) values ('rmcmurtyr8@naver.com','');
+insert into representative (email_address, representative_name) values ('tabade9@reverbnation.com','');
 
 /*sale to*/
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c1', 't1', 94, '2020-06-05');
