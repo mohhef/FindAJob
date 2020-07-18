@@ -146,27 +146,24 @@ insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o7', '6985070
 insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o8', '698507015-9', 465, null);
 insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o9', '272521287-1', 128, '2020-03-04');
 insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o10', '272521287-1', 223, null);
-insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o11', '173127435-1', 61, True);
-insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o12', '240258028-3', 61, True);
-insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o13', '549652903-4', 36, True);
-insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o14', '326314786-2', 69, True);
-insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o15', '266608745-X', 41, True);
-insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o16', '205242918-X', 17, True);
+insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o11', '173127435-1', 61, '2019-01-19');
+insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o12', '240258028-3', 61, '2019-01-10');
+insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o13', '549652903-4', 36, '2019-01-09');
+insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o14', '326314786-2', 69, '2019-01-19');
+insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o15', '266608745-X', 41, '2019-01-25');
+insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o16', '205242918-X', 17, '2019-01-27');
 insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o17', '321821287-1', 123, '2019-03-04');
 
 
-
-/*TODO: Since we have only one bookstore 'b1' we can only order from 'p1' because they are linked
-in the 'publisher_branch' entity. Should we create other orders for different branches from different publishers? */
 /*order_from*/
 insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o1');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o2');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o3');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o4');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o5');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o6');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o7');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o8');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o9');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o10');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p2', 'o2');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p3', 'o3');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p4', 'o4');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b2', 'p4', 'o5');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b3', 'p4', 'o6');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p5', 'o7');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b2', 'p5', 'o8');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b3', 'p5', 'o9');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b4', 'p5', 'o10');
  
