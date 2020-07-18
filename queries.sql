@@ -9,8 +9,8 @@ order by quantity_sold desc
 
 /*ii. Get details of all back orders for a given publisher.*/
 select book_order.order_id, order_date
-from orders, book_order
-where orders.order_id = book_order.order_id and received = false;
+from orders, order_from, book_order
+where orders.order_id = book_order.order_id and book_order.order_id = order_from.order_id and received = false and publisher_number = "p1";
 
 /*iii. For a given customer, get details of all his/her special orders.*/
 select c.cid,c.first_name,so.order_id,so.order_date,so.quantity
