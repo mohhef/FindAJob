@@ -146,12 +146,12 @@ insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o7', '6985070
 insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o8', '698507015-9', 465, null);
 insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o9', '272521287-1', 128, '2020-03-04');
 insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o10', '272521287-1', 223, null);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o11', '173127435-1', 61, True);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o12', '240258028-3', 61, True);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o13', '549652903-4', 36, True);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o14', '326314786-2', 69, True);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o15', '266608745-X', 41, True);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o16', '205242918-X', 17, True);
+insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o11', '173127435-1', 61, True);
+insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o12', '240258028-3', 61, True);
+insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o13', '549652903-4', 36, True);
+insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o14', '326314786-2', 69, True);
+insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o15', '266608745-X', 41, True);
+insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o16', '205242918-X', 17, True);
 insert into `book_order` (order_id,ISBN,qty,arrival_date) values ('o17', '321821287-1', 123, '2019-03-04');
 
 
