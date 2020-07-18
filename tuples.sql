@@ -65,7 +65,6 @@ insert into `order_from` (branch_name,publisher_number,order_id) values ('b6','p
 insert into `order_from` (branch_name,publisher_number,order_id) values ('b7','p7','o9');
 insert into `order_from` (branch_name,publisher_number,order_id) values ('b8','p8','o10');
 
-
 /*orders*/
 insert into orders (order_id, order_date) values ('o1', '2019-11-07');
 insert into orders (order_id, order_date) values ('o2', '2020-06-10');
@@ -102,8 +101,6 @@ insert into publisher_branch (branch_name, publisher_number, telephone_number, r
 insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b9','p9', '307-331-2906', 'astennett8@phpbb.com', 'Idi Iroko', '46911 Anhalt Circle', 'N5c1M4');
 insert into publisher_branch (branch_name, publisher_number, telephone_number, rep_email_address, province, address, postal_code) values ('b10','p10', '611-720-7818', 'rbirdis9@weather.com', 'Bryukhovetskaya', '39138 Atwood Street', 'y8d0z1');
 
-/*reader_interest*/
-
 /*representative*/
 insert into representative (email_address, representative_name) values ('mhise0@msu.edu','');
 insert into representative (email_address, representative_name) values ( 'lsteels1@spotify.com','' );
@@ -125,6 +122,10 @@ insert into representative (email_address, representative_name) values ( 'msimmg
 insert into representative (email_address, representative_name) values ( 'fkinleyside7@friendfeed.com','');
 insert into representative (email_address, representative_name) values ('rmcmurtyr8@naver.com','');
 insert into representative (email_address, representative_name) values ('tabade9@reverbnation.com','');
+
+/*reader_interest*/
+
+
 
 /*sale to*/
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c1', 't1', 94, '2020-06-05');
