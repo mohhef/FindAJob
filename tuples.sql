@@ -52,13 +52,13 @@ insert into publisher_branch (branch_name, publisher_number, telephone_number, r
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c1', 't1', 94, '2020-06-05');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('272521287-1', 'c2', 't2', 56, '2020-05-04');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('346111992-X', 'c3', 't3', 55, '2020-05-08');
-insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c4', 't4', 31, '2020-00-02');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c4', 't4', 31, '2020-01-02');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c5', 't5', 38, '2020-06-07');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c6', 't6', 16, '2020-01-03');
-insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c7', 't7', 3, '2020-00-05');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c7', 't7', 3, '2020-01-05');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c8', 't8', 61, '2020-02-08');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('698507015-9', 'c0', 't9', 86, '2020-01-09');
-insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c10', 't10', 24, '2020-00-08');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c10', 't10', 24, '2020-01-08');
 
 /*publisher*/
 insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p1', '71 Menomonie Circle', '405-470-3544', 'Dabfeed', 'Oklahoma City', '73135', 'Oklahoma', 'gmuir0@e-recht24.de', 'www.biqao.com');
@@ -115,3 +115,29 @@ insert into stores (isbn, quantity_on_hand, bs_id) values ('324259918-6', 57, 'b
 /*bookstore*/
 
 insert into bookstore (bs_id, phone_number, address, bookstore_name) values ('bs1', '170-792-1904', '24806 Golden Leaf Parkway', 'betterbook');
+
+
+/*order*/
+insert into orders (order_id, order_date) values ('o1', '2019-11-07');
+insert into orders (order_id, order_date) values ('o2', '2020-06-10');
+insert into orders (order_id, order_date) values ('o3', '2020-06-05');
+insert into orders (order_id, order_date) values ('o4', '2020-01-08');
+insert into orders (order_id, order_date) values ('o5', '2020-05-05');
+insert into orders (order_id, order_date) values ('o6', '2019-10-15');
+insert into orders (order_id, order_date) values ('o7', '2019-12-01');
+insert into orders (order_id, order_date) values ('o8', '2020-06-05');
+insert into orders (order_id, order_date) values ('o9', '2020-03-04');
+insert into orders (order_id, order_date) values ('o10', '2020-07-10');
+
+
+/*back_order*/
+insert into `book_order` (order_id,ISBN,qty,received) values ('o1', '958599307-4', 308, True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o2', '958599307-4', 476, False);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o3', '346111992-X', 323, False);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o4', '346111992-X', 137, True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o5', '205217918-6', 343, True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o6', '205217918-6', 123, False);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o7', '698507015-9', 107, True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o8', '698507015-9', 465, False);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o9', '272521287-1', 128, True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o10', '272521287-1', 223, False);
