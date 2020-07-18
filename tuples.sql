@@ -115,3 +115,29 @@ insert into stores (isbn, quantity_on_hand, bs_id) values ('324259918-6', 57, 'b
 /*bookstore*/
 
 insert into bookstore (bs_id, phone_number, address, bookstore_name) values ('bs1', '170-792-1904', '24806 Golden Leaf Parkway', 'betterbook');
+
+
+/*order*/
+insert into orders (order_id, order_date) values ('o1', '2020-04-05');
+insert into orders (order_id, order_date) values ('o2', '2020-06-10');
+insert into orders (order_id, order_date) values ('o3', '2020-06-05');
+insert into orders (order_id, order_date) values ('o4', '2020-06-10');
+insert into orders (order_id, order_date) values ('o5', '2020-05-05');
+insert into orders (order_id, order_date) values ('o6', '2020-07-01');
+insert into orders (order_id, order_date) values ('o7', '2020-06-05');
+insert into orders (order_id, order_date) values ('o8', '2020-06-05');
+insert into orders (order_id, order_date) values ('o9', '2020-05-02');
+insert into orders (order_id, order_date) values ('o10', '2020-07-10');
+
+
+/*back_order*/
+insert into `book_order` (order_id,ISBN,qty,received) values ('o1', '958599307-4', '3', True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o2', '958599307-4', '4', False);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o3', '346111992-X', '3', False);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o4', '346111992-X', '1', True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o5', '205217918-6', '3', True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o6', '205217918-6', '1', False);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o7', '698507015-9', '1', True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o8', '698507015-9', '4', False);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o9', '272521287-1', '1', True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o10', '272521287-1', '2', False);
