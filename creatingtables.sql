@@ -82,7 +82,7 @@ CREATE TABLE `book_order` (
   `order_id` varchar(10) NOT NULL,
   `ISBN` varchar(50) NOT NULL,
   `qty` int,
-  `received` varchar(10),
+  `arrival_date` date,
   PRIMARY KEY (`order_id`,`ISBN`),
   KEY `ISBN` (`ISBN`),
   CONSTRAINT `book_order_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
