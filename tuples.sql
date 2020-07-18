@@ -57,7 +57,7 @@ insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('9
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c6', 't6', 16, '2020-01-03');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c7', 't7', 3, '2020-01-05');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c8', 't8', 61, '2020-02-08');
-insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('698507015-9', 'c0', 't9', 86, '2020-01-09');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('698507015-9', 'c9', 't9', 86, '2020-01-09');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c10', 't10', 24, '2020-01-08');
 
 /*publisher*/
@@ -107,15 +107,15 @@ insert into stores (isbn, quantity_on_hand, bs_id) values ('698507015-9', 21, 'b
 insert into stores (isbn, quantity_on_hand, bs_id) values ('266608745-X', 41, 'bs1');
 insert into stores (isbn, quantity_on_hand, bs_id) values ('272521287-1', 72, 'bs1');
 insert into stores (isbn, quantity_on_hand, bs_id) values ('205217918-6', 27, 'bs1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('305217918-6', 17, 'bs1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('432217918-6', 87, 'bs1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('921729318-6', 47, 'bs1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('324259918-6', 57, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('205242918-6', 17, 'bs1');
+-- TODO: These books ISBN does not exist in the book entity can someone confirm that these are safe to delete?--
+-- insert into stores (isbn, quantity_on_hand, bs_id) values ('432217918-6', 87, 'bs1');
+-- insert into stores (isbn, quantity_on_hand, bs_id) values ('921729318-6', 47, 'bs1');
+-- insert into stores (isbn, quantity_on_hand, bs_id) values ('324259918-6', 57, 'bs1');
 
 /*bookstore*/
 
 insert into bookstore (bs_id, phone_number, address, bookstore_name) values ('bs1', '170-792-1904', '24806 Golden Leaf Parkway', 'betterbook');
-
 
 /*order*/
 insert into orders (order_id, order_date) values ('o1', '2019-11-07');
@@ -129,15 +129,21 @@ insert into orders (order_id, order_date) values ('o8', '2020-06-05');
 insert into orders (order_id, order_date) values ('o9', '2020-03-04');
 insert into orders (order_id, order_date) values ('o10', '2020-07-10');
 
-
 /*back_order*/
 insert into `book_order` (order_id,ISBN,qty,received) values ('o1', '958599307-4', 308, True);
 insert into `book_order` (order_id,ISBN,qty,received) values ('o2', '958599307-4', 476, False);
 insert into `book_order` (order_id,ISBN,qty,received) values ('o3', '346111992-X', 323, False);
 insert into `book_order` (order_id,ISBN,qty,received) values ('o4', '346111992-X', 137, True);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o5', '205217918-6', 343, True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o5', '205217918-6', 85, True);
 insert into `book_order` (order_id,ISBN,qty,received) values ('o6', '205217918-6', 123, False);
 insert into `book_order` (order_id,ISBN,qty,received) values ('o7', '698507015-9', 107, True);
 insert into `book_order` (order_id,ISBN,qty,received) values ('o8', '698507015-9', 465, False);
 insert into `book_order` (order_id,ISBN,qty,received) values ('o9', '272521287-1', 128, True);
 insert into `book_order` (order_id,ISBN,qty,received) values ('o10', '272521287-1', 223, False);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o11', '173127435-1', 61, True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o12', '240258028-3', 61, True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o13', '549652903-4', 36, True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o14', '326314786-2', 69, True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o15', '266608745-X', 41, True);
+insert into `book_order` (order_id,ISBN,qty,received) values ('o16', '205242918-X', 17, True);
+ 
