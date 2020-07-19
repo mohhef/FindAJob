@@ -28,13 +28,20 @@ where  c.cid = st.cid and st.isbn = b.isbn and st.order_date between '2020-02-02
 
 
 /*vi. Find the title and name of publisher of book(s) that have the highest backorder.*/
-/*Question what they mean by title ? is it book title? and what about name? we only have the id of the publisher*/
-/*Please can you help me clarify that so that i can modify the query if needed because as of now i'm returning the publisher number that has the most orders */
-select sub.publisher_number 
-from (select o.publisher_number, COUNT(o.publisher_number) mycount 
-	from order_from as o 
-	group by o.publisher_number 
-	order by mycount desc) as sub Limit 1;
+
+select Distinct p.company_name ,getPublisherName.title, getPublisherName.ISBN 
+from(select fo.publisher_number, getPublishingNb.title, getPublishingNb.ISBN 
+	from (select bo.order_id, getOrderIds.ISBN ,getOrderIds.title 
+		from(select b.title, backorder.ISBN 
+			from (select o.ISBN, sum(o.qty) mycount 
+				from book_order as o 
+				where o.arrival_date is null 
+				group by o.ISBN 
+				order by mycount desc limit 1) as backorder, book as b 
+			where backorder.ISBN = b.ISBN) as getOrderIds, book_order as bo 
+		where getOrderIds.ISBN = bo.ISBN) as getPublishingNb, order_from fo 
+	where getPublishingNb.order_id = fo.order_id) as getPublisherName, publisher as p 
+where getPublisherName.publisher_number= p.publisher_number  ;
 
 
 /*vii. Give details of books that are supplied by a given publisher ordered by
