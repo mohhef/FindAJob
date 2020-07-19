@@ -1,4 +1,3 @@
-
 /*author*/
 insert into author (author_name, email) values ('Row Havill', 'kedmonstone0@rambler.ru');
 insert into author (author_name, email) values ('Upton Southerton', 'rbickerdike1@aol.com');
@@ -15,29 +14,37 @@ insert into author (author_name, email) values ('Jacqueline Duer', 'jismail9@fda
 insert into bookstore (bs_id, phone_number, address, bookstore_name) values ('bs1', '170-792-1904', '24806 Golden Leaf Parkway', 'betterbook');
 
 /*book*/
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('958599307-4', 'p1', 'Better Than Sex', 44, 'Diomedea irrorata', 78, 'BS1');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('173127435-1', 'p2', 'Master of Disguise, The', 20, 'Geochelone elegans', 76, 'BS1');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('240258028-3', 'p3', 'Old Man Made in Spain (Abuelo made in Spain)', 40, 'Laniarius ferrugineus', 52, 'BS1');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('346111992-X', 'p4', 'Dark City', 23, 'Psittacula krameri', 57, 'BS1');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('549652903-4', 'p5', 'To the Limit (Am Limit)', 40, 'Varanus salvator', 82, 'BS1');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('326314786-2', 'p6', 'Spy in Black, The', 31, 'Geochelone elephantopus', 39, 'BS1');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('698507015-9', 'p7', 'Last Time I Saw Archie, The', 45, 'Gyps fulvus', 52, 'BS1');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('266608745-X', 'p8', 'Maze, The', 43, 'Castor canadensis', 78, 'BS1');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('272521287-1', 'p9', 'A Story of Children and Film', 35, 'Anas bahamensis', 44, 'BS1');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('205217918-6', 'p10', 'Last Stand, The', 61, 'Mirounga leonina', 89, 'BS1');
-insert into book (ISBN, publisher_number, title, cost_price, book_subject, selling_price, bs_id) values ('205242918-6', 'p3', 'Mr. Bean', 21, 'Funny', 89, 'BS1');
+insert into book (ISBN, publisher_number, title, book_subject, selling_price ) values ('958599307-4', 'p1', 'Better Than Sex', 'Diomedea irrorata', 78);
+insert into book (ISBN, publisher_number, title, book_subject, selling_price ) values ('173127435-1', 'p2', 'Master of Disguise, The', 'Geochelone elegans', 76);
+insert into book (ISBN, publisher_number, title, book_subject, selling_price ) values ('240258028-3', 'p3', 'Old Man Made in Spain (Abuelo made in Spain)', 'Laniarius ferrugineus', 52);
+insert into book (ISBN, publisher_number, title, book_subject, selling_price ) values ('346111992-X', 'p4', 'Dark City', 'Psittacula krameri', 57);
+insert into book (ISBN, publisher_number, title, book_subject, selling_price ) values ('549652903-4', 'p5', 'To the Limit (Am Limit)', 'Varanus salvator', 82);
+insert into book (ISBN, publisher_number, title, book_subject, selling_price ) values ('326314786-2', 'p6', 'Spy in Black, The', 'Geochelone elephantopus', 39);
+insert into book (ISBN, publisher_number, title, book_subject, selling_price ) values ('698507015-9', 'p7', 'Last Time I Saw Archie, The', 'Gyps fulvus', 52);
+insert into book (ISBN, publisher_number, title, book_subject, selling_price ) values ('266608745-X', 'p8', 'Maze, The', 'Castor canadensis', 78);
+insert into book (ISBN, publisher_number, title, book_subject, selling_price ) values ('272521287-1', 'p9', 'A Story of Children and Film', 'Anas bahamensis', 44);
+insert into book (ISBN, publisher_number, title, book_subject, selling_price ) values ('205217918-6', 'p10', 'Last Stand, The', 'Mirounga leonina', 89);
+insert into book (ISBN, publisher_number, title, book_subject, selling_price ) values ('205242918-6', 'p3', 'Mr. Bean', 'Funny', 89);
+insert into book (ISBN, publisher_number, title, book_subject, selling_price) values  ('321821287-1', 'p3', 'Mr. white man', 'Funny', 89);
 
-/*baok_order*/
-insert into `book_order` (order_id,ISBN,qty,received) values ('o1', '958599307-4', 308, True);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o2', '958599307-4', 476, False);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o3', '346111992-X', 323, False);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o4', '346111992-X', 137, True);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o5', '205217918-6', 343, True);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o6', '205217918-6', 123, False);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o7', '698507015-9', 107, True);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o8', '698507015-9', 465, False);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o9', '272521287-1', 128, True);
-insert into `book_order` (order_id,ISBN,qty,received) values ('o10', '272521287-1', 223, False);
+/*book_order*/
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o1', '958599307-4', 308, '2019-11-09',10);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o2', '958599307-4', 476, null,20);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o3', '346111992-X', 323, null,30);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o4', '346111992-X', 137, '2020-01-11',22);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o5', '205217918-6', 343, '2020-05-09',34);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o6', '205217918-6', 123, null,32);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o7', '698507015-9', 107, '2019-12-01',44);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o8', '698507015-9', 465, null,44);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o9', '272521287-1', 128, '2020-03-04',55);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o10', '272521287-1', 223, null,66);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o11', '173127435-1', 61, '2019-01-19',77);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o12', '240258028-3', 61, '2019-01-10',32);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o13', '549652903-4', 36, '2019-01-09',42);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o14', '326314786-2', 69, '2019-01-19',12);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o15', '266608745-X', 41, '2019-01-25',34);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o16', '205242918-X', 17, '2019-01-27',54);
+insert into `book_order` (order_id,ISBN,qty,arrival_date,cost_price) values ('o17', '321821287-1', 123, '2019-03-04',23);
 
 /*customer*/
 insert into customer (cid, first_name, last_name, company_name, telephone_number, address, province, postal_code, city, email, cumulative_purchases) values ("c1", 'Priscilla', 'todor', null, '294-600-9853', '95940 Aberg Alley', 'quebec', 'H3H2C3', 'Starobin', 'ptodor0@sciencedirect.com', 2);
@@ -53,19 +60,20 @@ insert into customer (cid, first_name, last_name, company_name, telephone_number
 
 /*interested_in*/
 
+
 /*order_from*/
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b1','p1','o1');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b2','p1','o2');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b3','p1','o3');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b2','p1','o4');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b4','p4','o5');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b4','p4','o6');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b5','p5','o7');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b6','p6','o8');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b7','p7','o9');
-insert into `order_from` (branch_name,publisher_number,order_id) values ('b8','p8','o10');
-
-
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o1');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p2', 'o2');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p3', 'o3');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p4', 'o4');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b2', 'p4', 'o5');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b3', 'p4', 'o6');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p5', 'o7');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b2', 'p5', 'o8');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b3', 'p5', 'o9');
+insert into `order_from` (branch_name,publisher_number,order_id) values ('b4', 'p5', 'o10');
+ 
+ 
 /*orders*/
 insert into orders (order_id, order_date) values ('o1', '2019-11-07');
 insert into orders (order_id, order_date) values ('o2', '2020-06-10');
@@ -77,6 +85,13 @@ insert into orders (order_id, order_date) values ('o7', '2019-12-01');
 insert into orders (order_id, order_date) values ('o8', '2020-06-05');
 insert into orders (order_id, order_date) values ('o9', '2020-03-04');
 insert into orders (order_id, order_date) values ('o10', '2020-07-10');
+insert into orders (order_id, order_date) values ('o11', '2019-09-21');
+insert into orders (order_id, order_date) values ('o12', '2019-08-20');
+insert into orders (order_id, order_date) values ('o13', '2019-06-10');
+insert into orders (order_id, order_date) values ('o14', '2019-04-12');
+insert into orders (order_id, order_date) values ('o15', '2019-02-15');
+insert into orders (order_id, order_date) values ('o16', '2019-05-17');
+insert into orders (order_id, order_date) values ('o17', '2019-06-19');
 
 /*publisher*/
 insert into publisher (publisher_number, address, telephone_number, company_name, city, postal_code, province, email_address, website) values ('p1', '71 Menomonie Circle', '405-470-3544', 'Dabfeed', 'Oklahoma City', '73135', 'Oklahoma', 'gmuir0@e-recht24.de', 'www.biqao.com');
@@ -135,7 +150,7 @@ insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('9
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c6', 't6', 16, '2020-01-03');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c7', 't7', 3, '2020-01-05');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('958599307-4', 'c8', 't8', 61, '2020-02-08');
-insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('698507015-9', 'c0', 't9', 86, '2020-01-09');
+insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('698507015-9', 'c9', 't9', 86, '2020-01-09');
 insert into sale_to (ISBN, cid, transaction_id, quantity, order_date) values ('205217918-6', 'c10', 't10', 24, '2020-01-08');
 
 /*special order*/
@@ -150,7 +165,7 @@ insert into special_order (order_id, order_date, Quantity, cid, branch_name, pub
 insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so9', '2020-10-3', 3, 'c9','b9','p9','272521287-1');
 insert into special_order (order_id, order_date, Quantity, cid, branch_name, publisher_number, ISBN) values ('so10', '2020-4-1', 4, 'c10','b10','p10','205217918-6');
 
-/*stores*/
+/*store*/
 insert into stores (isbn, quantity_on_hand, bs_id) values ('958599307-4', 99, 'bs1');
 insert into stores (isbn, quantity_on_hand, bs_id) values ('173127435-1', 61, 'bs1');
 insert into stores (isbn, quantity_on_hand, bs_id) values ('240258028-3', 61, 'bs1');
@@ -161,10 +176,8 @@ insert into stores (isbn, quantity_on_hand, bs_id) values ('698507015-9', 21, 'b
 insert into stores (isbn, quantity_on_hand, bs_id) values ('266608745-X', 41, 'bs1');
 insert into stores (isbn, quantity_on_hand, bs_id) values ('272521287-1', 72, 'bs1');
 insert into stores (isbn, quantity_on_hand, bs_id) values ('205217918-6', 27, 'bs1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('305217918-6', 17, 'bs1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('432217918-6', 87, 'bs1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('921729318-6', 47, 'bs1');
-insert into stores (isbn, quantity_on_hand, bs_id) values ('324259918-6', 57, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('205242918-6', 17, 'bs1');
+insert into stores (isbn, quantity_on_hand, bs_id) values ('321821287-1', 123, 'bs1');
 
 /*written_by*/
 insert into written_by (ISBN, email) values ('958599307-4', 'kedmonstone0@rambler.ru');
@@ -177,10 +190,5 @@ insert into written_by (ISBN, email) values ('698507015-9', 'agoldson6@marriott.
 insert into written_by (ISBN, email) values ('266608745-X', 'nnovak7@berkeley.edu');
 insert into written_by (ISBN, email) values ('272521287-1', 'pkennally8@engadget.com');
 insert into written_by (ISBN, email) values ('205217918-6', 'jismail9@fda.gov');
-
-
-
-
-
-
-
+insert into written_by (ISBN, email) values ('205242918-6', 'gflacknell3@t-online.de');
+insert into written_by (ISBN, email) values ('321821287-1', 'wbale5@de.vu');

@@ -58,16 +58,12 @@ CREATE TABLE `book` (
   `ISBN` varchar(50) NOT NULL,
   `publisher_number` varchar(10) NOT NULL,
   `title` varchar(50) DEFAULT NULL,
-  `cost_price` decimal(10,0) DEFAULT NULL,
   `book_subject` varchar(50) DEFAULT NULL,
   `Selling_price` varchar(50) DEFAULT NULL,
-  `bs_id` varchar(10) NOT NULL,
 
   PRIMARY KEY (`ISBN`),
   KEY `publisher_number` (`publisher_number`),
-  KEY `bs_id` (`bs_id`),
-  CONSTRAINT `book_ibfk_1` FOREIGN KEY (`publisher_number`) REFERENCES `publisher_branch` (`publisher_number`),
-  CONSTRAINT `book_ibfk_2` FOREIGN KEY (`bs_id`) REFERENCES `bookstore` (`bs_id`)
+  CONSTRAINT `book_ibfk_1` FOREIGN KEY (`publisher_number`) REFERENCES `publisher_branch` (`publisher_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -82,7 +78,8 @@ CREATE TABLE `book_order` (
   `order_id` varchar(10) NOT NULL,
   `ISBN` varchar(50) NOT NULL,
   `qty` int,
-  `received` varchar(10),
+  `arrival_date` date,
+  `cost_price` int DEFAULT null,
   PRIMARY KEY (`order_id`,`ISBN`),
   KEY `ISBN` (`ISBN`),
   CONSTRAINT `book_order_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
