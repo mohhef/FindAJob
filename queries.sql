@@ -37,7 +37,13 @@ WHERE pb.branch_name = o_f.branch_name
 
 /*vi. Find the title and name of publisher of book(s) that have the highest backorder.*/
 
-
+select off.publisher_number,p.company_name,back_order.isbn,b.title, max(quantity) as back_order_quantity
+from order_from off, publisher p, book b,
+(select bo.isbn,bo.order_id, sum(bo.qty) as quantity
+from book_order bo
+where arrival_date is null
+group by bo.isbn) as back_order
+where off.order_id=back_order.order_id and off.publisher_number=p.publisher_number and back_order.isbn = b.isbn
 
 /*vii. Give details of books that are supplied by a given publisher ordered by
 their sale price in increasing order.*/
