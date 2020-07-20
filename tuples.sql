@@ -48,11 +48,6 @@ insert into orders (order_id, order_date) values ('o15', '2019-02-15');
 insert into orders (order_id, order_date) values ('o16', '2019-05-17');
 insert into orders (order_id, order_date) values ('o17', '2019-06-19');
 
-
-
-
-
-
  
 /*reader_interest*/
 
