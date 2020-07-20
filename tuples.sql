@@ -161,4 +161,43 @@ insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', '
 insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o8');
 insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o9');
 insert into `order_from` (branch_name,publisher_number,order_id) values ('b1', 'p1', 'o10');
+
+
+/*representitive*/
+insert into representative (email_address, representative_name) values ("johnDoe@representative.live.com", "John Doe");
+insert into representative (email_address, representative_name) values ("janeDoe@representative.live.com", "Jane Doe");
+insert into representative (email_address, representative_name) values ("richardDoe@representative.live.com", "Richard Doe");
+insert into representative (email_address, representative_name) values ("janieDoe@representative.live.com", "Janie Doe");
+insert into representative (email_address, representative_name) values ("johnnyDoe@representative.live.com", "Johnny Doe");
+insert into representative (email_address, representative_name) values ("johnRoe@representative.live.com", "John Roe");
+insert into representative (email_address, representative_name) values ("janeRoe@representative.live.com", "Jane Roe");
+insert into representative (email_address, representative_name) values ("richardRoe@representative.live.com", "Richard Roe");
+insert into representative (email_address, representative_name) values ("janieRoe@representative.live.com", "Janie Roe");
+insert into representative (email_address, representative_name) values ("johnnyRoe@representative.live.com", "Johnny Roe");
+
+
+/*interested_in*/
+insert into interested_in(category_name, cid) values ("c1", "fantasy");
+insert into interested_in(category_name, cid) values ("c2", "adventure");
+insert into interested_in(category_name, cid) values ("c3", "romance");
+insert into interested_in(category_name, cid) values ("c4", "mystery");
+insert into interested_in(category_name, cid) values ("c5", "horror");
+insert into interested_in(category_name, cid) values ("c6", "thriller");
+insert into interested_in(category_name, cid) values ("c7", "fantasy");
+insert into interested_in(category_name, cid) values ("c8", "adventure");
+insert into interested_in(category_name, cid) values ("c9", "romance");
+insert into interested_in(category_name, cid) values ("c10", "mystery");
+
+
+/*reader_interest*/
+insert into reader_interest(category_name, bs_id, interest_description) values ("fantasy", "bs1", "Fantasy is a genre of speculative fiction set in a fictional universe, often inspired by real world myth and folklore.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("adventure", "bs1", "Adventure fiction is a genre of fiction in which an adventure, an exciting undertaking involving risk and physical danger, forms the main storyline.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("romance", "bs1", "A romance novel or romantic novel is a type of novel and genre fiction which places its primary focus on the relationship and romantic love between two people");
+insert into reader_interest(category_name, bs_id, interest_description) values ("mystery", "bs1", "Mystery fiction is a genre of fiction usually involving a mysterious death or a crime to be solved.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("horror", "bs1", "Horror is a genre of speculative fiction which is intended to frighten, scare, disgust, or startle its readers by inducing feelings of horror and terror.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("thriller", "bs1", "Thrillers are characterized and defined by the moods they elicit, giving viewers heightened feelings of suspense, excitement, surprise, anticipation and anxiety.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("travel", "bs1", "Books in the travel nonfiction genre are about places and destinations one might want to visit during their travels.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("health", "bs1", "Books in the health nonfiction genre are about the health and function of the human body.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("motivational", "bs1", "Books in the inspirational fiction genre contain stories of people who overcome adversity or reach new levels of understanding that inspire and encourage the reader to do the same.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("guide/how to", "bs1", "Books in this category explain how to get specific things done in an efficient and correct way.");
  
