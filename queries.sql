@@ -25,15 +25,12 @@ from customer c, sale_to st, book b
 where  c.cid = st.cid and st.isbn = b.isbn and st.order_date between '2020-02-02' and '2020-09-09' and c.cid='c1'
 
 /*v. Give a report of sales during a specific period of time for a given branch.*/
-SELECT pb.branch_name, sum(b.selling_price)
-FROM publisher_branch as pb, order_from as o_f, orders as o, book_order as bo, book as b 
-WHERE pb.branch_name = o_f.branch_name 
-	and o_f.order_id = bo.order_id 
-	and bo.ISBN = b.ISBN
-	and o.order_date >= DATE("2020-01-01") 
+select bo.isbn book_sold, sum(bo.qty) as quantity_sold, sum(bo.cost_price*bo.qty) as total_sales
+from order_from off, book_order bo, orders o 
+where off.order_id = bo.order_id and off.branch_name='b1' and off.order_id= o.order_id
+	and o.order_date >= DATE("2019-01-01") 
 	and o.order_date <= DATE("2020-07-01")
-	and pb.branch_name = "b1"
-	group by pb.branch_name;
+group by bo.isbn
 
 /*vi. Find the title and name of publisher of book(s) that have the highest backorder.*/
 
