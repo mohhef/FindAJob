@@ -106,7 +106,6 @@ CREATE TABLE `customer` (
   `postal_code` varchar(50) DEFAULT NULL,
   `city` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `cumulative_purchases` int DEFAULT NULL,
   PRIMARY KEY (`cid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
