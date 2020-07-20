@@ -26,7 +26,16 @@ insert into customer (cid, first_name, last_name, company_name, telephone_number
 insert into customer (cid, first_name, last_name, company_name, telephone_number, address, province, postal_code, city, email, cumulative_purchases) values ("c10", 'Rob', 'Sailes', null, '255-310-8617', '81727 Loomis Road', 'quebec', 'G3E2C3', 'Xiongzhang', 'rsailes9@topsy.com', 10);
 
 /*interested_in*/
-
+insert into representative (email_address, representative_name) values ("johnDoe@representative.live.com", "John Doe");
+insert into representative (email_address, representative_name) values ("janeDoe@representative.live.com", "Jane Doe");
+insert into representative (email_address, representative_name) values ("richardDoe@representative.live.com", "Richard Doe");
+insert into representative (email_address, representative_name) values ("janieDoe@representative.live.com", "Janie Doe");
+insert into representative (email_address, representative_name) values ("johnnyDoe@representative.live.com", "Johnny Doe");
+insert into representative (email_address, representative_name) values ("johnRoe@representative.live.com", "John Roe");
+insert into representative (email_address, representative_name) values ("janeRoe@representative.live.com", "Jane Roe");
+insert into representative (email_address, representative_name) values ("richardRoe@representative.live.com", "Richard Roe");
+insert into representative (email_address, representative_name) values ("janieRoe@representative.live.com", "Janie Roe");
+insert into representative (email_address, representative_name) values ("johnnyRoe@representative.live.com", "Johnny Roe");
 
 
 /*orders*/
@@ -48,8 +57,17 @@ insert into orders (order_id, order_date) values ('o15', '2019-02-15');
 insert into orders (order_id, order_date) values ('o16', '2019-05-17');
 insert into orders (order_id, order_date) values ('o17', '2019-06-19');
 
- 
 /*reader_interest*/
+insert into reader_interest(category_name, bs_id, interest_description) values ("fantasy", "bs1", "Fantasy is a genre of speculative fiction set in a fictional universe, often inspired by real world myth and folklore.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("adventure", "bs1", "Adventure fiction is a genre of fiction in which an adventure, an exciting undertaking involving risk and physical danger, forms the main storyline.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("romance", "bs1", "A romance novel or romantic novel is a type of novel and genre fiction which places its primary focus on the relationship and romantic love between two people");
+insert into reader_interest(category_name, bs_id, interest_description) values ("mystery", "bs1", "Mystery fiction is a genre of fiction usually involving a mysterious death or a crime to be solved.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("horror", "bs1", "Horror is a genre of speculative fiction which is intended to frighten, scare, disgust, or startle its readers by inducing feelings of horror and terror.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("thriller", "bs1", "Thrillers are characterized and defined by the moods they elicit, giving viewers heightened feelings of suspense, excitement, surprise, anticipation and anxiety.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("travel", "bs1", "Books in the travel nonfiction genre are about places and destinations one might want to visit during their travels.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("health", "bs1", "Books in the health nonfiction genre are about the health and function of the human body.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("motivational", "bs1", "Books in the inspirational fiction genre contain stories of people who overcome adversity or reach new levels of understanding that inspire and encourage the reader to do the same.");
+insert into reader_interest(category_name, bs_id, interest_description) values ("guide/how to", "bs1", "Books in this category explain how to get specific things done in an efficient and correct way.");
 
 /*representative*/
 insert into representative (email_address, representative_name) values ('mhise0@msu.edu','mohamed');
