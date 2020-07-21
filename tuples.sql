@@ -1,3 +1,4 @@
+SET FOREIGN_KEY_CHECKS=1;
 /*author*/
 insert into author (author_name, email) values ('Row Havill', 'kedmonstone0@rambler.ru');
 insert into author (author_name, email) values ('Upton Southerton', 'rbickerdike1@aol.com');
@@ -24,18 +25,6 @@ insert into customer (cid, first_name, last_name, company_name, telephone_number
 insert into customer (cid, first_name, last_name, company_name, telephone_number, address, province, postal_code, city, email) values ("c8", 'Trenna', 'Lammerding', null, '333-468-4652', '7857 Forest Run Circle', 'ontario', 'H3G2C3', 'Watulimo', 'tlammerding7@bizjournals.com');
 insert into customer (cid, first_name, last_name, company_name, telephone_number, address, province, postal_code, city, email) values ("c9", 'Hew', 'Cochrane', 'Bubblebox', '314-942-0200', '10 Clarendon Crossing', 'ontario', 'C3G2C3', 'Masjid', 'hcochrane8@imgur.com');
 insert into customer (cid, first_name, last_name, company_name, telephone_number, address, province, postal_code, city, email) values ("c10", 'Rob', 'Sailes', null, '255-310-8617', '81727 Loomis Road', 'quebec', 'G3E2C3', 'Xiongzhang', 'rsailes9@topsy.com');
-
-/*interested_in*/
-insert into interested_in (cid, category_name) values ("c1", "fantasye");
-insert into interested_in (cid, category_name) values ("c2", "adventure");
-insert into interested_in (cid, category_name) values ("c3", "mystery");
-insert into interested_in (cid, category_name) values ("c4", "horror");
-insert into interested_in (cid, category_name) values ("c5", "thriller");
-insert into interested_in (cid, category_name) values ("c6", "travel");
-insert into interested_in (cid, category_name) values ("c7", "health");
-insert into interested_in (cid, category_name) values ("c8", "motivational");
-insert into interested_in (cid, category_name) values ("c9", "guide/how to");
-insert into interested_in (cid, category_name) values ("c10", "adventure");
 
 
 /*orders*/
@@ -210,3 +199,16 @@ insert into written_by (ISBN, email) values ('272521287-1', 'pkennally8@engadget
 insert into written_by (ISBN, email) values ('205217918-6', 'jismail9@fda.gov');
 insert into written_by (ISBN, email) values ('205242918-6', 'gflacknell3@t-online.de');
 insert into written_by (ISBN, email) values ('321821287-1', 'wbale5@de.vu');
+
+/*interested_in*/
+insert into interested_in (cid, category_name) values ("c1", "fantasy");
+insert into interested_in (cid, category_name) values ("c2", "adventure");
+insert into interested_in (cid, category_name) values ("c3", "mystery");
+insert into interested_in (cid, category_name) values ("c4", "horror");
+insert into interested_in (cid, category_name) values ("c5", "thriller");
+insert into interested_in (cid, category_name) values ("c6", "travel");
+insert into interested_in (cid, category_name) values ("c7", "health");
+insert into interested_in (cid, category_name) values ("c8", "motivational");
+insert into interested_in (cid, category_name) values ("c9", "guide/how to");
+insert into interested_in (cid, category_name) values ("c10", "adventure");
+
