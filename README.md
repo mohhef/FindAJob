@@ -21,6 +21,6 @@ Robert Beaudenon
       insert into test_employer values ('amr',123);  
       insert into test_employer values ('mo',123);  
  9. Go back to 'http://127.0.0.1/comp-353/main/test.php', some values should be shown as follows:  
- ![Screenshot](setup.png)
+ ![Screenshot](setup.PNG)
  
       
