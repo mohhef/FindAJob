@@ -10,7 +10,7 @@ Robert Beaudenon
 2. Start the xampp control panel
 3. Start Apache and mysql from the control panel
 4. Clone the comp-353 reprository to xampp/htdocs
-5. enter 'http://127.0.0.1/comp-353/main/test.php' in your web browser to test a php script, you should get a database error
+5. enter 'http://127.0.0.1/comp-353/main/test.php' in your web browser to test a the php script, you should get a database error
 6. go to http://localhost/phpmyadmin
 7. create a new database called 'web_career'
 8. Select the database and run the following script  
