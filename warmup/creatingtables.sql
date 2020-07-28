@@ -63,7 +63,7 @@ CREATE TABLE `book` (
 
   PRIMARY KEY (`ISBN`),
   KEY `publisher_number` (`publisher_number`),
-  CONSTRAINT `book_ibfk_1` FOREIGN KEY (`publisher_number`) REFERENCES `publisher_branch` (`publisher_number`)
+  CONSTRAINT `book_ibfk_1` FOREIGN KEY (`publisher_number`) REFERENCES `publisher` (`publisher_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -106,7 +106,6 @@ CREATE TABLE `customer` (
   `postal_code` varchar(50) DEFAULT NULL,
   `city` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `cumulative_purchases` int DEFAULT NULL,
   PRIMARY KEY (`cid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
