@@ -1,0 +1,90 @@
+.dialogWide > .modal-dialog {
+   width: 80% !important;
+}
+body {
+  background-color: #022044;
+}
+
+html, body {
+  overflow-x: hidden;
+  zoom: 95%;
+}
+
+span.select2-selection--multiple[aria-expanded=true] {
+    border-color: #ced4da !important;
+}
+
+span.select2-selection--multiple{
+    border-color: #ced4da !important;
+}
+
+
+#change{
+
+  margin-top: 8px;
+  margin-left: 9px;
+
+}
+#change1 {
+  margin-top: 23px;
+  margin-right: 10px;
+}
+
+#change1 a {
+  font-size: 18px;
+}
+
+#change1 a:hover {
+  background-color: green;
+}
+
+#change2 {
+  margin-right: 20px;
+}
+
+#change4 {
+  margin-top: 23px;
+  margin-right: 10px;
+}
+
+#change4 a {
+  font-size: 18px;
+}
+
+#change4 a:hover {
+  background-color: none;
+}
+
+#pipeview{
+  text-decoration:none;
+  font-size: 20px;
+  color: white;
+}
+  #buttonmodal{
+    position:fixed;
+margin-left: 940px;
+margin-top: -20px;
+  }
+#rcorners1 {
+  position:relative;
+ border-radius: 25px;
+  width: 1300px;
+  height: 460px;
+  padding: 20px;
+}
+#nav {
+  background-color: #022044;
+  padding-left: 150px;
+
+}
+#nav2 {
+
+  padding-right: 150px;
+  font-size: 18px;
+  padding-top: 10px;
+
+}
+
+#cooks {
+  color: white;
+}
