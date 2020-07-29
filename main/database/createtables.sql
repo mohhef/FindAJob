@@ -6,7 +6,7 @@ primary key(telephone_number)
 );
 
 create table job(
-job_id varchar(10),
+job_id varchar(10) auto_increment,
 title varchar(100),
 description varchar(200),
 date_posted date,
