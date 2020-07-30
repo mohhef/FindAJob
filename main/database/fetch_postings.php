@@ -39,6 +39,8 @@ function get_all_data($conn)
   return mysqli_num_rows($result);
 }
 
+
+
 $number_filter_row = mysqli_num_rows(mysqli_query($conn, $query1));
 
 
@@ -54,9 +56,14 @@ $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job_id"].'" data-column="description">' . $row["description"] . '</div>';
 $sub_array[] = '<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["job_id"].'">Delete</button>';
 $sub_array[] = '<button type="button" name="update" class="btn btn-primary btn-xs update" id="'.$row["job_id"].'">Update</button>';
-$sub_array[] = '<button type="button" name="contact" class="btn btn-primary btn-xs contact" id="'.$row["job_id"].'">Contact</button>';
+// $sub_array[] = '<button type="button" name="contact" class="btn btn-primary btn-xs contact" id="'.$row["job_id"].'" onclick="go_to_contact(this.id)">Contact</button>';
+$sub_array[] = '<form action="contact.php" method="post">
+<input type = "hidden" name = "id" value = "'.$row["job_id"].'" />
+<input type="submit" name="contact" value="contact" class="btn btn-primary btn-xs contact"  id="'.$row["job_id"].'">
+</form>';
 $data[] = $sub_array;
 }
+
 
 $output = array(
   "draw"=>intval($_POST["draw"]),
