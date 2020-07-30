@@ -27,7 +27,7 @@ $id=$_POST['id'];
 
  $query = "SELECT co.company_name, c.euser_name, co.telephone_number FROM contact_info co, contact c WHERE co.telephone_number = c.telephone_number and co.telephone_number in (SELECT c.telephone_number FROM contact c WHERE c.euser_name in (SELECT p.user_name FROM post p WHERE p.job_id =".$id."))";
       
- $mysqli = new mysqli("localhost", 'root', 'root', 'web_career');
+ $mysqli = new mysqli("localhost", 'root', '', 'web_career');
 
 if ($result = $mysqli->query($query)) {
     while ($row = $result->fetch_assoc()) {
