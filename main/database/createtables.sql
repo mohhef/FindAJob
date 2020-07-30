@@ -18,6 +18,10 @@ create table category(
     primary key(c_name)
 );
 
+insert into category(c_name) values ('Part-time');
+insert into category(c_name) values ('Full-time');
+insert into category(c_name) values ('Intern');
+
 create table subscription_category_loyer(
     category varchar(100) not null,
     price varchar(5),
@@ -48,6 +52,8 @@ create table job(
     description varchar(200),
     date_posted date,
     employee_needed int,
+    category varchar(15) not null,
+    foreign key (category) references category(c_name),
     primary key(job_id)
 );
 
@@ -94,14 +100,6 @@ create table contact(
     primary key (telephone_number,euser_name),
     foreign key (telephone_number) references contact_info(telephone_number),
     foreign key (euser_name) references employer(user_name)
-);
-
-create table belong_to(
-    c_name varchar(15) not null,
-    job_id int not null,
-    primary key(c_name,job_id),
-    foreign key(c_name) references category(c_name),
-    foreign key(job_id) references job(job_id)
 );
 
 create table post(
