@@ -92,12 +92,5 @@ $(document).ready(function(){
 
 
 
-function go_to_contact(id)
-{
-
-  window.location="contact.php?="+ this.id;
-}
-
-
 </script>
 <?php include "footer.php"?>
