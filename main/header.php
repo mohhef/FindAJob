@@ -21,6 +21,17 @@
       <script src="js/ColReorderWithResize.js"></script>
       <script src="js/bootbox.min.js"></script>
       <script src="js/bootbox.locales.min.js"></script>
+    <?php }
+        elseif(basename($_SERVER['PHP_SELF']) == 'pricing.php'){
+      ?>
+      <script src="js/jquery-3.31.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.dataTables.min.js"></script>
+      <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+      <script src="js/dataTables.bootstrap4.min.js"></script>
+      <script src="js/ColReorderWithResize.js"></script>
+      <script src="js/bootbox.min.js"></script>
+      <script src="js/bootbox.locales.min.js"></script>
     <?php } ?>    
     
 
@@ -34,6 +45,14 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />
       <?php }
         elseif(basename($_SERVER['PHP_SELF']) == 'view_job.php'){
+      ?>
+      <link rel="stylesheet" href="css/4.1.3bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="css/maindata.css" />
+      <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+      <!--  <link rel="stylesheet" type="text/css" href="../../inventory/style/main.css" /> -->
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />      
+    <?php }
+    elseif(basename($_SERVER['PHP_SELF']) == 'pricing.php'){
       ?>
       <link rel="stylesheet" href="css/4.1.3bootstrap.css">
       <link rel="stylesheet" type="text/css" href="css/maindata.css" />
@@ -58,6 +77,9 @@
     </div>
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="view_job.php" id="pipeview">Modify A job</a>
+    </div>
+    <div class="col-md-1-auto" id="change1">
+      <a class="btn btn-outline-primary" href="pricing.php" id="pipeview">Pricing</a>
     </div>
     <div class="col-md-1-auto" id="change2">
     </div>
