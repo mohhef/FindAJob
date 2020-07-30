@@ -14,8 +14,11 @@
           <th>Employees Needed</th>
           <th>Date Posted</th>
           <th>Description</th>
-          <th></th>
-          <th></th>
+          <th>Delete Job</th>
+          <th>Update Job</th>
+          <th>Contact Employer</th>
+          
+
         </tr>
       </thead>
     </table>
@@ -67,6 +70,10 @@ $(document).ready(function(){
         "orderable": true,
         //    "width":"5%"
       },{
+        "orderable": true,
+        //    "width":"5%"
+      },
+      ,{
         "orderable": true,
         //    "width":"5%"
       }

@@ -54,6 +54,7 @@ $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job_id"].'" data-column="description">' . $row["description"] . '</div>';
 $sub_array[] = '<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["job_id"].'">Delete</button>';
 $sub_array[] = '<button type="button" name="update" class="btn btn-primary btn-xs update" id="'.$row["job_id"].'">Update</button>';
+$sub_array[] = '<button type="button" name="contact" class="btn btn-primary btn-xs contact" id="'.$row["job_id"].'">Contact</button>';
 $data[] = $sub_array;
 }
 
