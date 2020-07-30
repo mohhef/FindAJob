@@ -30,8 +30,6 @@ create table subscription_category_loyer(
 
 create table employer(
     user_name varchar(20) not null,
-    email varchar(100),
-    password varchar(200),
     category varchar(100),  
     primary key(user_name),
     foreign key (user_name) references all_user(user_name),
@@ -86,8 +84,6 @@ create table subscription_category_loyee(
 
 create table employee(
     user_name varchar(20) not null,
-    password varchar(200),
-    email varchar(100),
     category varchar(100),
     primary key(user_name),
     foreign key (user_name) references all_user(user_name),
