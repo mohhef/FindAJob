@@ -2,7 +2,7 @@
 
 require("config.php");
 //$query =mysqli_query($conn,"SELECT * FROM `automation_data`");
-$columns = array('job_id','title','description','date_posted','employee_needed');
+$columns = array('job_id','title','description','date_posted','category','employee_needed');
 
 $query1= "SELECT * FROM `job`";
 
@@ -10,6 +10,7 @@ if(isset($_POST["search"]["value"])){
 $query1.=' WHERE job_id LIKE "%'.$_POST["search"]["value"].'%"
  OR title LIKE "%'.$_POST["search"]["value"].'%"
  OR description LIKE "%'.$_POST["search"]["value"].'%"
+ OR category LIKE "%'.$_POST["search"]["value"].'%"
  OR date_posted LIKE "%'.$_POST["search"]["value"].'%"
  OR employee_needed LIKE "%'.$_POST["search"]["value"].'%"
  ';
@@ -51,6 +52,7 @@ $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job_id"].'" data-column="title">' . $row["title"] . '</div>';
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job_id"].'" data-column="employee_needed">' . $row["employee_needed"] . '</div>';
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job_id"].'" data-column="date_posted">' . $row["date_posted"] . '</div>';
+$sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job_id"].'" data-column="date_posted">' . $row["category"] . '</div>';
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job_id"].'" data-column="description">' . $row["description"] . '</div>';
 $sub_array[] = '<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["job_id"].'">Delete</button>';
 $sub_array[] = '<button type="button" name="update" class="btn btn-primary btn-xs update" id="'.$row["job_id"].'">Update</button>';
