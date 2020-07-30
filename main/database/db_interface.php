@@ -6,12 +6,12 @@ $category_sel=$_POST['category_sel'];
 $description_box=$_POST['description_box'];
 $date_posted = date("Y-m-d");
 if ($post_job==true){
-    insertJob($post_job,$job_title,$emp_no,$category_sel,$description_box);
+    insertJob($job_title,$emp_no,$description_box,$date_posted);
 }
 echo($date_posted);
 function insertJob($job_title,$emp_no,$description_box,$date_posted){
     require('config.php');
-    $query1 ="INSERT INTO job (title,employee_needed,description,date_posted) VALUES ('$job_title','$emp_no','$description_box',$date_posted)";
+    $query1 ="INSERT INTO job (title,employee_needed,description,date_posted) VALUES ('$job_title','$emp_no','$description_box','$date_posted')";
     $result = mysqli_query($conn, $query1);
     if(true)
     {

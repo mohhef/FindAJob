@@ -1,3 +1,4 @@
+
 <?php include "header.php" ?>
 
 </br></br>
@@ -54,6 +55,7 @@
         event.preventDefault();
         var job_title = document.getElementById("job_title").value;
         var emp_no = document.getElementById("emp_no").value;
+        console.log(emp_no);
         var category_sel = document.getElementById("category_sel").value;
         var description_box = document.getElementById("description_box").value;
         // if (x == "" || y== "" || z=="" || g=="") {
@@ -65,7 +67,7 @@
       $(document).ready(function () {
         bootbox.confirm("Job Title: "+ job_title
         + "<br>"+
-        "Employee numbers: " +job_title
+        "Employee numbers: " +emp_no
         + "<br>"+
         "Category: " +category_sel
         + "<br>"+
