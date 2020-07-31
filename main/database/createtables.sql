@@ -12,6 +12,7 @@ create table all_user(
     password varchar(200),
     primary key(user_name)
 );
+insert into all_user(user_name,email,password) values ('caren','c123en@hello.com','123');
 
 create table category(
     c_name varchar(15) not null,
@@ -28,6 +29,8 @@ create table subscription_category_loyer(
     primary key(category)
 );
 
+insert into subscription_category_loyer(category,price) values ('prime','$50');
+insert into subscription_category_loyer(category,price) values ('gold','$100');
 create table employer(
     user_name varchar(20) not null,
     category varchar(100),  
@@ -35,6 +38,8 @@ create table employer(
     foreign key (user_name) references all_user(user_name),
     foreign key (category) references subscription_category_loyer(category)
 );
+
+insert into employer(user_name,category) values ('caren','prime');
 
 create table representatives(
     rep_user_name varchar(20) not null,
