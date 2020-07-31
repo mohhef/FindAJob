@@ -1,22 +1,24 @@
 drop SCHEMA web_career;
 create database web_career;
+SET FOREIGN_KEY_CHECKS=0;
 create table contact_info(
-    telephone_number varchar(20) not null,
+    telephone_number varchar(20),
     company_name varchar(50),
     primary key(telephone_number)
 );
 
 create table all_user(
-    user_name varchar(20) not null,
+    user_name varchar(20),
     email varchar(100),
     balance int,
     password varchar(200),
     primary key(user_name)
 );
 insert into all_user(user_name,email,password) values ('caren','c123en@hello.com','123');
+insert into all_user(user_name,email,password) values ('carenloyee','c123ee@hello.com','123');
 
 create table category(
-    c_name varchar(15) not null,
+    c_name varchar(15),
     primary key(c_name)
 );
 
@@ -25,15 +27,16 @@ insert into category(c_name) values ('Full-time');
 insert into category(c_name) values ('Intern');
 
 create table subscription_category_loyer(
-    category varchar(100) not null,
+    category varchar(100),
     price varchar(5),
     primary key(category)
 );
 
 insert into subscription_category_loyer(category,price) values ('prime','$50');
 insert into subscription_category_loyer(category,price) values ('gold','$100');
+
 create table employer(
-    user_name varchar(20) not null,
+    user_name varchar(20),
     category varchar(100),  
     primary key(user_name),
     foreign key (user_name) references all_user(user_name),
@@ -42,7 +45,7 @@ create table employer(
 insert into employer(user_name,category) values ('caren','prime');
 
 create table representatives(
-    rep_user_name varchar(20) not null,
+    rep_user_name varchar(20),
     name varchar(50),
     password varchar(200),
     primary key (rep_user_name),
@@ -50,66 +53,66 @@ create table representatives(
 );
 
 create table job(
-    job_id int not null auto_increment,
+    job_id int   auto_increment,
     title varchar(100),
     description varchar(200),
     date_posted date,
     employee_needed int,
-    category varchar(15) not null,
+    category varchar(15),
     foreign key (category) references category(c_name),
     primary key(job_id)
 );
 
 create table admin(
-    user_name varchar(20) not null,
+    user_name varchar(20),
     password varchar(200),
     primary key(user_name)
 );
 insert into admin(user_name,password) values('bigboss','123456');
 
 create table card_method(
-    card_number int(20) not null,
+    card_number int(20),
     name varchar(20),
     expiration_date date,
     primary key(card_number)
 );
 
 create table chequing(
-    account_no int not null,
+    account_no int,
     bank_no int,
     transit_no int,
     primary key(account_no)
 );
 
 create table subscription_category_loyee(
-    category varchar(100) not null,
+    category varchar(100),
     price varchar(5),
     primary key(category)
 );
-insert into subscription_category_loyer(category,price) values ('basic','$0');
-insert into subscription_category_loyer(category,price) values ('prime','$10');
-insert into subscription_category_loyer(category,price) values ('gold','$20');
+insert into subscription_category_loyee(category,price) values ('basic','$0');
+insert into subscription_category_loyee(category,price) values ('prime','$10');
+insert into subscription_category_loyee(category,price) values ('gold','$20');
 
 create table employee(
-    user_name varchar(20) not null,
+    user_name varchar(20),
     category varchar(100),
     primary key(user_name),
     foreign key (user_name) references all_user(user_name),
     foreign key (category) references subscription_category_loyee(category)
 );
 
-insert into employee(user_name,category) values('carenloyee')
+insert into employee(user_name,category) values('carenloyee','basic');
 
 create table contact(
-    telephone_number varchar(15) not null,
-    euser_name varchar(20) not null,
+    telephone_number varchar(15),
+    euser_name varchar(20)  ,
     primary key (telephone_number,euser_name),
     foreign key (telephone_number) references contact_info(telephone_number),
     foreign key (euser_name) references employer(user_name)
 );
 
 create table post(
-    job_id int not null,
+    job_id int auto_increment,
     user_name varchar(20),
     primary key(job_id, user_name),
     foreign key (job_id) references job(job_id),
@@ -117,7 +120,7 @@ create table post(
 );
 
 create table offer(
-    job_id int not null,
+    job_id int ,
     user_name_loyer varchar(20),
     user_name_loyee varchar(20),
     offer_status varchar(20), 
@@ -128,7 +131,7 @@ create table offer(
 );
 
 create table applies(
-    job_id int not null,
+    job_id int   auto_increment,
     user_name varchar(20),
     application_status varchar(20), 
     date_applied date,
@@ -137,9 +140,10 @@ create table applies(
     foreign key(user_name) references employee(user_name)
 );
 
+
 create table manages(
-    user_name varchar(20) not null,
-    auser_name varchar(20) not null,
+    user_name varchar(20)  ,
+    auser_name varchar(20)  ,
     activate_deactivate varchar(20),
     primary key(user_name,auser_name),
     foreign key(user_name) references all_user(user_name),
@@ -149,32 +153,32 @@ insert into manages(user_name,auser_name,activate_deactivate)values('caren','big
 insert into manages(user_name,auser_name,activate_deactivate)values('carenloyee','bigboss','activate');
 
 create table loyer_credit_pays(
-    user_name varchar(20) not null,
-    card_number int(20) not null,
+    user_name varchar(20)  ,
+    card_number int(20)  ,
     automatic_manual varchar(20),
     primary key(user_name,card_number),
     foreign key (user_name) references employer(user_name)
 );
 
 create table loyee_credit_pays(
-    user_name varchar(20) not null,
-    card_number int(20) not null,
+    user_name varchar(20)  ,
+    card_number int(20)  ,
     automatic_manual varchar(20),
     primary key(user_name,card_number),
     foreign key (user_name) references employee(user_name) 
 );
 
 create table loyer_chequing(
-    account_no int not null,
-    user_name varchar(20) not null,
+    account_no int  ,
+    user_name varchar(20)  ,
     primary key(account_no,user_name),
     foreign key(account_no) references chequing(account_no),
     foreign key(user_name) references employer(user_name)
 
 );
 create table loyee_chequing(
-    account_no int not null,
-    user_name varchar(20) not null,
+    account_no int  ,
+    user_name varchar(20)  ,
     primary key(account_no,user_name),
     foreign key(account_no) references chequing(account_no),
     foreign key(user_name) references employee(user_name)

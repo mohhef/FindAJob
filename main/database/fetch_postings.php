@@ -2,17 +2,17 @@
 
 require("config.php");
 //$query =mysqli_query($conn,"SELECT * FROM `automation_data`");
-$columns = array('job_id','title','description','date_posted','category','employee_needed');
+$columns = array('job_id','title','description','date_posted','category','employee_needed','application_status');
 
-$query1= "SELECT * FROM `job`";
+$query1= "SELECT j.job_id, j.title, j.employee_needed, j.date_posted, j.category, j.description, p.application_status FROM job j, applies p";
 
 if(isset($_POST["search"]["value"])){
-$query1.=' WHERE job_id LIKE "%'.$_POST["search"]["value"].'%"
- OR title LIKE "%'.$_POST["search"]["value"].'%"
- OR description LIKE "%'.$_POST["search"]["value"].'%"
- OR category LIKE "%'.$_POST["search"]["value"].'%"
- OR date_posted LIKE "%'.$_POST["search"]["value"].'%"
- OR employee_needed LIKE "%'.$_POST["search"]["value"].'%"
+$query1.=' WHERE j.job_id=p.job_id and j.job_id LIKE "%'.$_POST["search"]["value"].'%"
+ OR j.title LIKE "%'.$_POST["search"]["value"].'%"
+ OR j.description LIKE "%'.$_POST["search"]["value"].'%"
+ OR j.category LIKE "%'.$_POST["search"]["value"].'%"
+ OR j.date_posted LIKE "%'.$_POST["search"]["value"].'%"
+ OR j.employee_needed LIKE "%'.$_POST["search"]["value"].'%"
  ';
 }
 if(isset($_POST["order"])){
@@ -35,7 +35,7 @@ $result = mysqli_query($conn,  $query1 . $query2);
 
 function get_all_data($conn)
 {
-  $query = "SELECT * FROM `job`";
+  $query = "SELECT j.job_id, j.title, j.employee_needed, j.date_posted, j.category, j.description, p.application_status FROM job j, applies p WHERE j.job_id=p.job_id";
   $result = mysqli_query($conn, $query);
   return mysqli_num_rows($result);
 }
@@ -54,6 +54,7 @@ $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job_id"].'" data-column="date_posted">' . $row["date_posted"] . '</div>';
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job_id"].'" data-column="date_posted">' . $row["category"] . '</div>';
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job_id"].'" data-column="description">' . $row["description"] . '</div>';
+$sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["job_id"].'" data-column="application_status">' . $row["application_status"] . '</div>';
 $sub_array[] = '<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["job_id"].'">Delete</button>';
 $sub_array[] = '<button type="button" name="update" class="btn btn-primary btn-xs update" id="'.$row["job_id"].'">Update</button>';
 $data[] = $sub_array;
