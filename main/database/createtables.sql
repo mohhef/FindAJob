@@ -9,14 +9,20 @@ create table contact_info(
 create table all_user(
     user_name varchar(20) not null,
     email varchar(100),
+    balance int,
     password varchar(200),
     primary key(user_name)
 );
+insert into all_user(user_name,email,password) values ('caren','c123en@hello.com','123');
 
 create table category(
     c_name varchar(15) not null,
     primary key(c_name)
 );
+
+insert into category(c_name) values ('Part-time');
+insert into category(c_name) values ('Full-time');
+insert into category(c_name) values ('Intern');
 
 create table subscription_category_loyer(
     category varchar(100) not null,
@@ -24,15 +30,16 @@ create table subscription_category_loyer(
     primary key(category)
 );
 
+insert into subscription_category_loyer(category,price) values ('prime','$50');
+insert into subscription_category_loyer(category,price) values ('gold','$100');
 create table employer(
     user_name varchar(20) not null,
-    email varchar(100),
-    password varchar(200),
     category varchar(100),  
     primary key(user_name),
     foreign key (user_name) references all_user(user_name),
     foreign key (category) references subscription_category_loyer(category)
 );
+insert into employer(user_name,category) values ('caren','prime');
 
 create table representatives(
     rep_user_name varchar(20) not null,
@@ -48,6 +55,8 @@ create table job(
     description varchar(200),
     date_posted date,
     employee_needed int,
+    category varchar(15) not null,
+    foreign key (category) references category(c_name),
     primary key(job_id)
 );
 
@@ -56,12 +65,12 @@ create table admin(
     password varchar(200),
     primary key(user_name)
 );
+insert into admin(user_name,password) values('bigboss','123456');
 
 create table card_method(
     card_number int(20) not null,
     name varchar(20),
     expiration_date date,
-    balance int,
     primary key(card_number)
 );
 
@@ -77,16 +86,19 @@ create table subscription_category_loyee(
     price varchar(5),
     primary key(category)
 );
+insert into subscription_category_loyer(category,price) values ('basic','$0');
+insert into subscription_category_loyer(category,price) values ('prime','$10');
+insert into subscription_category_loyer(category,price) values ('gold','$20');
 
 create table employee(
     user_name varchar(20) not null,
-    password varchar(200),
-    email varchar(100),
     category varchar(100),
     primary key(user_name),
     foreign key (user_name) references all_user(user_name),
     foreign key (category) references subscription_category_loyee(category)
 );
+
+insert into employee(user_name,category) values('carenloyee')
 
 create table contact(
     telephone_number varchar(15) not null,
@@ -94,14 +106,6 @@ create table contact(
     primary key (telephone_number,euser_name),
     foreign key (telephone_number) references contact_info(telephone_number),
     foreign key (euser_name) references employer(user_name)
-);
-
-create table belong_to(
-    c_name varchar(15) not null,
-    job_id int not null,
-    primary key(c_name,job_id),
-    foreign key(c_name) references category(c_name),
-    foreign key(job_id) references job(job_id)
 );
 
 create table post(
@@ -139,8 +143,10 @@ create table manages(
     activate_deactivate varchar(20),
     primary key(user_name,auser_name),
     foreign key(user_name) references all_user(user_name),
-    foreign key(user_name) references admin(user_name)
+    foreign key(auser_name) references admin(user_name)
 );
+insert into manages(user_name,auser_name,activate_deactivate)values('caren','bigboss','activate');
+insert into manages(user_name,auser_name,activate_deactivate)values('carenloyee','bigboss','activate');
 
 create table loyer_credit_pays(
     user_name varchar(20) not null,

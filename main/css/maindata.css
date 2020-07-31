@@ -65,15 +65,13 @@ html, body {
  border-radius: 25px;
    background-color:#fff;
    position: relative;
-
   padding: 25px;
-
+  margin-bottom: 30px
 }
 
 @media (min-width: 1805px) {
   .container-fluid{
-    width: 1800px;
-
+    width: 1700px;
   }
 }
 
