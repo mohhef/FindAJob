@@ -9,6 +9,7 @@ create table contact_info(
 create table all_user(
     user_name varchar(20) not null,
     email varchar(100),
+    balance int,
     password varchar(200),
     primary key(user_name)
 );
@@ -38,7 +39,6 @@ create table employer(
     foreign key (user_name) references all_user(user_name),
     foreign key (category) references subscription_category_loyer(category)
 );
-
 insert into employer(user_name,category) values ('caren','prime');
 
 create table representatives(
@@ -65,12 +65,12 @@ create table admin(
     password varchar(200),
     primary key(user_name)
 );
+insert into admin(user_name,password) values('bigboss','123456');
 
 create table card_method(
     card_number int(20) not null,
     name varchar(20),
     expiration_date date,
-    balance int,
     primary key(card_number)
 );
 
@@ -86,6 +86,9 @@ create table subscription_category_loyee(
     price varchar(5),
     primary key(category)
 );
+insert into subscription_category_loyer(category,price) values ('basic','$0');
+insert into subscription_category_loyer(category,price) values ('prime','$10');
+insert into subscription_category_loyer(category,price) values ('gold','$20');
 
 create table employee(
     user_name varchar(20) not null,
@@ -94,6 +97,8 @@ create table employee(
     foreign key (user_name) references all_user(user_name),
     foreign key (category) references subscription_category_loyee(category)
 );
+
+insert into employee(user_name,category) values('carenloyee')
 
 create table contact(
     telephone_number varchar(15) not null,
@@ -138,8 +143,10 @@ create table manages(
     activate_deactivate varchar(20),
     primary key(user_name,auser_name),
     foreign key(user_name) references all_user(user_name),
-    foreign key(user_name) references admin(user_name)
+    foreign key(auser_name) references admin(user_name)
 );
+insert into manages(user_name,auser_name,activate_deactivate)values('caren','bigboss','activate');
+insert into manages(user_name,auser_name,activate_deactivate)values('carenloyee','bigboss','activate');
 
 create table loyer_credit_pays(
     user_name varchar(20) not null,
