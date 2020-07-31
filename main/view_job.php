@@ -15,6 +15,7 @@
           <th>Date Posted</th>
           <th>Category</th>
           <th>Description</th>
+          <th>Status</th>
           <th></th>
           <th></th>
         </tr>
@@ -114,6 +115,9 @@ $(document).ready(function(){
         "orderable": true,
         //    "width":"21%"
       }, {
+        "orderable": true,
+        //    "width":"25%"
+      },{
         "orderable": true,
         //    "width":"25%"
       }, {
