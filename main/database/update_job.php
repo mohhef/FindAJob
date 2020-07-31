@@ -2,8 +2,6 @@
 require('config.php');
 
 
-mysqli_query($conn, $updatePipe);
-
 $updateQuery= "UPDATE `job` SET title ='".$_POST["jobTitle"]."', employee_needed = '".$_POST["empNeeded"]."',
  category =  '".$_POST["category"]."', description =  '".$_POST["description"]."' WHERE job_id = '".$_POST["jobID"]."'";
 

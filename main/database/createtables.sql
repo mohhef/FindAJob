@@ -46,10 +46,10 @@ insert into employer(user_name,category) values ('caren','prime');
 
 create table representatives(
     rep_user_name varchar(20),
-    name varchar(50),
-    password varchar(200),
+    employer_user_name varchar(20),
     primary key (rep_user_name),
-    foreign key (rep_user_name) references employer(user_name)
+    foreign key (employer_user_name) references employer(user_name),
+    foreign key (rep_user_name) references all_user(user_name)
 );
 
 create table job(
