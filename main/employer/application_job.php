@@ -11,10 +11,10 @@
         <tr>
           <th>Job ID</th>
           <th>Title</th>
+          <th>Date Applied</th>
           <th>Category</th>
           <th>Description</th>
-          <th>Status</th>
-          <th>Username</th>
+          <th>User Name</th>
           <th>Offer</th>
           <th></th>
         </tr>
@@ -79,7 +79,7 @@ $(document).ready(function(){
       "searchPlaceholder": "search"
     },
     "ajax" : {
-      url:"../database/fetch_applied_jobs.php",
+      url:"../database/fetch_job_applications.php",
       type:"POST"
     }
   });
