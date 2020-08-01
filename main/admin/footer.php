@@ -1,6 +1,6 @@
 <script>
 window.onload = function() {
-    var y = document.cookie.indexOf("employee_username=");
+    var y = document.cookie.indexOf("admin_username=");
     if (y < 0) {
       // if cookie doesn't exist, ask for password
       var input = bootbox.alert({
