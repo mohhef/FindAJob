@@ -24,9 +24,6 @@
       <script src="../js/bootbox.min.js"></script>
       <script src="../js/bootbox.locales.min.js"></script>
     <?php } ?>    
-    
-
-
 
       <?php if(basename($_SERVER['PHP_SELF']) == 'a.php'){ ?>
         <link rel="stylesheet" href="../css/4.3.1bootstrap.min.css">
@@ -47,6 +44,13 @@
 </head>
 
 <body>
+<div class="row">
+    <div class="col-md-4 mr-auto" id="change">
+      <a href="../../inventory/main.php">
+        <img src="../png/findAjob.png" width=auto height=70px alt="" width=auto height=50px id ="Logo" position:absolute;>
+      </a>
+    </div>
+    <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="admin.php" id="pipeview">Admin main</a>
     </div>
     <div class="col-md-1-auto" id="change4">
