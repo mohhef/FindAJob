@@ -3,7 +3,7 @@ require('config.php');
 
 $status = $_POST["status"];
 $updateQuery = "";
-
+echo($status);
 
 if($status == "disactive"){
     $updateQuery= "UPDATE `manages` SET activate_deactivate ='active' WHERE user_name = '".$_POST["id"]."'";  
