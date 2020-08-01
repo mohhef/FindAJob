@@ -86,14 +86,13 @@ $(document).ready(function(){
 $("#user_data").on('click', '.apply', function(){
   var id = $(this).attr("id");
     $.ajax({
-    url:'../database/update_applies.php',
+    url:'../database/insert_applies.php',
     method:"POST",
     data:{id:id},
     error: function(xhr, error){
         console.log(xhr); console.log(error);
     },
     success:function(){
-      console.log('it')
       $('#user_data').DataTable().ajax.reload(null,false);
        }
   });
@@ -108,7 +107,6 @@ $("#user_data").on('click', '.withdraw', function(){
         console.log(xhr); console.log(error);
     },
     success:function(){
-      console.log('it')
       $('#user_data').DataTable().ajax.reload(null,false);
        }
   });
