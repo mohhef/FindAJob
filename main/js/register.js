@@ -17,7 +17,7 @@ const registerEmployee = () => {
         }
         const res = JSON.parse(data);
         if(res.result){
-            setCookie("employer_username", username, 1);
+            setCookie("employee_username", username, 1);
             window.location.replace('index.php')
         }else{
             alert("Registration failed.");
