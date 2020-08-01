@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c9b6d816-6da5-4570-a787-193642d61384" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/main/controllers/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/controllers/JobController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/css/employer/dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/js/employer/dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/service/employee/delete_job.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/service/employee/insert_job.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/view/employer/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/PNG/findAjob.png" beforeDir="false" afterPath="$PROJECT_DIR$/main/assets/findAjob.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/admin/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/admin/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/admin_forgot_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/auth/admin_forgot_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/css/4.1.3bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/css/4.3.1bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/css/dataTables.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/css/find_a_job.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/css/fontAwesomne4.70.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/css/maindata.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/css/semantic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/database/createtables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/main/sql/createtables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/database/fetch_employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/database/fetch_employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employee/apply_job.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/employee/apply_job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employee/footer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employee/header.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employee_forgot_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/auth/employee_forgot_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employee_register.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/auth/employee_register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employer/application_job.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/employer/application_job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employer/footer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employer/header.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employer/post_job.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/employer/post_job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employer/subscription.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/employer/subscription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employer/view_job.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/employer/view_job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employer_forgot_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/auth/employer_forgot_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employer_register.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/view/auth/employer_register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/helpers/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/helpers/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/helpers/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/helpers/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/helpers/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/helpers/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/1.14.7popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/ColReorderWithResize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/bootbox.all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/bootbox.locales.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/bootbox.locales.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/bootbox.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/bootbox.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/bootbox/bootbox/bootbox.all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/bootbox/bootbox/bootbox.all.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/bootbox/bootbox/bootbox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/bootbox/bootbox/bootbox.locales.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/bootbox/bootbox/bootbox.locales.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/bootbox/bootbox/bootbox.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/dataTables.bootstrap4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/forgot.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/js/auth/forgot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/jquery-3.31.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/jquery.dataTables.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/jquery3.4.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/js/auth/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/js/auth/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/secure.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/semantic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/standingrefresh.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1fUu2TerLxWtyyCOzF54Xa4kV0P" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/service/employee" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/main/service/employee" />
+      <recent name="$PROJECT_DIR$/main/js/employer" />
+      <recent name="$PROJECT_DIR$/main/helpers" />
+      <recent name="$PROJECT_DIR$/main/view/employer" />
+      <recent name="$PROJECT_DIR$/main/controllers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/main/js" />
+      <recent name="$PROJECT_DIR$/main/view" />
+      <recent name="$PROJECT_DIR$/main/sql" />
+      <recent name="$PROJECT_DIR$/main/js/auth" />
+      <recent name="$PROJECT_DIR$/main/view/auth" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c9b6d816-6da5-4570-a787-193642d61384" name="Default Changelist" comment="" />
+      <created>1596284786857</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596284786857</updated>
+      <workItem from="1596284788735" duration="7368000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="290" y="1484" width="1397" height="297" key="#SQL_Dialects" timestamp="1596290277714">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="290" y="1484" width="1397" height="297" key="#SQL_Dialects/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596290277714" />
+    <state x="588" y="1294" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596285458010">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="588" y="1294" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596285458010" />
+    <state x="726" y="1381" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596285892833">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="726" y="1381" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596285892833" />
+    <state width="1244" height="278" key="GridCell.Tab.0.bottom" timestamp="1596289561729">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state width="1244" height="278" key="GridCell.Tab.0.bottom/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596289561729" />
+    <state width="1244" height="278" key="GridCell.Tab.0.center" timestamp="1596289561729">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state width="1244" height="278" key="GridCell.Tab.0.center/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596289561729" />
+    <state width="1244" height="278" key="GridCell.Tab.0.left" timestamp="1596289561729">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state width="1244" height="278" key="GridCell.Tab.0.left/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596289561729" />
+    <state width="1244" height="278" key="GridCell.Tab.0.right" timestamp="1596289561729">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state width="1244" height="278" key="GridCell.Tab.0.right/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596289561729" />
+    <state x="724" y="1352" width="529" height="561" key="NewPhpClassDialog" timestamp="1596285547806">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="724" y="1352" width="529" height="561" key="NewPhpClassDialog/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596285547806" />
+    <state x="789" y="1558" width="399" height="149" key="NewPhpFileDialog" timestamp="1596292344243">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="789" y="1558" width="399" height="149" key="NewPhpFileDialog/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596292344243" />
+    <state x="718" y="1464" width="540" height="337" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1596284838556">
+      <screen x="0" y="1080" width="1920" height="1080" />
+    </state>
+    <state x="718" y="1464" width="540" height="337" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596284838556" />
+  </component>
+</project>

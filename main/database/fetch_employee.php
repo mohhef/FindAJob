@@ -5,7 +5,7 @@ require("config.php");
 $columns = array('user_name', 'email', 'category', 'balance', 'status');
 
 $query1= "SELECT e.user_name, e.email, p.category, e.balance, m.activate_deactivate  FROM all_user e,
-manages m,  employee p WHERE e.user_name = p.user_name and e.user_name = m.user_name ";
+manages m,  employer p WHERE e.user_name = p.user_name and e.user_name = m.user_name ";
 
 // if(isset($_POST["search"]["value"])){
 // $query1.='  and job_id LIKE "%'.$_POST["search"]["value"].'%"
@@ -38,7 +38,7 @@ $result = mysqli_query($conn,  $query1 . $query2);
 function get_all_data($conn)
 {
   $query = "SELECT e.user_name, e.email, e.balance, p.category, m.activate_deactivate  FROM all_user e,
-  manages m,  employee p WHERE e.user_name = p.user_name and e.user_name = m.user_name";
+  manages m,  employer p WHERE e.user_name = p.user_name and e.user_name = m.user_name";
   $result = mysqli_query($conn, $query);
   return mysqli_num_rows($result);
 }

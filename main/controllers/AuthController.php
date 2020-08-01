@@ -7,7 +7,7 @@ class AuthController
 {
     function employeeLogin($username, $password){
         $conn = connDB();
-        if ($stmt = $conn->prepare("SELECT au.password FROM all_user as au, employee as e WHERE au.user_name = ? AND  e.user_name = ?" )) {
+        if ($stmt = $conn->prepare("SELECT au.password FROM all_user as au, employer as e WHERE au.user_name = ? AND  e.user_name = ?" )) {
             $stmt->bind_param('ss', $username, $username);
             $stmt->execute();
             $stmt->store_result();
@@ -73,7 +73,7 @@ class AuthController
             $stmt->bind_param("sss", $username, $email, $password);
             if($stmt->execute()){
                 $stmt->close();
-                if($stmt = $conn->prepare("INSERT INTO employee(user_name, category) VALUE (?, 'BASIC')")){
+                if($stmt = $conn->prepare("INSERT INTO employer(user_name, category) VALUE (?, 'BASIC')")){
                     $stmt->bind_param("s", $username);
                     if($stmt->execute()){
                         $stmt->close();
@@ -105,7 +105,7 @@ class AuthController
     }
     function forgotPasswordEmployee($username, $password){
         $conn = connDB();
-        if($stmt = $conn->prepare("SELECT * FROM employee WHERE user_name = ?")){
+        if($stmt = $conn->prepare("SELECT * FROM employer WHERE user_name = ?")){
             $stmt->bind_param("s", $username);
             if($stmt->execute()){
                 $stmt->store_result();

@@ -1,4 +1,4 @@
-<?php require("./helpers/session.php");?>
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="container" style="background-color:#f1f1f1">
                         <button type="button" class="registerbtn" onclick="window.location.href='employee_register.php'">Register</button>
-                        <span class="psw"><a href="employee_forgot_password.php">Forgot password?</a></span>
+                        <span class="psw"><a href="view/auth/employee_forgot_password.php">Forgot password?</a></span>
                     </div>
                     <br />
                 </form>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="container" style="background-color:#f1f1f1">
                         <button type="button" class="registerbtn" onclick="window.location.href='employer_register.php'">Register</button>
-                        <span class="psw"><a href="employer_forgot_password.php">Forgot password?</a></span>
+                        <span class="psw"><a href="view/auth/employer_forgot_password.php">Forgot password?</a></span>
                     </div>
                     <br />
                 </form>
@@ -89,7 +89,7 @@
                         <button type="button" onclick="adminLogin()">Login</button>
                     </div>
                     <div class="container" >
-                        <span class="psw"><a href="admin_forgot_password.php">Forgot password?</a></span>
+                        <span class="psw"><a href="view/auth/admin_forgot_password.php">Forgot password?</a></span>
                     </div>
                     <br />
                 </form>
@@ -98,7 +98,7 @@
     </div>
 </div>
 <script src="js/util.js"></script>
-<script src="js/login.js"></script>
+<script src="js/auth/login.js"></script>
 
 <?php require("./helpers/footer.php"); ?>
 </body>
