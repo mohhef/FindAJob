@@ -11,7 +11,8 @@
     <script src="../js/bootbox.min.js"></script>
     <script src="../js/bootbox.locales.min.js"></script>
     <?php }
-        elseif(basename($_SERVER['PHP_SELF']) == 'view_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php' || basename($_SERVER['PHP_SELF']) == 'admin.php'){
+        elseif(basename($_SERVER['PHP_SELF']) == 'view_job.php' ||basename($_SERVER['PHP_SELF']) == 'application_job.php'||
+         basename($_SERVER['PHP_SELF']) == 'subscription.php' || basename($_SERVER['PHP_SELF']) == 'admin.php'){
       ?>
       <script src="../js/jquery-3.31.js"></script>
       <script src="../js/bootstrap.min.js"></script>
@@ -33,7 +34,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />
       <?php }
-        elseif(basename($_SERVER['PHP_SELF']) == 'view_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php'|| basename($_SERVER['PHP_SELF']) == 'admin.php' ){
+        elseif(basename($_SERVER['PHP_SELF']) == 'view_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php'|| 
+        basename($_SERVER['PHP_SELF']) == 'application_job.php'|| basename($_SERVER['PHP_SELF']) == 'admin.php' ){
       ?>
       <link rel="stylesheet" href="../css/4.1.3bootstrap.css">
       <link rel="stylesheet" type="text/css" href="../css/maindata.css" />
@@ -58,6 +60,9 @@
     </div>
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="view_job.php" id="pipeview">Modify A job</a>
+    </div>
+    <div class="col-md-1-auto" id="change1">
+      <a class="btn btn-outline-primary" href="application_job.php" id="pipeview">Job Applications</a>
     </div>
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="subscription.php" id="pipeview">Subscription</a>
