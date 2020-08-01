@@ -9,7 +9,7 @@ if(isset($_COOKIE['employer_username'])){
 
     header("Location: http://".$_SERVER['HTTP_HOST'].'/comp-353/main/employer/post_job.php');
 }
-if(isset($_COOKIE['username_admin'])){
+if(isset($_COOKIE['admin_username'])){
     header("Location: http://".$_SERVER['HTTP_HOST'].'/comp-353/main/admin/admin.php');
 }
 
