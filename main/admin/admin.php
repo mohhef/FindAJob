@@ -142,6 +142,43 @@ $(document).ready(function(){
     }
   });
 }
+
+$("#employer_data").on('click', '.delete', function(){
+  var id = $(this).attr("id");
+  var status = $(this).attr("value");
+    $.ajax({
+    url:'../database/update_status.php',
+    method:"POST",
+    data:{id:id, status:status},
+    error: function(xhr, error){
+        console.log(xhr); console.log(error);
+    },
+    success:function(){
+      console.log('it')
+      $('#employer_data').DataTable().ajax.reload(null,false);
+       }
+  });
+    });
+
+$("#employee_data").on('click', '.delete', function(){
+  var id = $(this).attr("id");
+  var status = $(this).attr("value");
+    $.ajax({
+    url:'../database/update_status.php',
+    method:"POST",
+    data:{id:id, status:status},
+    error: function(xhr, error){
+        console.log(xhr); console.log(error);
+    },
+    success:function(){
+      console.log('it2')
+      $('#employee_data').DataTable().ajax.reload(null,false);
+       }
+  });
+    });
+
 });
+
+
 </script>
 <?php include "footer.php"?>
