@@ -1,6 +1,6 @@
-
+<?php session_start();
+?>
 <?php include "header.php" ?>
-
 </br></br>
 </br>
 
@@ -81,7 +81,7 @@
                 job_title: job_title,
                 emp_no:emp_no,
                 category_sel: category_sel,
-                description_box: description_box,
+                description_box: description_box
               });
             }
         })
