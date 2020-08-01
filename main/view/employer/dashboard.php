@@ -71,7 +71,16 @@ $jobs = $job->getJobs();
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
             <div class="card-body">
-                <div id="jobTable"></div>
+                <table id="jobTable" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <th>Job ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Date Posted</th>
+                        <th>category</th>
+                        </thead>
+                    <tbody></tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -80,11 +89,20 @@ $jobs = $job->getJobs();
 <?php require("../../helpers/footer.php"); ?>
 <script src="../../js/employer/dashboard.js"></script>
 <script>
+    // dropdown menu
     $(function(){
         $(".dropdown-menu a").click(function(){
             $("#dropdownMenuButton:first-child").text($(this).text());
             $("#dropdownMenuButton:first-child").val($(this).text());
         })
+    })
+
+    // table rendering
+    const data = <?php echo json_encode($jobs);?>;
+    console.log(data.data);
+    $('#jobTable').DataTable({
+
+        data: data.data
     })
 </script>
 </body>

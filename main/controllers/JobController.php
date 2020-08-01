@@ -24,20 +24,18 @@ class JobController
     function getJobs()
     {
         $conn = connDB();
-        if ($stmt = $conn->prepare("SELECT * FROM job as j, post as p WHERE j.job_id = p.job_id AND p.user_name = ?")) {
+        if ($stmt = $conn->prepare("SELECT j.job_id, j.title, j.description, j.employee_needed, j.category FROM job as j, post as p WHERE j.job_id = p.job_id AND p.user_name = ?")) {
             $stmt->bind_param("s",$_COOKIE['employer_username']);
             $stmt->execute();
-            if ($stmt->num_rows > 0) {
-                $stmt->fetch();
-                $result = $stmt->get_result();
-                $arr = [];
 
-                while($row = $result->fetch_array()){
-                    $arr[] = $row;
-                }
-                return $arr;
+            $result = $stmt->get_result();
+            $arr = [];
+
+            while($row = $result->fetch_array(MYSQLI_NUM)){
+                $arr['data'][] = $row;
             }
-            return false;
+            return $arr;
+
         }
     }
 
