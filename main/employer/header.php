@@ -11,7 +11,7 @@
     <script src="../js/bootbox.min.js"></script>
     <script src="../js/bootbox.locales.min.js"></script>
     <?php }
-        elseif(basename($_SERVER['PHP_SELF']) == 'view_job.php' ||basename($_SERVER['PHP_SELF']) == 'application_job.php'||
+        elseif(basename($_SERVER['PHP_SELF']) == 'view_job.php' ||basename($_SERVER['PHP_SELF']) == 'application_job.php'|| basename($_SERVER['PHP_SELF']) == 'payment.php' ||
          basename($_SERVER['PHP_SELF']) == 'subscription.php' || basename($_SERVER['PHP_SELF']) == 'admin.php'){
       ?>
       <script src="../js/jquery-3.31.js"></script>
@@ -34,16 +34,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />
       <?php }
-<<<<<<< HEAD:main/header.php
-        elseif(
-          basename($_SERVER['PHP_SELF']) == 'view_job.php' || 
-          basename($_SERVER['PHP_SELF']) == 'subscription.php' ||
-          basename($_SERVER['PHP_SELF']) == 'payment.php' 
-          ){
-=======
-        elseif(basename($_SERVER['PHP_SELF']) == 'view_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php'|| 
+        elseif(basename($_SERVER['PHP_SELF']) == 'view_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php'|| basename($_SERVER['PHP_SELF']) == 'payment.php' ||
         basename($_SERVER['PHP_SELF']) == 'application_job.php'|| basename($_SERVER['PHP_SELF']) == 'admin.php' ){
->>>>>>> 519d9b837019bedb80b4e3770d01254342ecd104:main/employer/header.php
       ?>
       <link rel="stylesheet" href="../css/4.1.3bootstrap.css">
       <link rel="stylesheet" type="text/css" href="../css/maindata.css" />
