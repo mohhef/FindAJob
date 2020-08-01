@@ -80,6 +80,44 @@ $(document).ready(function(){
     }
   });
 }
-});
+$("#user_data").on('click', '.offer', function(){
+  var id = $(this).attr("id");
+  console.log(id);
+  $.ajax({
+    url:'../database/get_jobposts.php',
+    method:"POST",
+    data:{id:id},
+    dataType:"json",
+    success:function(data){
+      bootbox.prompt({
+        size: "large",
+        title: "Offer",
+        inputType: 'radio',
+        inputOptions: [{
+         text: "Offer the job '"+id+ "'",
+         value: '1',
+        }],
+       callback: function(result) {
+          if (result == 1) {
+          $.ajax({
+            url:'../database/offer_job.php',
+            method: "POST",
+            data:{id:id,loyee_username:data.user_name},
+            dataType:"json",
+            success: function(data){
+              $('#alert_message').html('<div class="alert alert-success">'+'dsf'+'</div>');
+              $('#user_data').DataTable().ajax.reload(null,false);
+            }
+          });
+          setInterval(function(){
+                  $('#alert_message').html('');
+                }, 5000);
+            }
+          }
+        });
+        }
+      });
+      });
+      });
 </script>
 <?php include "footer.php"?>
