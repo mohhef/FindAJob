@@ -15,6 +15,7 @@
           <th>Date Posted</th>
           <th>Category</th>
           <th>Description</th>
+          <th>Status</th>
           <th></th>
           <th></th>
         </tr>
@@ -116,6 +117,9 @@ $(document).ready(function(){
       }, {
         "orderable": true,
         //    "width":"25%"
+      },{
+        "orderable": true,
+        //    "width":"25%"
       }, {
         "orderable": true,
         //  "width":"10%"
@@ -133,7 +137,7 @@ $(document).ready(function(){
       "searchPlaceholder": "search"
     },
     "ajax" : {
-      url:"database/fetch_postings.php",
+      url:"../database/fetch_postings.php",
       type:"POST"
     }
   });
@@ -142,7 +146,7 @@ $(document).ready(function(){
 function update_data(id, column_name, value)
 {
   $.ajax({
-    url:"database/update.php",
+    url:"../database/update.php",
     method:"POST",
     data:{id:id, column_name:column_name, value:value},
     success:function(data)
@@ -161,7 +165,7 @@ $("#user_data").on('click', '.update', function(){
   var id = $(this).attr("id");
   var action = 'getPipeline';
   $.ajax({
-    url:'database/get_job.php',
+    url:'../database/get_job.php',
     method:"POST",
     data:{id:id, action:action},
     dataType:"json",
@@ -191,7 +195,7 @@ $("#jobModal").on('submit','#jobForm', function(event){
   var description = jQuery('input[name="description"]').val();
   console.log(jobTitle);
    $.ajax({
-    url:"database/update_job.php",
+    url:"../database/update_job.php",
     method:"POST",
     data:formData,
     success:function(data){
@@ -208,7 +212,7 @@ $(document).on('click', '.delete',function(){
   var id=$(this).attr("id");
   var action = 'get_job';
   $.ajax({
-    url:'database/get_job.php',
+    url:'../database/get_job.php',
     method:"POST",
     data:{id:id, action:action},
     dataType:"json",
@@ -228,7 +232,7 @@ $(document).on('click', '.delete',function(){
        callback: function(result) {
           if (result == 1) {
             $.ajax({
-              url:"database/delete_job.php",
+              url:"../database/delete_job.php",
               method: "POST",
               data: {id:id},
               success:function(data){
