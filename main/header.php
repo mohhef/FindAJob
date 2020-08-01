@@ -11,18 +11,10 @@
     <script src="js/bootbox.min.js"></script>
     <script src="js/bootbox.locales.min.js"></script>
     <?php }
-        elseif(basename($_SERVER['PHP_SELF']) == 'view_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php' ){
-      ?>
-      <script src="js/jquery-3.31.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/jquery.dataTables.min.js"></script>
-      <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-      <script src="js/dataTables.bootstrap4.min.js"></script>
-      <script src="js/ColReorderWithResize.js"></script>
-      <script src="js/bootbox.min.js"></script>
-      <script src="js/bootbox.locales.min.js"></script>
-    <?php }
-        elseif(basename($_SERVER['PHP_SELF']) == 'pricing.php'){
+        elseif(
+          basename($_SERVER['PHP_SELF']) == 'view_job.php' || 
+          basename($_SERVER['PHP_SELF']) == 'subscription.php' ||
+          basename($_SERVER['PHP_SELF']) == 'payment.php' ){
       ?>
       <script src="js/jquery-3.31.js"></script>
       <script src="js/bootstrap.min.js"></script>
@@ -44,15 +36,11 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />
       <?php }
-        elseif(basename($_SERVER['PHP_SELF']) == 'view_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php' ){
-      ?>
-      <link rel="stylesheet" href="css/4.1.3bootstrap.css">
-      <link rel="stylesheet" type="text/css" href="css/maindata.css" />
-      <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
-      <!--  <link rel="stylesheet" type="text/css" href="../../inventory/style/main.css" /> -->
-      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />      
-    <?php }
-    elseif(basename($_SERVER['PHP_SELF']) == 'pricing.php'){
+        elseif(
+          basename($_SERVER['PHP_SELF']) == 'view_job.php' || 
+          basename($_SERVER['PHP_SELF']) == 'subscription.php' ||
+          basename($_SERVER['PHP_SELF']) == 'payment.php' 
+          ){
       ?>
       <link rel="stylesheet" href="css/4.1.3bootstrap.css">
       <link rel="stylesheet" type="text/css" href="css/maindata.css" />
