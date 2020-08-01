@@ -56,7 +56,7 @@
       <a class="btn btn-outline-primary" href="apply_job.php" id="pipeview">Jobs Available</a>
     </div>
     <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="post_job.php" id="pipeview">sb</a>
+      <a class="btn btn-outline-primary" href="post_job.php" id="pipeview">Offer Status</a>
     </div>
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="view_job.php" id="pipeview">a</a>
