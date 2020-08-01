@@ -81,7 +81,7 @@
 
 <?php include "footer.php" ?>
 
-<script type="text/javascript">
+<script>
 
 $(document).ready(function() {
   // document.body.style.zoom="100%"
@@ -239,4 +239,5 @@ $(document).on('click', '.delete',function(){
 });
 });
 </script>
+
 <?php include "footer.php"?>
