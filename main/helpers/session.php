@@ -1,10 +1,13 @@
 <?php
 session_start();
-if(isset($_COOKIE['username_employee'])){
-    #redirect to employee dashboard
+if(isset($_COOKIE['employee_username'])){
+
+    header("Location: http://".$_SERVER['HTTP_HOST'].'/comp-353/main/employee/apply_job.php');
+
 }
-if(isset($_COOKIE['username_employer'])){
-    #redirect to employer dashboard
+if(isset($_COOKIE['employer_username'])){
+
+    header("Location: http://".$_SERVER['HTTP_HOST'].'/comp-353/main/employer/post_job.php');
 }
 if(isset($_COOKIE['username_admin'])){
     #redirect to admin dashboard
@@ -13,4 +16,4 @@ if(isset($_COOKIE['username_admin'])){
 #TODO : add logic so that two cookies from different users can't coexist
 
 
-header("Location: http://".$_SERVER['HTTP_HOST'].'/main/index.php');
+//header("Location: http://".$_SERVER['HTTP_HOST'].'/main/index.php');
