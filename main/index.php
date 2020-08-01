@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php require("./helpers/session.php");?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
