@@ -53,9 +53,6 @@
       </a>
     </div>
     <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="post_job.php" id="pipeview">Home</a>
-    </div>
-    <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="post_job.php" id="pipeview">Post A job</a>
     </div>
     <div class="col-md-1-auto" id="change1">
