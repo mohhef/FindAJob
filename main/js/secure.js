@@ -28,13 +28,14 @@ if (y >= 0) { // if y >= 0, the key:value pair exists in the cookie
     return true;
 
 }
-function cookieset_employee(){
-var y = document.cookie.indexOf("employee_admin");
+}
+function cookieset_admin(){
+var y = document.cookie.indexOf("admin_username=");
 console.log(y);
 if (y >= 0) { // if y >= 0, the key:value pair exists in the cookie
   // nothing happens, display the page
 
-    document.cookie = 'employee_username' +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = 'admin_username=' +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     // alert("You are now logged out!");
 
     window.location.href = "http://127.0.0.1/comp-353/main/";
@@ -43,4 +44,4 @@ if (y >= 0) { // if y >= 0, the key:value pair exists in the cookie
 
 }
 }
-}
+
