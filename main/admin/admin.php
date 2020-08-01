@@ -137,11 +137,46 @@ $(document).ready(function(){
       "searchPlaceholder": "search"
     },
     "ajax" : {
-      url:"database/fetch_employee.php",
+      url:"../database/fetch_employee.php",
       type:"POST"
     }
   });
 }
+
+$("#employer_data").on('click', '.update', function(){
+  var id = $(this).attr("id");
+  var status = $(this).attr("value");
+    $.ajax({
+    url:'../database/update_status.php',
+    method:"POST",
+    data:{id:id, status:status},
+    error: function(xhr, error){
+        console.log(xhr); console.log(error);
+    },
+    success:function(){
+      $('#employer_data').DataTable().ajax.reload(null,false);
+       }
+  });
+    });
+
+$("#employee_data").on('click', '.update', function(){
+  var id = $(this).attr("id");
+  var status = $(this).attr("value");
+    $.ajax({
+    url:'../database/update_status.php',
+    method:"POST",
+    data:{id:id, status:status},
+    error: function(xhr, error){
+        console.log(xhr); console.log(error);
+    },
+    success:function(){
+      $('#employee_data').DataTable().ajax.reload(null,false);
+       }
+  });
+    });
+
 });
+
+
 </script>
 <?php include "footer.php"?>
