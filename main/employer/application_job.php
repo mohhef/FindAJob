@@ -15,6 +15,7 @@
           <th>Description</th>
           <th>Status</th>
           <th>Username</th>
+          <th>Offer</th>
           <th></th>
         </tr>
       </thead>
@@ -64,6 +65,9 @@ $(document).ready(function(){
         //    "width":"25%"
       },{
         "orderable": true,
+        //    "width":"25%"
+      },{
+        "orderable": false,
         //    "width":"25%"
       },{
         "orderable": false,
