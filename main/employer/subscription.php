@@ -41,7 +41,7 @@
             // TODO: fix username when aloys is done with his task
             function(result) {
                 if(result == true){
-                    $.post("database/update_category.php",{
+                    $.post("../database/update_category.php",{
                         user_name: 'caren',
                         category: category
                     });

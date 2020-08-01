@@ -14,7 +14,9 @@ if ($post_job==true){
 function insertJob($job_title,$emp_no,$description_box,$date_posted,$category_sel){
     require('config.php');
     $query1 ="INSERT INTO job (title,employee_needed,description,date_posted,category) VALUES ('$job_title','$emp_no','$description_box','$date_posted','$category_sel')";
+    $query2 ="INSERT INTO applies (date_applied,application_status) VALUES ('','')";
     $result = mysqli_query($conn, $query1);
+    $result = mysqli_query($conn, $query2);
     if(true)
     {
         echo 'Data Inserted';
