@@ -6,12 +6,12 @@
     <table id="user_data" class="display nowrap table table-borderless table-striped" style="" >
       <thead>
         <tr>
+          <th>Job ID</th>
           <th>Title</th>
-          <th>Employees Needed</th>
+          <th>Employees needed</th>
           <th>Date Posted</th>
           <th>Category</th>
           <th>Description</th>
-          <th>Status</th>
           <th></th>
           <th></th>
         </tr>
