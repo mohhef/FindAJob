@@ -24,7 +24,7 @@ class JobController
     function getJobs()
     {
         $conn = connDB();
-        if ($stmt = $conn->prepare("SELECT j.job_id, j.title, j.description, j.employee_needed, j.category FROM job as j, post as p WHERE j.job_id = p.job_id AND p.user_name = ?")) {
+        if ($stmt = $conn->prepare("SELECT j.job_id, j.title, j.description, j.employee_needed, j.category, j.date_posted FROM job as j, post as p WHERE j.job_id = p.job_id AND p.user_name = ?")) {
             $stmt->bind_param("s",$_COOKIE['employer_username']);
             $stmt->execute();
 
@@ -70,8 +70,8 @@ class JobController
     function updateJob($title, $description, $employee_needed, $category, $job_id)
     {
         $conn = connDB();
-        if ($stmt = $conn->prepare("UPDATE job SET title = ?, employee_needed = ?, category = ?, description = ? WHERE job_id = ?")) {
-            $stmt->bind_param("sissi", $title, $description, $employee_needed, $category, $job_id);
+        if ($stmt = $conn->prepare("UPDATE job SET title = ?, description = ?, employee_needed = ?, category = ? WHERE job_id = ?")) {
+            $stmt->bind_param("ssisi", $title, $description, $employee_needed, $category, $job_id);
             $stmt->execute();
             if ($stmt->affected_rows > 0) {
                 return true;
@@ -83,13 +83,23 @@ class JobController
     function deleteJob($job_id)
     {
         $conn = connDB();
-        if ($stmt = $conn->prepare("DELETE FROM job WHERE job_id = ?")) {
+        if($stmt = $conn->prepare("DELETE FROM post WHERE job_id = ?")){
             $stmt->bind_param("i", $job_id);
             $stmt->execute();
-            if ($stmt->affected_rows > 0) {
-                return true;
+            if($stmt->affected_rows > 0){
+                $stmt->close();
+                if ($stmt = $conn->prepare("DELETE FROM job WHERE job_id = ?")) {
+                    $stmt->bind_param("i", $job_id);
+                    $stmt->execute();
+                    if ($stmt->affected_rows > 0) {
+                        $stmt->close();
+                        $conn->close();
+                        return true;
+                    }
+                }
             }
         }
+
         return false;
     }
 }
