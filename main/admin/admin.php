@@ -93,7 +93,7 @@ $(document).ready(function(){
       "searchPlaceholder": "search"
     },
     "ajax" : {
-      url:"database/fetch_employer.php",
+      url:"../database/fetch_employer.php",
       type:"POST"
     }
   });

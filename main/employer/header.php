@@ -8,6 +8,7 @@
     <script src="../js/1.14.7popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+    <script src="../js/secure.js"></script>
     <script src="../js/bootbox.min.js"></script>
     <script src="../js/bootbox.locales.min.js"></script>
     <?php }
@@ -20,6 +21,7 @@
       <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
       <script src="../js/dataTables.bootstrap4.min.js"></script>
       <script src="../js/ColReorderWithResize.js"></script>
+      <script src="../js/secure.js"></script>
       <script src="../js/bootbox.min.js"></script>
       <script src="../js/bootbox.locales.min.js"></script>
     <?php } ?>    
@@ -63,6 +65,9 @@
     </div>
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="subscription.php" id="pipeview">Subscription</a>
+    </div>
+    <div class="col-md-1-auto" id="change4">
+      <a class="btn btn-danger" onclick="cookieset_employer();" id="cooks">Logout</a>
     </div>
     <div class="col-md-1-auto" id="change2">
     </div>
