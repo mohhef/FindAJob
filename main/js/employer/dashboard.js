@@ -23,7 +23,7 @@ const postJob = () => {
         const res = JSON.parse(data);
         if(res.result){
             alert("Job was added.");
-            window.location.replace('index.php');
+            location.reload();
         }else{
             alert("Unable to add job.");
         }

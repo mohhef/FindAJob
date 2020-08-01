@@ -1,17 +1,18 @@
 <?php
 
-define('__ROOT__', dirname(__FILE__));
-require(__ROOT__ . "/../helpers/config.php");
+defined('__ROOT__') or define('__ROOT__', dirname(__FILE__));
+require_once(__ROOT__."/../helpers/config.php");
 
 class JobController
 {
-    function getJob($job_id){
+    function getJob($job_id)
+    {
         $conn = connDB();
-        if($stmt = $conn->prepare("SELECT * FROM job WHERE job_id = ?")){
+        if ($stmt = $conn->prepare("SELECT * FROM job WHERE job_id = ?")) {
             $stmt->bind_param("i", $job_id);
             $stmt->execute();
             $stmt->store_result();
-            if($stmt->num_rows > 0) {
+            if ($stmt->num_rows > 0) {
                 $stmt->bind_result($job);
                 $stmt->fetch();
                 return $job;
@@ -20,25 +21,61 @@ class JobController
         }
     }
 
-    function insertJob($title, $description, $employee_needed, $category){
+    function getJobs()
+    {
         $conn = connDB();
-        if($stmt = $conn->prepare("INSERT INTO job(title, description, date_posted, employee_needed, category) value (?, ?, (SELECT NOW()), ?, ?)")){
+        if ($stmt = $conn->prepare("SELECT * FROM job as j, post as p WHERE j.job_id = p.job_id AND p.user_name = ?")) {
+            $stmt->bind_param("s",$_COOKIE['employer_username']);
+            $stmt->execute();
+            if ($stmt->num_rows > 0) {
+                $stmt->fetch();
+                $result = $stmt->get_result();
+                $arr = [];
+
+                while($row = $result->fetch_array()){
+                    $arr[] = $row;
+                }
+                return $arr;
+            }
+            return false;
+        }
+    }
+
+    function insertJob($title, $description, $employee_needed, $category)
+    {
+        $conn = connDB();
+        if ($stmt = $conn->prepare("INSERT INTO job(title, description, date_posted, employee_needed, category) value (?, ?, (SELECT NOW()), ?, ?)")) {
             $stmt->bind_param("ssis", $title, $description, $employee_needed, $category);
             $stmt->execute();
-            if($stmt->affected_rows > 0){
-                return true;
+            if ($stmt->affected_rows > 0) {
+                $stmt->close();
+                if ($stmt = $conn->prepare("SELECT LAST_INSERT_ID()")) {
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    $job_id = $result->fetch_array();
+                    $stmt->close();
+                    if ($stmt = $conn->prepare("INSERT INTO post(job_id, user_name) value (?, ?)")) {
+                        $stmt->bind_param("is", $job_id[0], $_COOKIE['employer_username']);
+                        if($stmt->execute()) {
+                            return true;
+                        }
+                    }
+                }
+
+
             }
         }
 
         return false;
     }
 
-    function updateJob($title, $description, $employee_needed, $category, $job_id){
+    function updateJob($title, $description, $employee_needed, $category, $job_id)
+    {
         $conn = connDB();
-        if($stmt = $conn->prepare("UPDATE job SET title = ?, employee_needed = ?, category = ?, description = ? WHERE job_id = ?")){
+        if ($stmt = $conn->prepare("UPDATE job SET title = ?, employee_needed = ?, category = ?, description = ? WHERE job_id = ?")) {
             $stmt->bind_param("sissi", $title, $description, $employee_needed, $category, $job_id);
             $stmt->execute();
-            if($stmt->affected_rows > 0){
+            if ($stmt->affected_rows > 0) {
                 return true;
             }
         }
@@ -48,10 +85,10 @@ class JobController
     function deleteJob($job_id)
     {
         $conn = connDB();
-        if($stmt = $conn->prepare("DELETE FROM job WHERE job_id = ?")){
+        if ($stmt = $conn->prepare("DELETE FROM job WHERE job_id = ?")) {
             $stmt->bind_param("i", $job_id);
             $stmt->execute();
-            if($stmt->affected_rows > 0){
+            if ($stmt->affected_rows > 0) {
                 return true;
             }
         }

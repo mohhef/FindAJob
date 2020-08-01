@@ -2,8 +2,12 @@
 
 <?
 require("../../controllers/CategoryController.php");
+require("../../controllers/JobController.php");
 $category = new CategoryController();
 $categories = $category->getCategories();
+
+$job = new JobController();
+$jobs = $job->getJobs();
 ?>
 
 <!DOCTYPE html>
@@ -61,28 +65,13 @@ $categories = $category->getCategories();
         <div class="card-header" id="headingTwo">
             <h2 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Employer
+                    See Jobs
                 </button>
             </h2>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
             <div class="card-body">
-                <form id="employerLoginForm">
-                    <div class="container">
-                        <label for="uname"><b>User</b></label>
-                        <input type="text" placeholder="Enter Username" id="employer_username" required>
-
-                        <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" id="employer_password" required>
-
-                        <button type="button" onclick="employerLogin()">Login</button>
-                    </div>
-                    <div class="container" style="background-color:#f1f1f1">
-                        <button type="button" class="registerbtn" onclick="window.location.href='employer_register.php'">Register</button>
-                        <span class="psw"><a href="view/auth/employer_forgot_password.php">Forgot password?</a></span>
-                    </div>
-                    <br />
-                </form>
+                <div id="jobTable"></div>
             </div>
         </div>
     </div>
