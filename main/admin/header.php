@@ -12,8 +12,7 @@
     <script src="../js/bootbox.min.js"></script>
     <script src="../js/bootbox.locales.min.js"></script>
     <?php }
-        elseif(basename($_SERVER['PHP_SELF']) == 'available_job.php' ||
-         basename($_SERVER['PHP_SELF']) == 'subscription.php' || basename($_SERVER['PHP_SELF']) == 'applied_job.php'){
+        elseif(basename($_SERVER['PHP_SELF']) == 'apply_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php' || basename($_SERVER['PHP_SELF']) == 'admin.php'){
       ?>
       <script src="../js/jquery-3.31.js"></script>
       <script src="../js/bootstrap.min.js"></script>
@@ -25,8 +24,6 @@
       <script src="../js/bootbox.min.js"></script>
       <script src="../js/bootbox.locales.min.js"></script>
     <?php } ?>    
-    
-
 
       <?php if(basename($_SERVER['PHP_SELF']) == 'a.php'){ ?>
         <link rel="stylesheet" href="../css/4.3.1bootstrap.min.css">
@@ -36,8 +33,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />
       <?php }
-        elseif(basename($_SERVER['PHP_SELF']) == 'available_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php'|| 
-        basename($_SERVER['PHP_SELF']) == 'applied_job.php' ){
+        elseif(basename($_SERVER['PHP_SELF']) == 'apply_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php'|| basename($_SERVER['PHP_SELF']) == 'admin.php' ){
       ?>
       <link rel="stylesheet" href="../css/4.1.3bootstrap.css">
       <link rel="stylesheet" type="text/css" href="../css/maindata.css" />
@@ -55,19 +51,10 @@
       </a>
     </div>
     <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="available_job.php" id="pipeview">Jobs Available</a>
-    </div>
-    <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="applied_job.php" id="pipeview">Applied Jobs</a>
-    </div>
-    <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="post_job.php" id="pipeview">Offer Status</a>
-    </div>
-    <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="subscription.php" id="pipeview">a</a>
+      <a class="btn btn-outline-primary" href="admin.php" id="pipeview">Admin main</a>
     </div>
     <div class="col-md-1-auto" id="change4">
-      <a class="btn btn-danger" onclick="cookieset_employee();" id="cooks">Logout</a>
+      <a class="btn btn-danger" onclick="cookieset_admin();" id="cooks">Logout</a>
     </div>
     <div class="col-md-1-auto" id="change2">
     </div>

@@ -1,11 +1,11 @@
 <?php
-
+$user_name=$_COOKIE['employer_username'];
 require("config.php");
 //$query =mysqli_query($conn,"SELECT * FROM `automation_data`");
 $columns = array('job_id','title','description','date_posted','category','employee_needed','application_status');
 
-$query1= "SELECT j.job_id, j.title, j.employee_needed, j.date_posted, j.category, j.description, p.application_status FROM job j, applies p
- WHERE j.job_id=p.job_id";
+$query1= "SELECT j.job_id, j.title, j.employee_needed, j.date_posted, j.category, j.description, p.application_status FROM job j, applies p, post t
+WHERE j.job_id=p.job_id and t.job_id=j.job_id and t.user_name='$user_name'";
 
 if(isset($_POST["search"]["value"])){
 $query1.=' and (j.job_id LIKE "%'.$_POST["search"]["value"].'%"
@@ -36,7 +36,8 @@ $result = mysqli_query($conn,  $query1 . $query2);
 
 function get_all_data($conn)
 {
-  $query = "SELECT j.job_id, j.title, j.employee_needed, j.date_posted, j.category, j.description, p.application_status FROM job j, applies p WHERE j.job_id=p.job_id";
+  $query = "SELECT j.job_id, j.title, j.employee_needed, j.date_posted, j.category, j.description, p.application_status FROM job j, applies p, post t
+  WHERE j.job_id=p.job_id and t.job_id=j.job_id and t.user_name='".$_COOKIE['employer_username']."'";
   $result = mysqli_query($conn, $query);
   return mysqli_num_rows($result);
 }
