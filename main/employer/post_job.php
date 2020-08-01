@@ -76,7 +76,7 @@
         function(result){
             if(result==true){
                 console.log(job_title)
-                $.post("database/insert_job.php",{
+                $.post("../database/insert_job.php",{
                 post_job: true,
                 job_title: job_title,
                 emp_no:emp_no,
