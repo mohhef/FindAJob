@@ -143,7 +143,7 @@ $(document).ready(function(){
   });
 }
 
-$("#employer_data").on('click', '.delete', function(){
+$("#employer_data").on('click', '.update', function(){
   var id = $(this).attr("id");
   var status = $(this).attr("value");
     $.ajax({
@@ -154,13 +154,12 @@ $("#employer_data").on('click', '.delete', function(){
         console.log(xhr); console.log(error);
     },
     success:function(){
-      console.log('it')
       $('#employer_data').DataTable().ajax.reload(null,false);
        }
   });
     });
 
-$("#employee_data").on('click', '.delete', function(){
+$("#employee_data").on('click', '.update', function(){
   var id = $(this).attr("id");
   var status = $(this).attr("value");
     $.ajax({
@@ -171,7 +170,6 @@ $("#employee_data").on('click', '.delete', function(){
         console.log(xhr); console.log(error);
     },
     success:function(){
-      console.log('it2')
       $('#employee_data').DataTable().ajax.reload(null,false);
        }
   });
