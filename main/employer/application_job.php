@@ -38,8 +38,7 @@ $(document).ready(function(){
       "sDom": "Rlfrtip",
       "bAutoWidth":false,
       "responsive":true,
-      "scrollY": "660px",
-      "scrollX": true,
+
       "scrollCollapse": true,
       "processing":true,
       "serverSide":true,
@@ -65,9 +64,6 @@ $(document).ready(function(){
         //    "width":"25%"
       },{
         "orderable": true,
-        //    "width":"25%"
-      },{
-        "orderable": false,
         //    "width":"25%"
       },{
         "orderable": false,
