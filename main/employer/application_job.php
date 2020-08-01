@@ -89,16 +89,9 @@ $("#user_data").on('click', '.offer', function(){
     data:{id:id},
     dataType:"json",
     success:function(data){
-      bootbox.prompt({
-        size: "large",
-        title: "Offer",
-        inputType: 'radio',
-        inputOptions: [{
-         text: "Offer the job '"+id+ "'",
-         value: '1',
-        }],
-       callback: function(result) {
-          if (result == 1) {
+      bootbox.alert({
+        message:"Offer the job '"+id+ "'",
+       callback: function() {
           $.ajax({
             url:'../database/offer_job.php',
             method: "POST",
@@ -112,7 +105,6 @@ $("#user_data").on('click', '.offer', function(){
           setInterval(function(){
                   $('#alert_message').html('');
                 }, 5000);
-            }
           }
         });
         }
