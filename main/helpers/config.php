@@ -4,7 +4,7 @@
 function connDB()
 {
 	$username = 'root';
-	$password = 'root';
+	$password = '';
 	$hostname = '127.0.0.1';
 	$database = 'web_career';
 
