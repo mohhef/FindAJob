@@ -56,7 +56,7 @@ $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["use
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="employee_needed">' . $row["category"] . '</div>';
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="date_posted">' . $row["balance"] . '</div>';
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="date_posted">' . $row["activate_deactivate"] . '</div>';
-$sub_array[] = '<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["user_name"].'" value= "'. $row["activate_deactivate"] .'">Activate/deactivate</button>';
+$sub_array[] = '<button type="button" name="delete" class="btn btn-danger btn-xs update" id="'.$row["user_name"].'" value= "'. $row["activate_deactivate"] .'">Activate/deactivate</button>';
 $data[] = $sub_array;
 }
 
