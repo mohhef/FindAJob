@@ -53,19 +53,10 @@
       </a>
     </div>
     <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="apply_job.php" id="pipeview">Jobs Available</a>
-    </div>
-    <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="post_job.php" id="pipeview">Offer Status</a>
-    </div>
-    <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="view_job.php" id="pipeview">a</a>
-    </div>
-    <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="subscription.php" id="pipeview">a</a>
+      <a class="btn btn-outline-primary" href="admin.php" id="pipeview">Admin main</a>
     </div>
     <div class="col-md-1-auto" id="change4">
-      <a class="btn btn-danger" onclick="cookieset_employee();" id="cooks">Logout</a>
+      <a class="btn btn-danger" onclick="cookieset_admin();" id="cooks">Logout</a>
     </div>
     <div class="col-md-1-auto" id="change2">
     </div>
