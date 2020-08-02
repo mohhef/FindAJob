@@ -24,8 +24,6 @@
       <script src="../js/bootbox.min.js"></script>
       <script src="../js/bootbox.locales.min.js"></script>
     <?php } ?>    
-    
-
 
       <?php if(basename($_SERVER['PHP_SELF']) == 'a.php'){ ?>
         <link rel="stylesheet" href="../css/4.3.1bootstrap.min.css">
