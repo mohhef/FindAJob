@@ -205,7 +205,6 @@
                     $('#alert_message').html('');
                 }, 5000);
             })
-
         });
 
         $("#cardModal").on('click', '.submit_create_card', function(event) {

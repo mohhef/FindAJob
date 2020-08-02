@@ -4,8 +4,10 @@
 
     if (isset($_COOKIE['employer_username'])) {
         $user = $_COOKIE['employer_username'];
+        $type = "employer";
     } else if (isset($_COOKIE['employee_username'])) {
         $user = $_COOKIE['employee_username'];
+        $type = "employee";
     }
 
     $columns = array('card_no','name', 'expiration_date', 'type');
@@ -22,7 +24,7 @@
 
     $number_filter_row = mysqli_num_rows(mysqli_query($conn, $query1));
 
-    $preffered_method_query = "SELECT preferred_method FROM `employer` WHERE employer.user_name = '$user'";
+    $preffered_method_query = "SELECT preferred_method FROM `$type` t WHERE t.user_name = '$user'";
     $preffered_method = mysqli_fetch_array(mysqli_query($conn,  $preffered_method_query));
     $data = array();
 
