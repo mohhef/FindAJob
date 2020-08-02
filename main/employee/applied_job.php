@@ -6,14 +6,13 @@
     <table id="user_data" class="display nowrap table table-borderless table-striped" style="" >
       <thead>
         <tr>
+          <th>Job ID</th>
           <th>Title</th>
           <th>Employees Needed</th>
-          <th>Date Posted</th>
+          <th>Date Applied</th>
           <th>Category</th>
           <th>Description</th>
           <th>Status</th>
-          <th></th>
-          <th></th>
         </tr>
       </thead>
     </table>
@@ -66,10 +65,6 @@ $(document).ready(function(){
       },{
         "orderable": false,
         //    "width":"25%"
-      }, {
-        "orderable": false,
-        //  "width":"10%"
-
       }
     ],
     "language": {
@@ -77,43 +72,13 @@ $(document).ready(function(){
       "searchPlaceholder": "search"
     },
     "ajax" : {
-      url:"../database/fetch_applications.php",
+      url:"../database/fetch_applied_job.php",
       type:"POST"
     }
   });
 }
+});
 
-$("#user_data").on('click', '.apply', function(){
-  var id = $(this).attr("id");
-    $.ajax({
-    url:'../database/update_applies.php',
-    method:"POST",
-    data:{id:id},
-    error: function(xhr, error){
-        console.log(xhr); console.log(error);
-    },
-    success:function(){
-      console.log('it')
-      $('#user_data').DataTable().ajax.reload(null,false);
-       }
-  });
-    });
-$("#user_data").on('click', '.withdraw', function(){
-  var id = $(this).attr("id");
-    $.ajax({
-    url:'../database/update_applies_withdraws.php',
-    method:"POST",
-    data:{id:id},
-    error: function(xhr, error){
-        console.log(xhr); console.log(error);
-    },
-    success:function(){
-      console.log('it')
-      $('#user_data').DataTable().ajax.reload(null,false);
-       }
-  });
-    });
-  });
 
 </script>
 <?php include "footer.php"?>
