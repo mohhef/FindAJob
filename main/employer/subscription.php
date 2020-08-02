@@ -23,7 +23,7 @@
             </label>
         </div>
         </br>
-        <input type="submit" id="sub" value="Submit" class="col-sm-1 ml-2 mt-3 btn btn-primary" style="margin-bottom:20px;">
+        <input type="submit" id="sub" value="Submit and continue to payment" class="btn btn-primary" style="margin-bottom:20px;">
     </form>
 </div>
 
@@ -42,12 +42,14 @@
             function(result) {
                 if(result == true){
                     $.post("../database/update_category.php",{
-                        user_name: 'caren',
                         category: category
                     });
                 }
-            })
-        })
+                var url = "./payment.php";
+                window.location = url;
+            });
+        });
+        
     }
 </script>
 <?php include "footer.php"?>
