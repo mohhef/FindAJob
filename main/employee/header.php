@@ -64,7 +64,7 @@
       <a class="btn btn-outline-primary" href="post_job.php" id="pipeview">Offer Status</a>
     </div>
     <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="subscription.php" id="pipeview">a</a>
+      <a class="btn btn-outline-primary" href="subscription.php" id="pipeview">Subscription</a>
     </div>
     <div class="col-md-1-auto" id="change4">
       <a class="btn btn-danger" onclick="cookieset_employee();" id="cooks">Logout</a>
