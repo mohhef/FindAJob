@@ -44,21 +44,28 @@
                                     <label for="card_no" class="control-label">Card Number</label>
                                     <div class="card-no"></div>
                                 </div>
+                                </div>
+                                <div class="row">
                                 <div class="col-md-4 form-group">
                                     <label for="name" class="control-label">Name</label>
                                     <input type="text" class="form-control" id="name" name="name" placeholder="Name">
                                 </div>
+                                </div>
+                                <div class="row">
                                 <div class="col-md-4 form-group">
                                     <label for="expiration_date" class="control-label">Expiration Date</label>
                                     <input type="text" class="form-control" id="expiration_date" name="expiration_date"
                                         placeholder="YYYY/MM/DD">
                                 </div>
+                                </div>
+                                <div class="row">
                                 <div class="col-md-4 form-group">
                                     <label for="automatic_manual" class="control-label">Automatic/Manual</label>
                                     <input type="text" class="form-control" id="automatic_manual"
                                         name="automatic_manual" placeholder="Automatic/Manual">
                                 </div>
-                            </div>
+                                </div>
+                            
                         </div>
                     </div>
                     <div class="modal-footer">
