@@ -99,6 +99,7 @@ insert into subscription_category_loyee(category,price) values ('gold','$20');
 create table employee(
     user_name varchar(20),
     category varchar(100),
+        preferred_method int,  
     primary key(user_name),
     foreign key (user_name) references all_user(user_name),
     foreign key (user_name,preferred_method) references loyee_credit_pays(user_name,card_number),
