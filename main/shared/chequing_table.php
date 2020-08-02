@@ -33,16 +33,16 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-2 form-group">
+                            <div class="col-md form-group">
                                 <label for="accountNo" class="control-label">Account Number</label>
                                 <div class="account-no"></div>
                             </div>
-                            <div class="col-md-2 form-group">
+                            <div class="col-md form-group">
                                 <label for="bankNo" class="control-label">Bank Number</label>
                                 <input type="text" class="form-control" id="bankNo" name="bankNo"
                                     placeholder="Bank Number">
                             </div>
-                            <div class="col-md-1 form-group">
+                            <div class="col-md form-group">
                                 <label for="transitNo" class="control-label">Transit Number</label>
                                 <input type="text" class="form-control" id="transitNo" name="transitNo"
                                     placeholder="Transit Number">
@@ -148,7 +148,7 @@ $(document).ready(function() {
                 $('#transitNo').val(data.transit_no);
                 $('.modal-title').html("<i class='fa fa-plus'></i> Update Chequing Details");
                 $('.submit').html(
-                    "<input type='submit' name='save' id='save' class='btn btn-info modal-save submit_update' value='Save' />"
+                    "<input type='submit' name='save' class='btn btn-info modal-save submit_update' value='Save' />"
                 );
                 $('.account-no').html(
                     "<input disabled type='text' class='form-control' id='accountNo' name='accountNo' placeholder='Account Number' value=" + account_no + ">"
@@ -163,7 +163,7 @@ $(document).ready(function() {
         $('#chequingUpdateModal').modal('show');
         $('.modal-title').html("<i class='fa fa-plus'></i> Create Chequing Details");
         $('.submit').html(
-            "<input type='submit' name='save' id='save' class='btn btn-info modal-save submit_create' value='Save' />"
+            "<input type='submit' name='save' class='btn btn-info modal-save submit_create' value='Save' />"
         );
         $('.account-no').html(
             "<input type='text' class='form-control' id='accountNo' name='accountNo' placeholder='Account Number'>"
