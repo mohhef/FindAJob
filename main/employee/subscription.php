@@ -51,7 +51,7 @@ function validateForm() {
                         category: category
                     });
                 }
-                var url = "./payment.php";
+                var url = "../shared/payment.php";
                 window.location = url;
             });
     });
