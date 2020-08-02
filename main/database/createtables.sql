@@ -37,8 +37,11 @@ insert into subscription_category_loyer(category,price) values ('gold','$100');
 
 create table employer(
     user_name varchar(20),
-    category varchar(100),  
+    category varchar(100),
+    preferred_method int,  
     primary key(user_name),
+    foreign key (user_name,preferred_method) references loyer_credit_pays(user_name,card_number),
+    foreign key (user_name,preferred_method) references loyer_checquing_pays(user_name,account_no),
     foreign key (user_name) references all_user(user_name),
     foreign key (category) references subscription_category_loyer(category)
 );
@@ -71,7 +74,7 @@ create table admin(
 insert into admin(user_name,password) values('bigboss','123456');
 
 create table card_method(
-    card_number int(20),
+    card_number int,
     name varchar(20),
     expiration_date date,
     primary key(card_number)
@@ -96,8 +99,11 @@ insert into subscription_category_loyee(category,price) values ('gold','$20');
 create table employee(
     user_name varchar(20),
     category varchar(100),
+        preferred_method int,  
     primary key(user_name),
     foreign key (user_name) references all_user(user_name),
+    foreign key (user_name,preferred_method) references loyee_credit_pays(user_name,card_number),
+    foreign key (user_name,preferred_method) references loyee_checquing_pays(user_name,account_no),
     foreign key (category) references subscription_category_loyee(category)
 );
 

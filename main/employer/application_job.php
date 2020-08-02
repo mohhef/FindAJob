@@ -11,10 +11,10 @@
         <tr>
           <th>Job ID</th>
           <th>Title</th>
+          <th>Date Applied</th>
           <th>Category</th>
           <th>Description</th>
-          <th>Status</th>
-          <th>Username</th>
+          <th>User Name</th>
           <th>Offer</th>
           <th></th>
         </tr>
@@ -38,8 +38,7 @@ $(document).ready(function(){
       "sDom": "Rlfrtip",
       "bAutoWidth":false,
       "responsive":true,
-      "scrollY": "660px",
-      "scrollX": true,
+
       "scrollCollapse": true,
       "processing":true,
       "serverSide":true,
@@ -69,9 +68,6 @@ $(document).ready(function(){
       },{
         "orderable": false,
         //    "width":"25%"
-      },{
-        "orderable": false,
-        //    "width":"25%"
       }
     ],
     "language": {
@@ -79,11 +75,41 @@ $(document).ready(function(){
       "searchPlaceholder": "search"
     },
     "ajax" : {
-      url:"../database/fetch_applied_jobs.php",
+      url:"../database/fetch_job_applications.php",
       type:"POST"
     }
   });
 }
-});
+$("#user_data").on('click', '.offer', function(){
+  var id = $(this).attr("id");
+  console.log(id);
+  $.ajax({
+    url:'../database/get_jobposts.php',
+    method:"POST",
+    data:{id:id},
+    dataType:"json",
+    success:function(data){
+      bootbox.alert({
+        message:"Offer the job '"+id+ "'",
+       callback: function() {
+          $.ajax({
+            url:'../database/offer_job.php',
+            method: "POST",
+            data:{id:id,loyee_username:data.user_name},
+            dataType:"json",
+            success: function(data){
+              $('#alert_message').html('<div class="alert alert-success">'+'dsf'+'</div>');
+              $('#user_data').DataTable().ajax.reload(null,false);
+            }
+          });
+          setInterval(function(){
+                  $('#alert_message').html('');
+                }, 5000);
+          }
+        });
+        }
+      });
+      });
+      });
 </script>
 <?php include "footer.php"?>
