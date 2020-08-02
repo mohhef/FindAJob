@@ -7,6 +7,8 @@
 
     <div id="alert_message"></div>
 
+    <div class="current-info"></div>
+
     <label class="mr-2 font-weight-bold" for="inlineFormCustomSelectO">Choose a Category</label>
     </br>
     <form name="myForm" id="formid" onsubmit="return validateForm()" method="POST">
@@ -29,6 +31,16 @@
 </div>
 
 <script>
+
+$(document).ready(function() {
+        $.post("../database/current_payment_info.php", {}).done(function(data) {
+            $result = $.parseJSON(data);
+            $('.current-info').html(
+                "<div>Your current subscription is:  <strong>" + $result.category + "</strong></div></br><div>Your current Payment ID is:  <strong>" + $result["preferred_method"] + "</strong></div></br>"
+            );
+        });
+});
+
 function validateForm() {
     event.preventDefault();
     var category_list = document.getElementsByName('category');
