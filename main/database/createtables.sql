@@ -101,8 +101,8 @@ create table employee(
     category varchar(100),
     primary key(user_name),
     foreign key (user_name) references all_user(user_name),
-    foreign key (user_name,preferred_method) references loyer_credit_pays(user_name,card_number),
-    foreign key (user_name,preferred_method) references loyer_checquing_pays(user_name,account_no),
+    foreign key (user_name,preferred_method) references loyee_credit_pays(user_name,card_number),
+    foreign key (user_name,preferred_method) references loyee_checquing_pays(user_name,account_no),
     foreign key (category) references subscription_category_loyee(category)
 );
 
