@@ -149,8 +149,8 @@ create table manages(
     foreign key(user_name) references all_user(user_name),
     foreign key(auser_name) references admin(user_name)
 );
-insert into manages(user_name,auser_name,activate_deactivate)values('caren','bigboss','activate');
-insert into manages(user_name,auser_name,activate_deactivate)values('carenloyee','bigboss','activate');
+insert into manages(user_name,auser_name,activate_deactivate)values('caren','bigboss','active');
+insert into manages(user_name,auser_name,activate_deactivate)values('carenloyee','bigboss','active');
 
 create table loyer_credit_pays(
     user_name varchar(20)  ,

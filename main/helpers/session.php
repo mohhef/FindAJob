@@ -2,7 +2,7 @@
 session_start();
 if(isset($_COOKIE['employee_username'])){
 
-    header("Location: http://".$_SERVER['HTTP_HOST'].'/comp-353/main/employee/apply_job.php');
+    header("Location: http://".$_SERVER['HTTP_HOST'].'/comp-353/main/employee/available_job.php');
 
 }
 if(isset($_COOKIE['employer_username'])){
