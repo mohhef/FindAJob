@@ -17,7 +17,6 @@ function insertJob($job_title,$emp_no,$description_box,$date_posted,$category_se
     $query1 ="INSERT INTO job (title,employee_needed,description,date_posted,category) VALUES ('$job_title','$emp_no','$description_box','$date_posted','$category_sel')";
     $query3 ="INSERT INTO post (user_name) VALUES ('$user_name')";
     $result = mysqli_query($conn, $query1);
-    $result2 = mysqli_query($conn, $query2);
     $result3 = mysqli_query($conn, $query3);
     if(true)
     {
