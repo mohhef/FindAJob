@@ -42,7 +42,6 @@
             function(result) {
                 if(result == true){
                     $.post("../database/update_category.php",{
-                        user_name: 'caren',
                         category: category
                     });
                 }
