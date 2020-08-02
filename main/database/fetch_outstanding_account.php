@@ -1,20 +1,11 @@
 <?php
 
 require("config.php");
-//$query =mysqli_query($conn,"SELECT * FROM `automation_data`");
+
 $columns = array('user_name', 'email','balance', 'since');
 
 $query1= "SELECT e.user_name, e.email, e.balance  FROM all_user e WHERE e.balance < 0  ";
 
-// if(isset($_POST["search"]["value"])){
-// $query1.='  and job_id LIKE "%'.$_POST["search"]["value"].'%"
-//  OR title LIKE "%'.$_POST["search"]["value"].'%"
-//  OR description LIKE "%'.$_POST["search"]["value"].'%"
-//  OR category LIKE "%'.$_POST["search"]["value"].'%"
-//  OR date_posted LIKE "%'.$_POST["search"]["value"].'%"
-//  OR employee_needed LIKE "%'.$_POST["search"]["value"].'%"
-//  ';
-// }
 
 if(isset($_POST["order"])){
   $query1.='ORDER BY '.$columns[$_POST['order']['0']['column']].' '.$_POST['order']['0']['dir'].'
