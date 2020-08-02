@@ -9,7 +9,7 @@
           <th>Job ID</th>
           <th>Title</th>
           <th>Employees Needed</th>
-          <th>Date Posted</th>
+          <th>Date Applied</th>
           <th>Category</th>
           <th>Description</th>
           <th>Status</th>
