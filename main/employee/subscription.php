@@ -40,7 +40,6 @@
 $(document).ready(function() {
         $.post("../database/current_payment_info.php", {}).done(function(data) {
             $result = $.parseJSON(data);
-            console.log($result);
             $('.current-info').html(
                 "<div>Your current subscription is:  <strong>" + $result.category + "</strong></div></br><div>Your current Payment ID is:  <strong>" + $result["preferred_method"] + "</strong></div></br>"
             );
