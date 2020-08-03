@@ -11,6 +11,60 @@ window.onload = function() {
       })
     }
   }
+
+  window.onload = function() {
+    var id = getCookie("employer_username");
+    $.ajax({
+    url:'../database/get_frozen_account.php',
+    method:"POST",
+    data:{id:id},
+    error: function(xhr, error){
+        console.log(xhr); console.log(error);
+    },
+    success:function(data){
+       console.log(data);
+      if(data == 1){
+        console.log('robert');
+        if ( document.URL.includes("subscription.php") || document.URL.includes("payment.php")  || document.URL.includes("chequing_table.php")  || document.URL.includes("card_table.php")) {
+        }else{
+         redirect_to_subscription();
+        }
+        
+          var elements = document.getElementsByClassName("frozen");
+          console.log(elements.length);
+          
+           elements[0].style.display = 'none';
+           elements[1].style.display = 'none';
+           elements[2].style.display = 'none';
+     
+      }
+     
+    }
+   })
+  };
+
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function redirect_to_subscription(){
+  location.href = "subscription.php";
+}
+
 </script>
+
 </body>
 </html>
