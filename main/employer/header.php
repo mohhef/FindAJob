@@ -54,15 +54,21 @@
         <img src="../png/findAjob.png" width=auto height=70px alt="" width=auto height=50px id ="Logo" position:absolute;>
       </a>
     </div>
+    <div class="frozen">
     <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="post_job.php" id="pipeview">Post A job</a>
+      <a class="here btn btn-outline-primary" href="post_job.php" id="pipeview">Post A job</a>
     </div>
+  </div>
+  <div class="frozen">
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="view_job.php" id="pipeview">Modify A job</a>
     </div>
+  </div>
+  <div class="frozen">
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="application_job.php" id="pipeview">Job Applications</a>
     </div>
+  </div>
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="subscription.php" id="pipeview">Subscription</a>
     </div>
