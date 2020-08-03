@@ -13,15 +13,21 @@
     </br>
     <form name="myForm" id="formid" onsubmit="return validateForm()" method="POST">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="category" id="prime" value="prime" checked>
+            <input class="form-check-input" type="radio" name="category" id="basic" value="basic" checked>
             <label class="form-check-label" for="prime">
-                Prime -- 50$/Month
+                Basic -- Free
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="category" id="prime" value="prime">
+            <label class="form-check-label" for="prime">
+                Prime -- 10$/Month
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="category" id="gold" value="gold">
             <label class="form-check-label" for="gold">
-                Gold -- 100$/Month
+                Gold -- 20$/Month
             </label>
         </div>
         </br>
@@ -31,7 +37,6 @@
 </div>
 
 <script>
-
 $(document).ready(function() {
         $.post("../database/current_payment_info.php", {}).done(function(data) {
             $result = $.parseJSON(data);
@@ -53,7 +58,7 @@ function validateForm() {
             function(result) {
                 if (result == true) {
                     $.post("../database/update_category.php", {
-                        user_type: "employer",
+                        user_type: "employee",
                         category: category
                     });
                 }
