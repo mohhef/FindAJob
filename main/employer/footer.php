@@ -22,9 +22,9 @@ window.onload = function() {
         console.log(xhr); console.log(error);
     },
     success:function(data){
-       console.log(data);
+      
       if(data == 1){
-        console.log('robert');
+       
         if ( document.URL.includes("subscription.php") || document.URL.includes("payment.php")  || document.URL.includes("chequing_table.php")  || document.URL.includes("card_table.php")) {
         }else{
          redirect_to_subscription();
@@ -35,10 +35,8 @@ window.onload = function() {
           
            elements[0].style.display = 'none';
            elements[1].style.display = 'none';
-           elements[2].style.display = 'none';
-     
-      }
-     
+           elements[2].style.display = 'none';   
+      } 
     }
    })
   };
