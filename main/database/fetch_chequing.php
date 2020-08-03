@@ -1,6 +1,11 @@
 <?php
     require("config.php");
-    $user_name=$_COOKIE['employer_username'];
+    $user_name = '';
+    if (isset($_COOKIE['employee_username'])) {
+        $user_name = $_COOKIE['employee_username'];
+    } else if (isset($_COOKIE['employer_username'])){
+        $user_name = $_COOKIE['employer_username'];
+    }
     $columns = array('account_no','bank_no', 'transit_no');
     $query1= "SELECT chequing.account_no, chequing.bank_no, chequing.transit_no from loyer_chequing JOIN chequing ON loyer_chequing.account_no = chequing.account_no AND loyer_chequing.user_name = '$user_name'";
 
@@ -22,7 +27,7 @@
     while($row = mysqli_fetch_array($result))
     {
         $sub_array = array();
-        if(count($preffered_method) > 0 && $preffered_method[0] == $row["account_no"]) {
+        if(isset($preffered_method) && count($preffered_method) > 0 && $preffered_method[0] == $row["account_no"]) {
             $sub_array[] = '<div class="radio"><label><input type="radio" name="optradio" value="'.$row["account_no"].'" checked></label></div>';
         } else {
             $sub_array[] = '<div class="radio"><label><input type="radio" name="optradio" value="'.$row["account_no"].'"></label></div>';

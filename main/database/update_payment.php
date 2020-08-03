@@ -3,9 +3,16 @@
 updatePayment();
 function updatePayment() {
     require('config.php');
-    echo($_POST['category']);
-    echo($_POST['id']);
-    $query1 = "UPDATE `employer` SET preferred_method ='".$_POST['id']."' WHERE user_name = '$_COOKIE[employer_username]'";
+    $user = '';
+    $type = '';
+    if (isset($_COOKIE['employer_username'])) {
+        $type = "employer";
+        $user = $_COOKIE['employer_username'];
+    } else if (isset($_COOKIE['employee_username'])) {
+        $user = $_COOKIE['employee_username'];
+        $type = "employee";
+    }
+    $query1 = "UPDATE `$type` SET preferred_method ='".$_POST['id']."' WHERE user_name = '$user'";
     $result = mysqli_query($conn, $query1);
     if(true)
     {
