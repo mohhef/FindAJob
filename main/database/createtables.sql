@@ -12,6 +12,7 @@ create table all_user(
     email varchar(100),
     balance int,
     password varchar(200),
+    last_payment date,
     primary key(user_name)
 );
 insert into all_user(user_name,email,password) values ('caren','c123en@hello.com','123');
