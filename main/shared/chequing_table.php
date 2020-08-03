@@ -33,16 +33,16 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md form-group">
+                            <div class="col-md-2 form-group">
                                 <label for="accountNo" class="control-label">Account Number</label>
                                 <div class="account-no"></div>
                             </div>
-                            <div class="col-md form-group">
+                            <div class="col-md-2 form-group">
                                 <label for="bankNo" class="control-label">Bank Number</label>
                                 <input type="text" class="form-control" id="bankNo" name="bankNo"
                                     placeholder="Bank Number">
                             </div>
-                            <div class="col-md form-group">
+                            <div class="col-md-1 form-group">
                                 <label for="transitNo" class="control-label">Transit Number</label>
                                 <input type="text" class="form-control" id="transitNo" name="transitNo"
                                     placeholder="Transit Number">
