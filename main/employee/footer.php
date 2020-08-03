@@ -23,9 +23,9 @@ window.onload = function() {
         console.log(xhr); console.log(error);
     },
     success:function(data){
-       console.log(data);
+       
       if(data == 1){
-        console.log('robert');
+       
         if ( document.URL.includes("job_offers.php")) {
         }else{
          redirect_to_job_offers();

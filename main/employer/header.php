@@ -56,7 +56,7 @@
     </div>
     <div class="frozen">
     <div class="col-md-1-auto" id="change1">
-      <a class="here btn btn-outline-primary" href="post_job.php" id="pipeview">Post A job</a>
+      <a class="btn btn-outline-primary" href="post_job.php" id="pipeview">Post A job</a>
     </div>
   </div>
   <div class="frozen">
