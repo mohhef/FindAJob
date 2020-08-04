@@ -2,7 +2,7 @@
 <?php
 //create connection
 $username = 'root';
-$password = 'root';
+$password = '';
 $hostname = 'localhost';
 $database =  'web_career';
 
