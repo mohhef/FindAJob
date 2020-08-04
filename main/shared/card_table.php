@@ -44,28 +44,30 @@
                                     <label for="card_no" class="control-label">Card Number</label>
                                     <div class="card-no"></div>
                                 </div>
-                                </div>
-                                <div class="row">
+                            </div>
+                            <div class="row">
                                 <div class="col-md-4 form-group">
                                     <label for="name" class="control-label">Name</label>
                                     <input type="text" class="form-control" id="name" name="name" placeholder="Name">
                                 </div>
-                                </div>
-                                <div class="row">
+                            </div>
+                            <div class="row">
                                 <div class="col-md-4 form-group">
                                     <label for="expiration_date" class="control-label">Expiration Date</label>
                                     <input type="text" class="form-control" id="expiration_date" name="expiration_date"
                                         placeholder="YYYY/MM/DD">
                                 </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label for="automatic_manual">Automatic/Manual</label>
+                                    <select id="automatic_manual" class="form-control" name="automatic_manual">
+                                        <option selected value="automatic">Automatic</option>
+                                        <option value="manual">Manual</option>
+                                    </select>
                                 </div>
-                                <div class="row">
-                                <div class="col-md-4 form-group">
-                                    <label for="automatic_manual" class="control-label">Automatic/Manual</label>
-                                    <input type="text" class="form-control" id="automatic_manual"
-                                        name="automatic_manual" placeholder="Automatic/Manual">
-                                </div>
-                                </div>
-                            
+                            </div>
+
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -184,7 +186,7 @@
             $('#cardModal').modal('show');
             $('.modal-title').html("<i class='fa fa-plus'></i> Create Card Details");
             $('.submit').html(
-                "<input type='submit' name='save' id='save' class='btn btn-info modal-save submit_create_card' value='Save' />"
+                "<input type='submit' name='save' class='btn btn-info modal-save submit_create_card' value='Save' />"
             );
             $('.card-no').html(
                 "<input type='text' class='form-control' id='card_number' name='card_number' placeholder='Card Number'>"
@@ -203,7 +205,6 @@
                     $('#alert_message').html('');
                 }, 5000);
             })
-
         });
 
         $("#cardModal").on('click', '.submit_create_card', function(event) {
@@ -212,7 +213,7 @@
             var card_number = jQuery('input[name="card_number"]').val();
             var name = jQuery('input[name="name"]').val();
             var expiration_date = jQuery('input[name="expiration_date"]').val();
-            var automatic_manual = jQuery('input[name="automatic_manual"]').val();
+            var automatic_manual = document.getElementById('automatic_manual').value;
             $.post("../database/create_card.php", {
                 post_card: true,
                 card_number: card_number,
@@ -232,7 +233,7 @@
             var card_number = jQuery('input[name="card_number"]').val();
             var name = jQuery('input[name="name"]').val();
             var expiration_date = jQuery('input[name="expiration_date"]').val();
-            var automatic_manual = jQuery('input[name="automatic_manual"]').val();
+            var automatic_manual = document.getElementById('automatic_manual').value;
             var formData = {
                 card_number: card_number,
                 name: name,
