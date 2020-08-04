@@ -15,6 +15,7 @@
                     <th>Account Number</th>
                     <th>Bank Number</th>
                     <th>Transit Number</th>
+                    <th>Automatic/Manual</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -32,20 +33,27 @@
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-2 form-group">
+                        <div class="column">
+                            <div class="col-md form-group">
                                 <label for="accountNo" class="control-label">Account Number</label>
                                 <div class="account-no"></div>
                             </div>
-                            <div class="col-md-2 form-group">
+                            <div class="col-md form-group">
                                 <label for="bankNo" class="control-label">Bank Number</label>
                                 <input type="text" class="form-control" id="bankNo" name="bankNo"
                                     placeholder="Bank Number">
                             </div>
-                            <div class="col-md-1 form-group">
+                            <div class="col-md form-group">
                                 <label for="transitNo" class="control-label">Transit Number</label>
                                 <input type="text" class="form-control" id="transitNo" name="transitNo"
                                     placeholder="Transit Number">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="automatic_manual">Automatic/Manual</label>
+                                <select id="automatic_manual" class="form-control" name="automatic_manual">
+                                    <option selected value="automatic">Automatic</option>
+                                    <option value="manual">Manual</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -86,7 +94,10 @@ $(document).ready(function() {
             "columns": [{
                 "orderable": false,
                 // "width":"25px"
-            },{
+            }, {
+                "orderable": true,
+                // "width":"25px"
+            }, {
                 "orderable": true,
                 // "width":"25px"
             }, {
@@ -146,12 +157,14 @@ $(document).ready(function() {
                 $('#accountNo').val(data.account_no);
                 $('#bankNo').val(data.bank_no);
                 $('#transitNo').val(data.transit_no);
+                $('#automatic_manual').val(data.automatic_manual);
                 $('.modal-title').html("<i class='fa fa-plus'></i> Update Chequing Details");
                 $('.submit').html(
-                    "<input type='submit' name='save' id='save' class='btn btn-info modal-save submit_update' value='Save' />"
+                    "<input type='submit' name='save' class='btn btn-info modal-save submit_update' value='Save' />"
                 );
                 $('.account-no').html(
-                    "<input disabled type='text' class='form-control' id='accountNo' name='accountNo' placeholder='Account Number' value=" + account_no + ">"
+                    "<input disabled type='text' class='form-control' id='accountNo' name='accountNo' placeholder='Account Number' value=" +
+                    account_no + ">"
                 );
                 $('#action').val('update_data');
                 $('#save').val('Save');
@@ -163,7 +176,7 @@ $(document).ready(function() {
         $('#chequingUpdateModal').modal('show');
         $('.modal-title').html("<i class='fa fa-plus'></i> Create Chequing Details");
         $('.submit').html(
-            "<input type='submit' name='save' id='save' class='btn btn-info modal-save submit_create' value='Save' />"
+            "<input type='submit' name='save' class='btn btn-info modal-save submit_create' value='Save' />"
         );
         $('.account-no').html(
             "<input type='text' class='form-control' id='accountNo' name='accountNo' placeholder='Account Number'>"
@@ -176,10 +189,12 @@ $(document).ready(function() {
         var accountNo = jQuery('input[name="accountNo"]').val();
         var bankNo = jQuery('input[name="bankNo"]').val();
         var transitNo = jQuery('input[name="transitNo"]').val();
+        var automatic_manual = document.getElementById('automatic_manual').value;
         var formData = {
             account_no: accountNo,
             bank_no: bankNo,
-            transit_no: transitNo
+            transit_no: transitNo,
+            automatic_manual: automatic_manual
         }
         $.ajax({
             url: "../database/update_chequing.php",
@@ -200,11 +215,13 @@ $(document).ready(function() {
         var accountNo = jQuery('input[name="accountNo"]').val();
         var bankNo = jQuery('input[name="bankNo"]').val();
         var transitNo = jQuery('input[name="transitNo"]').val();
+        var automatic_manual = document.getElementById('automatic_manual').value;
         $.post("../database/create_chequing.php", {
             post_chequing: true,
             account_no: accountNo,
             bank_no: bankNo,
             transit_no: transitNo,
+            automatic_manual: automatic_manual
         });
         $('#chequingForm')[0].reset();
         $('#chequingUpdateModal').modal('hide');
@@ -235,7 +252,7 @@ $(document).ready(function() {
                     inputType: 'radio',
                     inputOptions: [{
                         text: "Delete the chequing with account number: '" +
-                        $account_no + "'",
+                            $account_no + "'",
                         value: '1',
                     }],
                     callback: function(result) {
@@ -249,7 +266,8 @@ $(document).ready(function() {
                                 success: function(data) {
                                     $('#alert_message').html(
                                         '<div class="alert alert-success"> Deleted Successfully the Following: ' +
-                                        data.account_no + '</div>');
+                                        data.account_no +
+                                        '</div>');
                                     $('#chequing_data').DataTable()
                                         .ajax.reload(null, false);
                                 }

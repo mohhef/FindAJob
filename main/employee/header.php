@@ -13,7 +13,7 @@
     <script src="../js/bootbox.locales.min.js"></script>
     <?php }
         elseif(basename($_SERVER['PHP_SELF']) == 'available_job.php' ||
-         basename($_SERVER['PHP_SELF']) == 'subscription.php' || basename($_SERVER['PHP_SELF']) == 'applied_job.php'){
+         basename($_SERVER['PHP_SELF']) == 'subscription.php' || basename($_SERVER['PHP_SELF']) == 'applied_job.php' ||  basename($_SERVER['PHP_SELF']) == 'payment.php'){
       ?>
       <script src="../js/jquery-3.31.js"></script>
       <script src="../js/bootstrap.min.js"></script>
@@ -37,7 +37,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />
       <?php }
         elseif(basename($_SERVER['PHP_SELF']) == 'available_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php'|| 
-        basename($_SERVER['PHP_SELF']) == 'applied_job.php' ){
+        basename($_SERVER['PHP_SELF']) == 'applied_job.php' ||  basename($_SERVER['PHP_SELF']) == 'payment.php'){
       ?>
       <link rel="stylesheet" href="../css/4.1.3bootstrap.css">
       <link rel="stylesheet" type="text/css" href="../css/maindata.css" />
@@ -54,17 +54,21 @@
         <img src="../png/findAjob.png" width=auto height=70px alt="" width=auto height=50px id ="Logo" position:absolute;>
       </a>
     </div>
+    <div class="frozen">
     <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="available_job.php" id="pipeview">Jobs Available</a>
+      <a class="btn btn-outline-primary" href="\comp-353\main\employee\available_job.php" id="pipeview">Jobs Available</a>
+    </div>
+  </div>
+  <div class="frozen">
+    <div class="col-md-1-auto" id="change1">
+      <a class="btn btn-outline-primary" href="\comp-353\main\employee\applied_job.php" id="pipeview">Applied Jobs</a>
+    </div>
+  </div>
+    <div class="col-md-1-auto" id="change1">
+      <a class="btn btn-outline-primary" href="\comp-353\main\employee\post_job.php" id="pipeview">Offer Status</a>
     </div>
     <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="applied_job.php" id="pipeview">Applied Jobs</a>
-    </div>
-    <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="post_job.php" id="pipeview">Offer Status</a>
-    </div>
-    <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="subscription.php" id="pipeview">a</a>
+      <a class="btn btn-outline-primary" href="\comp-353\main\employee\subscription.php" id="pipeview">Subscription</a>
     </div>
     <div class="col-md-1-auto" id="change4">
       <a class="btn btn-danger" onclick="cookieset_employee();" id="cooks">Logout</a>
