@@ -3,8 +3,8 @@
 //create connection
 function connDB()
 {
-	$username = 'user';
-	$password = 'password';
+	$username = 'root';
+	$password = 'root';
 	$hostname = '127.0.0.1';
 	$database = 'web_career';
 
