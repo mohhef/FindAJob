@@ -148,7 +148,7 @@ $(document).ready(function() {
                 $('#transitNo').val(data.transit_no);
                 $('.modal-title').html("<i class='fa fa-plus'></i> Update Chequing Details");
                 $('.submit').html(
-                    "<input type='submit' name='save' id='save' class='btn btn-info modal-save submit_update' value='Save' />"
+                    "<input type='submit' name='save' class='btn btn-info modal-save submit_update' value='Save' />"
                 );
                 $('.account-no').html(
                     "<input disabled type='text' class='form-control' id='accountNo' name='accountNo' placeholder='Account Number' value=" + account_no + ">"
@@ -163,7 +163,7 @@ $(document).ready(function() {
         $('#chequingUpdateModal').modal('show');
         $('.modal-title').html("<i class='fa fa-plus'></i> Create Chequing Details");
         $('.submit').html(
-            "<input type='submit' name='save' id='save' class='btn btn-info modal-save submit_create' value='Save' />"
+            "<input type='submit' name='save' class='btn btn-info modal-save submit_create' value='Save' />"
         );
         $('.account-no').html(
             "<input type='text' class='form-control' id='accountNo' name='accountNo' placeholder='Account Number'>"

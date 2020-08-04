@@ -3,7 +3,6 @@ create database web_career;
 SET FOREIGN_KEY_CHECKS=0;
 create table contact_info(
     telephone_number varchar(20),
-    company_name varchar(50),
     primary key(telephone_number)
 );
 
@@ -38,10 +37,11 @@ insert into subscription_category_loyer(category,price) values ('gold','$100');
 create table employer(
     user_name varchar(20),
     category varchar(100),
+    company_name varchar(50),
     preferred_method int,  
     primary key(user_name),
-    foreign key (user_name,preferred_method) references loyer_credit_pays(user_name,card_number),
-    foreign key (user_name,preferred_method) references loyer_checquing_pays(user_name,account_no),
+    -- foreign key (user_name,preferred_method) references loyer_credit_pays(user_name,card_number),
+    -- foreign key (user_name,preferred_method) references loyer_checquing_pays(user_name,account_no),
     foreign key (user_name) references all_user(user_name),
     foreign key (category) references subscription_category_loyer(category)
 );

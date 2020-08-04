@@ -56,21 +56,21 @@
     </div>
     <div class="frozen">
     <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="post_job.php" id="pipeview">Post A job</a>
+      <a class="btn btn-outline-primary" href="\comp-353\main\employer\post_job.php" id="pipeview">Post A job</a>
     </div>
   </div>
   <div class="frozen">
     <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="view_job.php" id="pipeview">Modify A job</a>
+      <a class="btn btn-outline-primary" href="\comp-353\main\employer\view_job.php" id="pipeview">Modify A job</a>
     </div>
   </div>
   <div class="frozen">
     <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="application_job.php" id="pipeview">Job Applications</a>
+      <a class="btn btn-outline-primary" href="\comp-353\main\employer\application_job.php" id="pipeview">Job Applications</a>
     </div>
   </div>
     <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="subscription.php" id="pipeview">Subscription</a>
+      <a class="btn btn-outline-primary" href="\comp-353\main\employer\subscription.php" id="pipeview">Subscription</a>
     </div>
     <div class="col-md-1-auto" id="change4">
       <a class="btn btn-danger" onclick="cookieset_employer();" id="cooks">Logout</a>
