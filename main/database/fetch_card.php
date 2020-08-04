@@ -4,19 +4,21 @@
 
     if (isset($_COOKIE['employer_username'])) {
         $user = $_COOKIE['employer_username'];
+        $payment_type = "loyer_credit_pays";
         $type = "employer";
     } else if (isset($_COOKIE['employee_username'])) {
         $user = $_COOKIE['employee_username'];
+        $payment_type = "loyee_credit_pays";
         $type = "employee";
     }
 
     $columns = array('card_no','name', 'expiration_date', 'type');
-    $query1= "SELECT card_method.card_number, card_method.name, card_method.expiration_date, loyer_credit_pays.automatic_manual from loyer_credit_pays JOIN card_method ON loyer_credit_pays.card_number = card_method.card_number AND loyer_credit_pays.user_name = '$user'";
+    $query1= "SELECT card_method.card_number, card_method.name, card_method.expiration_date, t.automatic_manual from `$payment_type` t JOIN card_method ON t.card_number = card_method.card_number AND t.user_name = '$user'";
 
     $result = mysqli_query($conn,  $query1) or die ("Error 1");
 
-    function get_all_data($conn) {
-        $query = "SELECT card_method.card_number, card_method.name, card_method.expiration_date, loyer_credit_pays.automatic_manual from loyer_credit_pays JOIN card_method ON loyer_credit_pays.card_number = card_method.card_number";
+    function get_all_data($conn, $payment_type) {
+        $query = "SELECT card_method.card_number, card_method.name, card_method.expiration_date, t.automatic_manual from `$payment_type` t JOIN card_method ON t.card_number = card_method.card_number";
         $result = mysqli_query($conn, $query) or die ("Error 2");
         $row = mysqli_fetch_array($result);
         return mysqli_num_rows($result);
@@ -47,7 +49,7 @@
 
     $output = array(
         "draw"=>intval($_POST["draw"]),
-        "recordsTotal"=>get_all_data($conn),
+        "recordsTotal"=>get_all_data($conn, $payment_type),
         "recordsFiltered"=> $number_filter_row,
         "data"=> $data
     );
