@@ -128,7 +128,7 @@ $(document).ready(function() {
             createChequing()
         }
 
-    };
+    }
 
     function updateChequing(th) {
         var account_no = th.attr("id");
