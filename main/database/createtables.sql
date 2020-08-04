@@ -177,6 +177,7 @@ create table loyee_credit_pays(
 create table loyer_chequing(
     account_no int  ,
     user_name varchar(20)  ,
+    automatic_manual varchar(20),
     primary key(account_no,user_name),
     foreign key(account_no) references chequing(account_no),
     foreign key(user_name) references employer(user_name)
@@ -185,6 +186,7 @@ create table loyer_chequing(
 create table loyee_chequing(
     account_no int  ,
     user_name varchar(20)  ,
+    automatic_manual varchar(20),
     primary key(account_no,user_name),
     foreign key(account_no) references chequing(account_no),
     foreign key(user_name) references employee(user_name)
