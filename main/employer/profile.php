@@ -19,6 +19,44 @@
     </table>
   </div>
 </div>
+<div id="profileModal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <form method="post" id="profileForm" autocomplete="off">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" align="left">Edit Profile</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2 form-group">
+          <label for="name" class="control-label">Employer Name</label>
+          <input readonly type="text" class="form-control disabled" id="empID" name="empID" placeholder="employerID">
+        </div>
+
+
+        <div class="col-md-2 form-group">
+          <label for="lastname" class="control-label">Company Name</label>
+          <input type="text" class="form-control"  id="companyName" name="companyName" placeholder="Company Name" required>
+        </div>
+      </div>
+
+        <div class="col-4 form-group">
+          <label for="description" class="control-label">Telephone Number</label>
+          <textarea   class="form-control"  id="telephoneNumber" name="telephoneNumber"></textarea>
+        </div>
+      </div>
+    </div>
+      <div class="modal-footer">
+        <input type="hidden" name="jobid" id="jobid" />
+        <input type="hidden" name="action" id="action" value="" />
+        <input type="submit" name="save" id="save" class="btn btn-info" value="Save" />
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
 
 <nav id="nav" class="navbar navbar-expand-sm  navbar-dark">
 </nav>
@@ -76,6 +114,48 @@ $(document).ready(function(){
     }
   });
 }
+
+$("#profile_data").on('click', '.update', function(){
+  var id = $(this).attr("id");
+  var action = 'getPipeline';
+  $.ajax({
+    url:'../database/get_employer_profile.php',
+    method:"POST",
+    data:{id:id, action:action},
+    dataType:"json",
+    success:function(data){
+      $('#profileModal').modal('show');
+      $('#empID').val(data.user_name);
+      $('#companyName').val(data.company_name);
+      $('#telephoneNumber').val(data.telephone_number);
+       $('.modal-title').html("<i class='fa fa-plus'></i> Edit Profile Details");
+       $('#action').val('updateJob');
+       $('#save').val('Save');
+    }
+  });
+});
+
+
+$("#profileModal").on('submit','#profileForm', function(event){
+  event.preventDefault();
+  $('#save').attr('disabled','disabled');
+  var formData = $(this).serialize();
+  console.log(formData)
+  var companyName = jQuery('input[name="companyName"]').val();
+  var telephoneNumber = jQuery('input[name="telephoneNumber"]').val();
+   $.ajax({
+    url:"../database/update_profile.php",
+    method:"POST",
+    data:formData,
+    success:function(data){
+      $('#profileForm')[0].reset();
+      $('#profileModal').modal('hide');
+      $('#save').attr('disabled', false);
+      $('#profile_data').DataTable().ajax.reload(null,false);
+      console.log(formData);
+    }
+  });
+});
 
 
 });
