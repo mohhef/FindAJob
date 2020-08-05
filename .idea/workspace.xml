@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9b6d816-6da5-4570-a787-193642d61384" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/feba979a-ecdf-40e1-8bf1-c6f0434b172d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/feba979a-ecdf-40e1-8bf1-c6f0434b172d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/helpers/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/helpers/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/js/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +94,7 @@
       <workItem from="1596284788735" duration="17276000" />
       <workItem from="1596456144315" duration="82000" />
       <workItem from="1596456227744" duration="13575000" />
+      <workItem from="1596639587740" duration="1554000" />
     </task>
     <servers />
   </component>
@@ -100,10 +106,11 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="290" y="1484" width="1397" height="297" key="#SQL_Dialects/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596290277714" />
-    <state x="588" y="1294" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596493332908">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state x="634" y="236" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596640760907">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="588" y="1294" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596493332908" />
+    <state x="634" y="236" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1596640760907" />
     <state x="726" y="1381" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596285892833">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
@@ -112,10 +119,11 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="729" y="1485" width="519" height="294" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596496800317" />
-    <state x="776" y="1390" width="424" height="484" key="FileChooserDialogImpl" timestamp="1596456224653">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state x="816" y="329" width="424" height="484" key="FileChooserDialogImpl" timestamp="1596639583957">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="1390" width="424" height="484" key="FileChooserDialogImpl/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596456224653" />
+    <state x="816" y="329" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1596639583957" />
     <state width="1244" height="278" key="GridCell.Tab.0.bottom" timestamp="1596500933145">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
