@@ -761,5 +761,629 @@ SELECT|sys.sys_config:null
       <ObjectGrants>ALL PRIVILEGES
 </ObjectGrants>
     </user>
+    <table id="235" parent="7" name="admin"/>
+    <table id="236" parent="7" name="all_user"/>
+    <table id="237" parent="7" name="applies"/>
+    <table id="238" parent="7" name="card_method"/>
+    <table id="239" parent="7" name="category"/>
+    <table id="240" parent="7" name="chequing"/>
+    <table id="241" parent="7" name="contact"/>
+    <table id="242" parent="7" name="contact_info"/>
+    <table id="243" parent="7" name="employee"/>
+    <table id="244" parent="7" name="employer"/>
+    <table id="245" parent="7" name="job"/>
+    <table id="246" parent="7" name="loyee_chequing"/>
+    <table id="247" parent="7" name="loyee_credit_pays"/>
+    <table id="248" parent="7" name="loyer_chequing"/>
+    <table id="249" parent="7" name="loyer_credit_pays"/>
+    <table id="250" parent="7" name="manages"/>
+    <table id="251" parent="7" name="offer"/>
+    <table id="252" parent="7" name="post"/>
+    <table id="253" parent="7" name="representatives"/>
+    <table id="254" parent="7" name="subscription_category_loyee"/>
+    <table id="255" parent="7" name="subscription_category_loyer"/>
+    <table id="256" parent="7" name="temp_password"/>
+    <scheduled-event id="257" parent="7" name="remove_temp_password">
+      <SourceTextLength>86</SourceTextLength>
+      <Definer>user@localhost</Definer>
+      <Interval>&apos;1&apos; MINUTE</Interval>
+      <Starts>&apos;2020-08-04 08:47:34&apos;</Starts>
+      <Preserve>1</Preserve>
+      <Status>enabled</Status>
+      <LastExecuted>2020-08-04.07:49:34</LastExecuted>
+    </scheduled-event>
+    <column id="258" parent="235" name="user_name">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="259" parent="235" name="password">
+      <Position>2</Position>
+      <DataType>varchar(200)|0s</DataType>
+    </column>
+    <key id="260" parent="235" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="261" parent="236" name="user_name">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="262" parent="236" name="email">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+    </column>
+    <column id="263" parent="236" name="balance">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="264" parent="236" name="password">
+      <Position>4</Position>
+      <DataType>varchar(200)|0s</DataType>
+    </column>
+    <key id="265" parent="236" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="266" parent="237" name="job_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="267" parent="237" name="user_name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="268" parent="237" name="application_status">
+      <Position>3</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <column id="269" parent="237" name="date_applied">
+      <Position>4</Position>
+      <DataType>date|0s</DataType>
+    </column>
+    <index id="270" parent="237" name="user_name">
+      <ColNames>user_name</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="271" parent="237" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>job_id
+user_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="272" parent="237" name="applies_ibfk_1">
+      <ColNames>job_id</ColNames>
+      <RefTableName>job</RefTableName>
+      <RefColNames>job_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="273" parent="237" name="applies_ibfk_2">
+      <ColNames>user_name</ColNames>
+      <RefTableName>employee</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <column id="274" parent="238" name="card_number">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="275" parent="238" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <column id="276" parent="238" name="expiration_date">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+    </column>
+    <key id="277" parent="238" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>card_number</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="278" parent="239" name="c_name">
+      <Position>1</Position>
+      <DataType>varchar(15)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="279" parent="239" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>c_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="280" parent="240" name="account_no">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="281" parent="240" name="bank_no">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="282" parent="240" name="transit_no">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <key id="283" parent="240" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>account_no</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="284" parent="241" name="telephone_number">
+      <Position>1</Position>
+      <DataType>varchar(15)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="285" parent="241" name="euser_name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="286" parent="241" name="euser_name">
+      <ColNames>euser_name</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="287" parent="241" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>telephone_number
+euser_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="288" parent="241" name="contact_ibfk_1">
+      <ColNames>telephone_number</ColNames>
+      <RefTableName>contact_info</RefTableName>
+      <RefColNames>telephone_number</RefColNames>
+    </foreign-key>
+    <foreign-key id="289" parent="241" name="contact_ibfk_2">
+      <ColNames>euser_name</ColNames>
+      <RefTableName>employer</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <column id="290" parent="242" name="telephone_number">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="291" parent="242" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>telephone_number</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="292" parent="243" name="user_name">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="293" parent="243" name="category">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+    </column>
+    <column id="294" parent="243" name="preferred_method">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <index id="295" parent="243" name="user_name">
+      <ColNames>user_name
+preferred_method</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="296" parent="243" name="category">
+      <ColNames>category</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="297" parent="243" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="298" parent="243" name="employee_ibfk_2">
+      <ColNames>user_name
+preferred_method</ColNames>
+      <RefTableName>loyee_credit_pays</RefTableName>
+      <RefColNames>user_name
+card_number</RefColNames>
+    </foreign-key>
+    <foreign-key id="299" parent="243" name="employee_ibfk_3">
+      <ColNames>user_name
+preferred_method</ColNames>
+      <RefTableName>loyee_checquing_pays</RefTableName>
+      <RefColNames>user_name
+account_no</RefColNames>
+    </foreign-key>
+    <foreign-key id="300" parent="243" name="employee_ibfk_1">
+      <ColNames>user_name</ColNames>
+      <RefTableName>all_user</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <foreign-key id="301" parent="243" name="employee_ibfk_4">
+      <ColNames>category</ColNames>
+      <RefTableName>subscription_category_loyee</RefTableName>
+      <RefColNames>category</RefColNames>
+    </foreign-key>
+    <column id="302" parent="244" name="user_name">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="303" parent="244" name="category">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+    </column>
+    <column id="304" parent="244" name="company_name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+    </column>
+    <column id="305" parent="244" name="preferred_method">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <index id="306" parent="244" name="category">
+      <ColNames>category</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="307" parent="244" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="308" parent="244" name="employer_ibfk_1">
+      <ColNames>user_name</ColNames>
+      <RefTableName>all_user</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <foreign-key id="309" parent="244" name="employer_ibfk_2">
+      <ColNames>category</ColNames>
+      <RefTableName>subscription_category_loyer</RefTableName>
+      <RefColNames>category</RefColNames>
+    </foreign-key>
+    <column id="310" parent="245" name="job_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="311" parent="245" name="title">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+    </column>
+    <column id="312" parent="245" name="description">
+      <Position>3</Position>
+      <DataType>varchar(200)|0s</DataType>
+    </column>
+    <column id="313" parent="245" name="date_posted">
+      <Position>4</Position>
+      <DataType>date|0s</DataType>
+    </column>
+    <column id="314" parent="245" name="employee_needed">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <column id="315" parent="245" name="category">
+      <Position>6</Position>
+      <DataType>varchar(15)|0s</DataType>
+    </column>
+    <index id="316" parent="245" name="category">
+      <ColNames>category</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="317" parent="245" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>job_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="318" parent="245" name="job_ibfk_1">
+      <ColNames>category</ColNames>
+      <RefTableName>category</RefTableName>
+      <RefColNames>c_name</RefColNames>
+    </foreign-key>
+    <column id="319" parent="246" name="account_no">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="320" parent="246" name="user_name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="321" parent="246" name="user_name">
+      <ColNames>user_name</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="322" parent="246" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>account_no
+user_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="323" parent="246" name="loyee_chequing_ibfk_1">
+      <ColNames>account_no</ColNames>
+      <RefTableName>chequing</RefTableName>
+      <RefColNames>account_no</RefColNames>
+    </foreign-key>
+    <foreign-key id="324" parent="246" name="loyee_chequing_ibfk_2">
+      <ColNames>user_name</ColNames>
+      <RefTableName>employee</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <column id="325" parent="247" name="user_name">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="326" parent="247" name="card_number">
+      <Position>2</Position>
+      <DataType>int(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="327" parent="247" name="automatic_manual">
+      <Position>3</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <key id="328" parent="247" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_name
+card_number</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="329" parent="247" name="loyee_credit_pays_ibfk_1">
+      <ColNames>user_name</ColNames>
+      <RefTableName>employee</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <column id="330" parent="248" name="account_no">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="331" parent="248" name="user_name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="332" parent="248" name="user_name">
+      <ColNames>user_name</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="333" parent="248" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>account_no
+user_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="334" parent="248" name="loyer_chequing_ibfk_1">
+      <ColNames>account_no</ColNames>
+      <RefTableName>chequing</RefTableName>
+      <RefColNames>account_no</RefColNames>
+    </foreign-key>
+    <foreign-key id="335" parent="248" name="loyer_chequing_ibfk_2">
+      <ColNames>user_name</ColNames>
+      <RefTableName>employer</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <column id="336" parent="249" name="user_name">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="337" parent="249" name="card_number">
+      <Position>2</Position>
+      <DataType>int(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="338" parent="249" name="automatic_manual">
+      <Position>3</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <key id="339" parent="249" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_name
+card_number</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="340" parent="249" name="loyer_credit_pays_ibfk_1">
+      <ColNames>user_name</ColNames>
+      <RefTableName>employer</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <column id="341" parent="250" name="user_name">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="342" parent="250" name="auser_name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="343" parent="250" name="activate_deactivate">
+      <Position>3</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <index id="344" parent="250" name="auser_name">
+      <ColNames>auser_name</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="345" parent="250" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_name
+auser_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="346" parent="250" name="manages_ibfk_1">
+      <ColNames>user_name</ColNames>
+      <RefTableName>all_user</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <foreign-key id="347" parent="250" name="manages_ibfk_2">
+      <ColNames>auser_name</ColNames>
+      <RefTableName>admin</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <column id="348" parent="251" name="job_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="349" parent="251" name="user_name_loyer">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="350" parent="251" name="user_name_loyee">
+      <Position>3</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="351" parent="251" name="offer_status">
+      <Position>4</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <index id="352" parent="251" name="user_name_loyer">
+      <ColNames>user_name_loyer</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="353" parent="251" name="user_name_loyee">
+      <ColNames>user_name_loyee</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="354" parent="251" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>job_id
+user_name_loyer
+user_name_loyee</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="355" parent="251" name="offer_ibfk_1">
+      <ColNames>job_id</ColNames>
+      <RefTableName>job</RefTableName>
+      <RefColNames>job_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="356" parent="251" name="offer_ibfk_2">
+      <ColNames>user_name_loyer</ColNames>
+      <RefTableName>employer</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <foreign-key id="357" parent="251" name="offer_ibfk_3">
+      <ColNames>user_name_loyee</ColNames>
+      <RefTableName>employee</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <column id="358" parent="252" name="job_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="359" parent="252" name="user_name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="360" parent="252" name="user_name">
+      <ColNames>user_name</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="361" parent="252" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>job_id
+user_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="362" parent="252" name="post_ibfk_1">
+      <ColNames>job_id</ColNames>
+      <RefTableName>job</RefTableName>
+      <RefColNames>job_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="363" parent="252" name="post_ibfk_2">
+      <ColNames>user_name</ColNames>
+      <RefTableName>employer</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <column id="364" parent="253" name="rep_user_name">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="365" parent="253" name="employer_user_name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </column>
+    <index id="366" parent="253" name="employer_user_name">
+      <ColNames>employer_user_name</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="367" parent="253" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>rep_user_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="368" parent="253" name="representatives_ibfk_2">
+      <ColNames>rep_user_name</ColNames>
+      <RefTableName>all_user</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <foreign-key id="369" parent="253" name="representatives_ibfk_1">
+      <ColNames>employer_user_name</ColNames>
+      <RefTableName>employer</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
+    <column id="370" parent="254" name="category">
+      <Position>1</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="371" parent="254" name="price">
+      <Position>2</Position>
+      <DataType>varchar(5)|0s</DataType>
+    </column>
+    <key id="372" parent="254" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>category</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="373" parent="255" name="category">
+      <Position>1</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="374" parent="255" name="price">
+      <Position>2</Position>
+      <DataType>varchar(5)|0s</DataType>
+    </column>
+    <key id="375" parent="255" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>category</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="376" parent="256" name="user_name">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="377" parent="256" name="temp_uuid">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="378" parent="256" name="timestamp">
+      <Position>3</Position>
+      <DataType>datetime|0s</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <key id="379" parent="256" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="380" parent="256" name="temp_password_ibfk_1">
+      <ColNames>user_name</ColNames>
+      <RefTableName>all_user</RefTableName>
+      <RefColNames>user_name</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>
