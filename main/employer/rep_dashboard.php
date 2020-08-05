@@ -1,6 +1,6 @@
 <?php require("../helpers/session.php")?>
 
-<?
+<?php
 require("../controllers/RepController.php");
 $repsController = new RepController();
 $user_name = $_COOKIE['employer_username'];
@@ -117,7 +117,7 @@ $reps = $repsController->getReps($user_name);
                     </form>
                 </div>
             </div>
-        </div
+        </div>
     </div>
 
     <?php require("../helpers/footer.php"); ?>
