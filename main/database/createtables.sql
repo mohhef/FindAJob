@@ -8,7 +8,7 @@ create table all_user(
     email varchar(100),
     balance int,
     password varchar(200),
-    primary key(user_name)
+    primary key(user_name) 
 );
 insert into all_user(user_name,email,password) values ('caren','c123en@hello.com','123');
 insert into all_user(user_name,email,password) values ('carenloyee','c123ee@hello.com','123');
@@ -39,7 +39,7 @@ create table employer(
     primary key(user_name),
     -- foreign key (user_name,preferred_method) references loyer_credit_pays(user_name,card_number),
     -- foreign key (user_name,preferred_method) references loyer_checquing_pays(user_name,account_no),
-    foreign key (user_name) references all_user(user_name),
+    foreign key (user_name) references all_user(user_name)  on delete cascade,
     foreign key (category) references subscription_category_loyer(category)
 );
 insert into employer(user_name,category) values ('caren','prime');
@@ -67,7 +67,7 @@ create table job(
     date_posted date,
     employee_needed int,
     category varchar(15),
-    foreign key (category) references category(c_name),
+    foreign key (category) references category(c_name)  on delete cascade,
     primary key(job_id)
 );
 
@@ -127,7 +127,8 @@ create table offer(
     job_id int ,
     user_name_loyer varchar(20),
     user_name_loyee varchar(20),
-    offer_status varchar(20), 
+    offer_status varchar(20),
+    accept_deny varchar(10),
     primary key(job_id, user_name_loyer,user_name_loyee),
     foreign key (job_id) references job(job_id),
     foreign key(user_name_loyer) references employer(user_name),

@@ -13,7 +13,8 @@
     <script src="../js/bootbox.locales.min.js"></script>
     <?php }
         elseif(basename($_SERVER['PHP_SELF']) == 'available_job.php' ||
-         basename($_SERVER['PHP_SELF']) == 'subscription.php' || basename($_SERVER['PHP_SELF']) == 'applied_job.php' ||  basename($_SERVER['PHP_SELF']) == 'payment.php'){
+         basename($_SERVER['PHP_SELF']) == 'subscription.php' || basename($_SERVER['PHP_SELF']) == 'applied_job.php' ||  basename($_SERVER['PHP_SELF']) == 'payment.php'||
+           basename($_SERVER['PHP_SELF']) == 'offer_status.php'){
       ?>
       <script src="../js/jquery-3.31.js"></script>
       <script src="../js/bootstrap.min.js"></script>
@@ -37,7 +38,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />
       <?php }
         elseif(basename($_SERVER['PHP_SELF']) == 'available_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php'|| 
-        basename($_SERVER['PHP_SELF']) == 'applied_job.php' ||  basename($_SERVER['PHP_SELF']) == 'payment.php'){
+        basename($_SERVER['PHP_SELF']) == 'applied_job.php' ||  basename($_SERVER['PHP_SELF']) == 'payment.php'||  basename($_SERVER['PHP_SELF']) == 'offer_status.php'){
       ?>
       <link rel="stylesheet" href="../css/4.1.3bootstrap.css">
       <link rel="stylesheet" type="text/css" href="../css/maindata.css" />
@@ -65,7 +66,7 @@
     </div>
   </div>
     <div class="col-md-1-auto" id="change1">
-      <a class="btn btn-outline-primary" href="\comp-353\main\employee\post_job.php" id="pipeview">Offer Status</a>
+      <a class="btn btn-outline-primary" href="\comp-353\main\employee\offer_status.php" id="pipeview">Offer Status</a>
     </div>
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="\comp-353\main\employee\subscription.php" id="pipeview">Subscription</a>
