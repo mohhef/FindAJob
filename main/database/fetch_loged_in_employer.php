@@ -6,7 +6,7 @@ $loggedin_user = $_POST['id'];
 $columns = array('user_name', 'company_name', 'telephone_number');
 
 $query1= "SELECT e.user_name, e.company_name, c.telephone_number  FROM employer e,
-contact c WHERE e.user_name = c.euser_name and e.user_name = '".$loggedin_user."'";
+contact_info c WHERE e.user_name = c.user_name and e.user_name = '".$loggedin_user."'";
 
 
 $result = mysqli_query($conn, $query1); 
@@ -14,7 +14,7 @@ $result = mysqli_query($conn, $query1);
 function get_all_data($conn)
 {
   $query = "SELECT e.user_name, e.company_name, c.telephone_number  FROM employer e,
-contact c WHERE e.user_name = c.euser_name and e.user_name = '".$_POST['id']."'";
+contact_info c WHERE e.user_name = c.user_name and e.user_name = '".$_POST['id']."'";
   $result = mysqli_query($conn, $query);
   return mysqli_num_rows($result);
 }
