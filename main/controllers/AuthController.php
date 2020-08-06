@@ -1,7 +1,7 @@
 <?php
 
-define('__ROOT__', dirname(__FILE__));
-require(__ROOT__."/../helpers/config.php");
+defined('__ROOT__') or define('__ROOT__', dirname(__FILE__));
+require_once(__ROOT__."/../helpers/config.php");
 
 class AuthController
 {
