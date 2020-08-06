@@ -14,7 +14,7 @@ const employeeLogin = () => {
         const res = JSON.parse(data);
         if(res.result){
             setCookie("employee_username", username, 1);
-            location.reload();
+            location.replace("/comp-353/main/employee/available_job.php");
         }else{
             alert("Username or Password is incorrect.");
         }
@@ -36,7 +36,7 @@ const employerLogin = () => {
         const res = JSON.parse(data);
         if(res.result){
             setCookie("employer_username", username, 1);
-            location.reload();
+            location.replace('/comp-353/main/employer/post_job.php');
         }else{
             alert("Username or Password is incorrect.");
         }
@@ -58,7 +58,7 @@ const adminLogin = () => {
         const res = JSON.parse(data);
         if(res.result){
             setCookie("admin_username", username, 1);
-            location.reload();
+            location.replace("/comp-353/main/admin/admin.php");
         }else{
             alert("Username or Password is incorrect.");
         }

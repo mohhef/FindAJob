@@ -11,12 +11,9 @@
         <tr>
           <th>Job ID</th>
           <th>Title</th>
-          <th>Date Applied</th>
-          <th>Category</th>
-          <th>Description</th>
-          <th>User Name</th>
-          <th>Offer</th>
-          <th></th>
+          <th>employee</th>
+          <th>Offer status</th>
+          <th>accept/deny</th>
         </tr>
       </thead>
     </table>
@@ -58,16 +55,10 @@ $(document).ready(function(){
         //  "width":"15%"
       }, {
         "orderable": true,
-        //    "width":"21%"
+        //  "width":"15%"
       }, {
         "orderable": true,
-        //    "width":"25%"
-      },{
-        "orderable": true,
-        //    "width":"25%"
-      },{
-        "orderable": false,
-        //    "width":"25%"
+        //  "width":"15%"
       }
     ],
     "language": {
@@ -75,43 +66,11 @@ $(document).ready(function(){
       "searchPlaceholder": "search"
     },
     "ajax" : {
-      url:"../database/fetch_job_applications.php",
+      url:"../database/fetched_offers.php",
       type:"POST"
     }
   });
 }
-$("#user_data").on('click', '.offer', function(){
-  var id = $(this).attr("id");
-  console.log(id);
-  $.ajax({
-    url:'../database/get_jobposts.php',
-    method:"POST",
-    data:{id:id},
-    dataType:"json",
-    success:function(data){
-      bootbox.alert({
-        message:"Offer the job '"+id+ "'",
-       callback: function() {
-          $.ajax({
-            url:'../database/offer_job.php',
-            method: "POST",
-            data:{id:id,loyee_username:data.user_name},
-            success: function(data){
-              $('#alert_message').html('<div class="alert alert-success">'+'Job offered'+'</div>');
-              $('#user_data').DataTable().ajax.reload(null,false);
-            },
-            error: function(xhr, error){
-                console.log(xhr); console.log(error);
-            },
-          });
-          setInterval(function(){
-                  $('#alert_message').html('');
-                }, 5000);
-          }
-        });
-        }
-      });
-      });
-      });
+});
 </script>
 <?php include "footer.php"?>
