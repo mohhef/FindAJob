@@ -103,7 +103,7 @@
     if(getCookie("employee_username")){
         location.replace("/comp-353/main/employee/available_job.php");
     }
-    if(getCookie("employer_usename")){
+    if(getCookie("employer_username")){
         location.replace('/comp-353/main/employer/post_job.php');
     }
     if(getCookie("admin_username")){
