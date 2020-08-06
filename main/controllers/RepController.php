@@ -104,8 +104,9 @@ class RepController
     function deleteRep($username)
     {
         $conn = connDB();
-        if ($stmt = $conn->prepare("DELETE FROM representatives WHERE rep_user_name=?")) {
-            $stmt->bind_param("s", $username);
+        $employer_username = $_COOKIE['employer_username'];
+        if ($stmt = $conn->prepare("DELETE FROM representatives WHERE rep_user_name=? AND employer_user_name=?")) {
+            $stmt->bind_param("ss", $username, $employer_username);
             $stmt->execute();
             if ($stmt->affected_rows > 0) {
                 $stmt->close();
