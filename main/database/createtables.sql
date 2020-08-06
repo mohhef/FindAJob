@@ -2,10 +2,6 @@ drop SCHEMA web_career;
 create database web_career;
 use web_career;
 SET FOREIGN_KEY_CHECKS=0;
-create table contact_info(
-    telephone_number varchar(20),
-    primary key(telephone_number)
-);
 
 create table all_user(
     user_name varchar(20),
@@ -47,6 +43,14 @@ create table employer(
     foreign key (category) references subscription_category_loyer(category)
 );
 insert into employer(user_name,category) values ('caren','prime');
+
+create table contact_info(
+    telephone_number varchar(20),
+    user_name varchar(20),
+    primary key(telephone_number),
+    foreign key (user_name) references employer(user_name)
+);
+
 
 create table representatives(
     rep_user_name varchar(20),
@@ -110,13 +114,6 @@ create table employee(
 
 insert into employee(user_name,category) values('carenloyee','basic');
 
-create table contact(
-    telephone_number varchar(15),
-    euser_name varchar(20)  ,
-    primary key (telephone_number,euser_name),
-    foreign key (telephone_number) references contact_info(telephone_number),
-    foreign key (euser_name) references employer(user_name)
-);
 
 create table post(
     job_id int auto_increment,
