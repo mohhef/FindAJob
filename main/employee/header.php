@@ -12,10 +12,8 @@
     <script src="../js/bootbox.min.js"></script>
     <script src="../js/bootbox.locales.min.js"></script>
     <?php }
-        elseif(basename($_SERVER['PHP_SELF']) == 'available_job.php' ||
-         basename($_SERVER['PHP_SELF']) == 'subscription.php' || basename($_SERVER['PHP_SELF']) == 'applied_job.php' ||  basename($_SERVER['PHP_SELF']) == 'payment.php' ||  basename($_SERVER['PHP_SELF']) == 'profile.php'){
-         basename($_SERVER['PHP_SELF']) == 'subscription.php' || basename($_SERVER['PHP_SELF']) == 'applied_job.php' ||  basename($_SERVER['PHP_SELF']) == 'payment.php'||
-           basename($_SERVER['PHP_SELF']) == 'offer_status.php'){
+        elseif(basename($_SERVER['PHP_SELF']) == 'available_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php'|| 
+         basename($_SERVER['PHP_SELF']) == 'profile.php'|| basename($_SERVER['PHP_SELF']) == 'applied_job.php' ||  basename($_SERVER['PHP_SELF']) == 'payment.php'||  basename($_SERVER['PHP_SELF']) == 'offer_status.php'){
       ?>
       <script src="../js/jquery-3.31.js"></script>
       <script src="../js/bootstrap.min.js"></script>
@@ -39,8 +37,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />
       <?php }
         elseif(basename($_SERVER['PHP_SELF']) == 'available_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php'|| 
-        basename($_SERVER['PHP_SELF']) == 'applied_job.php' ||  basename($_SERVER['PHP_SELF']) == 'payment.php' ||  basename($_SERVER['PHP_SELF']) == 'profile.php'){
-        basename($_SERVER['PHP_SELF']) == 'applied_job.php' ||  basename($_SERVER['PHP_SELF']) == 'payment.php'||  basename($_SERVER['PHP_SELF']) == 'offer_status.php'){
+         basename($_SERVER['PHP_SELF']) == 'profile.php'|| basename($_SERVER['PHP_SELF']) == 'applied_job.php' ||  basename($_SERVER['PHP_SELF']) == 'payment.php'||  basename($_SERVER['PHP_SELF']) == 'offer_status.php'){
       ?>
       <link rel="stylesheet" href="../css/4.1.3bootstrap.css">
       <link rel="stylesheet" type="text/css" href="../css/maindata.css" />
