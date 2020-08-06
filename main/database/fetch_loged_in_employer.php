@@ -30,7 +30,7 @@ $sub_array = array();
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="user_name">' . $row["user_name"] . '</div>';
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="title">' . $row["company_name"] . '</div>';
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="employee_needed">' . $row["telephone_number"] . '</div>';
-$sub_array[] = '<button type="button" name="delete" class="btn btn-danger btn-xs update" id="'.$row["user_name"].'" >Delete</button>';
+$sub_array[] = '<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["user_name"].'" >Delete</button>';
 $sub_array[] = '<button type="button" name="update" class="btn btn-primary btn-xs update" id="'.$row["user_name"].'" >Update</button>';
 $data[] = $sub_array;
 }
