@@ -1,5 +1,6 @@
 drop SCHEMA web_career;
 create database web_career;
+use web_career;
 SET FOREIGN_KEY_CHECKS=0;
 create table contact_info(
     telephone_number varchar(20),

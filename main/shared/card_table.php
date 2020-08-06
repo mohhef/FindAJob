@@ -151,7 +151,7 @@
             } else if (type == "Create") {
                 createCard();
             }
-        };
+        }
 
         function updateCard(id) {
             var card_no = id;

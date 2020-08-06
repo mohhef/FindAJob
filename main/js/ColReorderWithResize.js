@@ -881,7 +881,7 @@ ColReorder.prototype = {
 		  }
 		  ////////////////////////
 
-		  return;
+
 		}
 		else if (this.s.allowReorder) {
 			if ( this.dom.drag === null )
