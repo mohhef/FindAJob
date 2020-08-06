@@ -1,4 +1,4 @@
-<?php require("./helpers/session.php");?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,6 +99,17 @@
 </div>
 <script src="js/util.js"></script>
 <script src="js/login.js"></script>
+<script>
+    if(getCookie("employee_username")){
+        location.replace("/comp-353/main/employee/available_job.php");
+    }
+    if(getCookie("employer_username")){
+        location.replace('/comp-353/main/employer/post_job.php');
+    }
+    if(getCookie("admin_username")){
+        location.replace("/comp-353/main/admin/admin.php");
+    }
+</script>
 
 <?php require("./helpers/footer.php"); ?>
 </body>
