@@ -73,6 +73,7 @@ create table job(
 
 create table admin(
     user_name varchar(20),
+    telephone varchar(20),
     password varchar(200),
     primary key(user_name)
 );
