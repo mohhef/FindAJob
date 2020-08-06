@@ -1,8 +1,5 @@
 <?php include "header.php" ?>
 
-</br></br>
-</br>
-
 <div class="container-fluid" id="rcorners1">
   <div class="table-responsive">
     <div id="alert_message"></div>
@@ -11,11 +8,9 @@
         <tr>
           <th>Job ID</th>
           <th>Title</th>
-          <th>Date Applied</th>
-          <th>Category</th>
-          <th>Description</th>
-          <th>User Name</th>
-          <th>Offer</th>
+          <th>Offered</th>
+          <th>Accept/Deny</th>
+          <th></th>
           <th></th>
         </tr>
       </thead>
@@ -38,7 +33,8 @@ $(document).ready(function(){
       "sDom": "Rlfrtip",
       "bAutoWidth":false,
       "responsive":true,
-
+      "scrollY": "660px",
+      "scrollX": true,
       "scrollCollapse": true,
       "processing":true,
       "serverSide":true,
@@ -60,12 +56,9 @@ $(document).ready(function(){
         "orderable": true,
         //    "width":"21%"
       }, {
-        "orderable": true,
+        "orderable": false,
         //    "width":"25%"
-      },{
-        "orderable": true,
-        //    "width":"25%"
-      },{
+      }, {
         "orderable": false,
         //    "width":"25%"
       }
@@ -75,43 +68,43 @@ $(document).ready(function(){
       "searchPlaceholder": "search"
     },
     "ajax" : {
-      url:"../database/fetch_job_applications.php",
+      url:"../database/fetch_offers.php",
       type:"POST"
     }
   });
 }
-$("#user_data").on('click', '.offer', function(){
+
+$("#user_data").on('click', '.accept', function(){
   var id = $(this).attr("id");
-  console.log(id);
-  $.ajax({
-    url:'../database/get_jobposts.php',
+  var status = 'accept';
+    $.ajax({
+    url:'../database/offer_status.php',
     method:"POST",
-    data:{id:id},
-    dataType:"json",
-    success:function(data){
-      bootbox.alert({
-        message:"Offer the job '"+id+ "'",
-       callback: function() {
-          $.ajax({
-            url:'../database/offer_job.php',
-            method: "POST",
-            data:{id:id,loyee_username:data.user_name},
-            success: function(data){
-              $('#alert_message').html('<div class="alert alert-success">'+'Job offered'+'</div>');
-              $('#user_data').DataTable().ajax.reload(null,false);
-            },
-            error: function(xhr, error){
-                console.log(xhr); console.log(error);
-            },
-          });
-          setInterval(function(){
-                  $('#alert_message').html('');
-                }, 5000);
-          }
-        });
-        }
-      });
-      });
-      });
+    data:{id:id, status:status},
+    error: function(xhr, error){
+        console.log(xhr); console.log(error);
+    },
+    success:function(){
+      $('#user_data').DataTable().ajax.reload(null,false);
+       }
+  });
+    });
+$("#user_data").on('click', '.deny', function(){
+  var id = $(this).attr("id");
+  var status = 'deny';
+    $.ajax({
+    url:'../database/offer_status.php',
+    method:"POST",
+    data:{id:id, status:status},
+    error: function(xhr, error){
+        console.log(xhr); console.log(error);
+    },
+    success:function(){
+      $('#user_data').DataTable().ajax.reload(null,false);
+       }
+  });
+    });
+});
+
 </script>
 <?php include "footer.php"?>

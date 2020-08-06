@@ -1,17 +1,14 @@
 drop SCHEMA web_career;
 create database web_career;
+use web_career;
 SET FOREIGN_KEY_CHECKS=0;
-create table contact_info(
-    telephone_number varchar(20),
-    primary key(telephone_number)
-);
 
 create table all_user(
     user_name varchar(20),
     email varchar(100),
     balance int,
     password varchar(200),
-    primary key(user_name)
+    primary key(user_name) 
 );
 insert into all_user(user_name,email,password) values ('caren','c123en@hello.com','123');
 insert into all_user(user_name,email,password) values ('carenloyee','c123ee@hello.com','123');
@@ -42,10 +39,18 @@ create table employer(
     primary key(user_name),
     -- foreign key (user_name,preferred_method) references loyer_credit_pays(user_name,card_number),
     -- foreign key (user_name,preferred_method) references loyer_checquing_pays(user_name,account_no),
-    foreign key (user_name) references all_user(user_name),
+    foreign key (user_name) references all_user(user_name)  on delete cascade,
     foreign key (category) references subscription_category_loyer(category)
 );
 insert into employer(user_name,category) values ('caren','prime');
+
+create table contact_info(
+    telephone_number varchar(20),
+    user_name varchar(20),
+    primary key(telephone_number),
+    foreign key (user_name) references employer(user_name)
+);
+
 
 create table representatives(
     rep_user_name varchar(20),
@@ -62,7 +67,7 @@ create table job(
     date_posted date,
     employee_needed int,
     category varchar(15),
-    foreign key (category) references category(c_name),
+    foreign key (category) references category(c_name)  on delete cascade,
     primary key(job_id)
 );
 
@@ -102,20 +107,13 @@ create table employee(
         preferred_method int,  
     primary key(user_name),
     foreign key (user_name) references all_user(user_name),
-    foreign key (user_name,preferred_method) references loyee_credit_pays(user_name,card_number),
-    foreign key (user_name,preferred_method) references loyee_checquing_pays(user_name,account_no),
+    -- foreign key (user_name,preferred_method) references loyee_credit_pays(user_name,card_number),
+    -- foreign key (user_name,preferred_method) references loyee_checquing_pays(user_name,account_no),
     foreign key (category) references subscription_category_loyee(category)
 );
 
 insert into employee(user_name,category) values('carenloyee','basic');
 
-create table contact(
-    telephone_number varchar(15),
-    euser_name varchar(20)  ,
-    primary key (telephone_number,euser_name),
-    foreign key (telephone_number) references contact_info(telephone_number),
-    foreign key (euser_name) references employer(user_name)
-);
 
 create table post(
     job_id int auto_increment,
@@ -129,7 +127,8 @@ create table offer(
     job_id int ,
     user_name_loyer varchar(20),
     user_name_loyee varchar(20),
-    offer_status varchar(20), 
+    offer_status varchar(20),
+    accept_deny varchar(10),
     primary key(job_id, user_name_loyer,user_name_loyee),
     foreign key (job_id) references job(job_id),
     foreign key(user_name_loyer) references employer(user_name),

@@ -14,6 +14,7 @@
     <?php }
         elseif(basename($_SERVER['PHP_SELF']) == 'view_job.php' ||basename($_SERVER['PHP_SELF']) == 'application_job.php'|| basename($_SERVER['PHP_SELF']) == 'payment.php' ||
          basename($_SERVER['PHP_SELF']) == 'subscription.php' || basename($_SERVER['PHP_SELF']) == 'admin.php' || basename($_SERVER['PHP_SELF']) == 'profile.php'){
+         basename($_SERVER['PHP_SELF']) == 'subscription.php' || basename($_SERVER['PHP_SELF']) == 'admin.php'|| basename($_SERVER['PHP_SELF']) == 'offers.php'){
       ?>
       <script src="../js/jquery-3.31.js"></script>
       <script src="../js/bootstrap.min.js"></script>
@@ -38,6 +39,7 @@
       <?php }
         elseif(basename($_SERVER['PHP_SELF']) == 'view_job.php' || basename($_SERVER['PHP_SELF']) == 'subscription.php'|| basename($_SERVER['PHP_SELF']) == 'payment.php' ||
         basename($_SERVER['PHP_SELF']) == 'application_job.php'|| basename($_SERVER['PHP_SELF']) == 'admin.php' || basename($_SERVER['PHP_SELF']) == 'profile.php' ){
+        basename($_SERVER['PHP_SELF']) == 'application_job.php'|| basename($_SERVER['PHP_SELF']) == 'admin.php'|| basename($_SERVER['PHP_SELF']) == 'offers.php' ){
       ?>
       <link rel="stylesheet" href="../css/4.1.3bootstrap.css">
       <link rel="stylesheet" type="text/css" href="../css/maindata.css" />
@@ -69,11 +71,19 @@
       <a class="btn btn-outline-primary" href="\comp-353\main\employer\application_job.php" id="pipeview">Job Applications</a>
     </div>
   </div>
+  <div class="frozen">
+    <div class="col-md-1-auto" id="change1">
+      <a class="btn btn-outline-primary" href="\comp-353\main\employer\offers.php" id="pipeview">Offers</a>
+    </div>
+  </div>
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="\comp-353\main\employer\subscription.php" id="pipeview">Subscription</a>
     </div>
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="\comp-353\main\employer\profile.php" id="pipeview">Profile</a>
+    </div>
+    <div class="col-md-1-auto" id="change1">
+      <a class="btn btn-outline-primary" href="\comp-353\main\employer\rep_dashboard.php" id="pipeview">Representatives</a>
     </div>
     <div class="col-md-1-auto" id="change4">
       <a class="btn btn-danger" onclick="cookieset_employer();" id="cooks">Logout</a>
