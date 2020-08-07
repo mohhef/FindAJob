@@ -65,9 +65,11 @@
       <a class="btn btn-outline-primary" href="\comp-353\main\employee\applied_job.php" id="pipeview">Applied Jobs</a>
     </div>
   </div>
+  <div class="frozen">
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="\comp-353\main\employee\offer_status.php" id="pipeview">Offer Status</a>
     </div>
+  </div>
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="\comp-353\main\employee\subscription.php" id="pipeview">Subscription</a>
     </div>
