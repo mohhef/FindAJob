@@ -3,7 +3,6 @@ const employeeForgotPassword = () => {
     const password = $('input[id=employee_password_forgot]').val();
     const json = {
         "username": username,
-        "password": password,
     }
     $.post('./service/auth/employee_forgot.php', json, function(data){
         if(!data){
@@ -12,7 +11,7 @@ const employeeForgotPassword = () => {
         }
         const res = JSON.parse(data);
         if(res.result){
-            setCookie("employee_username", username, 1);
+            alert("Email has been sent.");
             window.location.replace('index.php');
         }else{
             alert("Username is invalid.");

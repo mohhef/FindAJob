@@ -1,7 +1,13 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 
 defined('__ROOT__') or define('__ROOT__', dirname(__FILE__));
 require_once(__ROOT__."/../helpers/config.php");
+require_once(__ROOT__."/../helpers/mail.php");
+require_once(__ROOT__."/../vendor/autoload.php");
+
 
 class AuthController
 {
@@ -103,7 +109,7 @@ class AuthController
         $stmt->close();
         return false;
     }
-    function forgotPasswordEmployee($username, $password){
+    function forgotPasswordEmployee($username){
         $conn = connDB();
         if($stmt = $conn->prepare("SELECT * FROM employee WHERE user_name = ?")){
             $stmt->bind_param("s", $username);
@@ -111,10 +117,30 @@ class AuthController
                 $stmt->store_result();
                 if($stmt->num_rows > 0){
                     $stmt->close();
-                    if($stmt = $conn->prepare("UPDATE all_user set password= ? WHERE user_name= ?")){
-                        $stmt->bind_param("ss", $password, $username);
+                    $uuid = uniqid("", true);
+                    if($stmt = $conn->prepare("INSERT INTO temp_password(user_name, temp_uuid) VALUE (?, ?)")){
+                        $stmt->bind_param("ss", $username, $uuid);
                         if($stmt->execute()){
-                            return true;
+                            $stmt->close();
+                            if($stmt = $conn->prepare("SELECT email FROM all_user WHERE user_name = ?")){
+                                $stmt->bind_param("s", $username);
+                                $stmt->execute();
+                                $res = $stmt->get_result();
+                                $email = $res->fetch_all(MYSQLI_NUM)[0][0];
+                                $mail = connMail();
+                                try {
+                                    $mail->From = "webcareer353@gmail.com";
+                                    $mail->FromName = "Web Career";
+                                    $mail->addAddress($email);
+                                    $mail->Subject = "Web Career Reset Password";
+                                    $mail->Body = "To change password, press on link : " . $_SERVER['HTTP_HOST'] . "/comp-353/main/reset_password_employee.php?token=" . $uuid;
+                                    $mail->send();
+                                    $mail->smtpClose();
+                                    return true;
+                                }catch (Exception $e){
+                                    echo "Mailer Error : " . $mail->ErrorInfo;
+                                }
+                            }
                         }
                     }
                 }
@@ -153,6 +179,30 @@ class AuthController
                         $stmt->bind_param("ss", $password, $username);
                         if($stmt->execute()){
                             return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    function employeeResetPassword($uuid, $password){
+        $conn = connDB();
+        if($stmt = $conn->prepare("SELECT user_name FROM temp_password WHERE temp_uuid = ?")){
+            $stmt->bind_param("s", $uuid);
+            if($stmt->execute()) {
+                $res = $stmt->get_result();
+                $username = $res->fetch_all()[0][0];
+                $stmt->close();
+                if ($stmt = $conn->prepare("UPDATE all_user SET password = ? WHERE user_name = ?")) {
+                    $stmt->bind_param("ss", $password, $username);
+                    if($stmt->execute()){
+                        $stmt->close();
+                        if($stmt = $conn->prepare("DELETE FROM temp_password WHERE user_name = ?")){
+                            $stmt->bind_param("s", $username);
+                            if($stmt->execute()){
+                                return true;
+                            }
                         }
                     }
                 }
