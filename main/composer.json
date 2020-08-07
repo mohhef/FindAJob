@@ -1,0 +1,12 @@
+{
+    "name": "workhorse/comp-353",
+    "authors": [
+        {
+            "name": "Aloys",
+            "email": "aloys.portafaix@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.1"
+    }
+}
