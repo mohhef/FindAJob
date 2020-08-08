@@ -40,8 +40,8 @@
                     }
                 }
             }
+            $price = null;
             if($isEmployee){
-                $price = null;
                 if($stmt = $conn->prepare("SELECT price FROM subscription_category_loyee WHERE category = ?")){
                     $stmt->bind_param("s", $user_info[1]);
                     $stmt->execute();
@@ -82,6 +82,14 @@
                     } catch (Exception $e) {
                         echo "Mailer Error : " . $mail->ErrorInfo;
                     }
+                }
+            }
+            $stmt->close();
+
+            if($price != null and $val[2] - $price >= 0){
+                if($stmt = $conn->prepare("UPDATE all_user SET last_payment = NOW() WHERE user_name = ?")){
+                    $stmt->bind_param("s", $val[0]);
+                    $stmt->execute();
                 }
             }
 
