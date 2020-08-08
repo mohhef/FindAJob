@@ -11,10 +11,27 @@ create table all_user
     password  varchar(200),
     primary key (user_name)
 );
-insert into all_user(user_name, email, password)
-values ('caren', 'c123en@hello.com', '123');
-insert into all_user(user_name, email, password)
-values ('carenloyee', 'c123ee@hello.com', '123');
+insert into all_user(user_name, email, balance, password)
+values ('caren', 'c123en@hello.com',1000, '123');
+insert into all_user(user_name, email, balance, password)
+values ('carenloyee', 'c123ee@hello.com',1000,  '123');
+insert into all_user(user_name, email, balance, password)
+values ('rob', 'robs@hello.com', 1000, '123');
+insert into all_user(user_name, email, balance, password)
+values ('robloyee', 'robs@hello.com',1000,  '123');
+insert into all_user(user_name, email, balance, password)
+values ('moh', 'mohs@hello.com',1000,  '123');
+insert into all_user(user_name, email, balance, password)
+values ('mohloyee', 'mohs@hello.com',1000,  '123');
+insert into all_user(user_name, email, balance, password)
+values ('ahmed', 'ahmed@hello.com',1000,  '123');
+insert into all_user(user_name, email, balance, password)
+values ('rep1', 'rep1@hello.com',1000,  '123');
+insert into all_user(user_name, email, balance, password)
+values ('rep2', 'rep2@hello.com',1000,  '123');
+insert into all_user(user_name, email, balance, password)
+values ('rep3', 'rep2@hello.com',1000,  '123');
+
 
 create table category
 (
@@ -23,11 +40,19 @@ create table category
 );
 
 insert into category(c_name)
-values ('Part-time');
+values ('Sofware Engineering');
 insert into category(c_name)
-values ('Full-time');
+values ('Accounting');
 insert into category(c_name)
-values ('Intern');
+values ('Finance');
+insert into category(c_name)
+values ('Civil engineering');
+insert into category(c_name)
+values ('computer engineering');
+insert into category(c_name)
+values ('Business studies');
+insert into category(c_name)
+values ('Marketing');
 
 create table subscription_category_loyer
 (
@@ -55,6 +80,12 @@ create table employer
 );
 insert into employer(user_name, category)
 values ('caren', 'prime');
+insert into employer(user_name, category)
+values ('moh', 'prime');
+insert into employer(user_name, category)
+values ('rob', 'prime');
+insert into employer(user_name, category)
+values ('ahmed', 'gold');
 
 create table contact_info
 (
@@ -64,7 +95,6 @@ create table contact_info
     foreign key (user_name) references employer (user_name)
 );
 
-
 create table representatives
 (
     rep_user_name      varchar(20),
@@ -73,6 +103,17 @@ create table representatives
     foreign key (employer_user_name) references employer (user_name),
     foreign key (rep_user_name) references all_user (user_name)
 );
+insert into representatives(rep_user_name, employer_user_name)
+values ('rep1', 'caren');
+insert into representatives(rep_user_name, employer_user_name)
+values ('rep2', 'caren');
+insert into representatives(rep_user_name, employer_user_name)
+values ('rep3', 'caren');
+insert into representatives(rep_user_name, employer_user_name)
+values ('rep4', 'caren');
+insert into representatives(rep_user_name, employer_user_name)
+values ('rep5', 'caren');
+
 
 create table job
 (
@@ -85,6 +126,13 @@ create table job
     foreign key (category) references category (c_name) on delete cascade,
     primary key (job_id)
 );
+
+insert into job(job_id,title,description,date_posted,employee_needed,category) values(1,'C++ job','professional in C++','1/12/2020',5,'Sofware Engineering');
+insert into job(job_id,title,description,date_posted,employee_needed,category) values(2,'C job','professional in C','1/12/2020',5,'Sofware Engineering');
+insert into job(job_id,title,description,date_posted,employee_needed,category) values(3,'C# job','professional in C#','1/12/2020',5,'Sofware Engineering');
+insert into job(job_id,title,description,date_posted,employee_needed,category) values(4,'Java job','professional in Java','1/12/2020',5,'Sofware Engineering');
+insert into job(job_id,title,description,date_posted,employee_needed,category) values(5,'GO job','professional in GO','1/12/2020',5,'Sofware Engineering');
+
 
 create table admin
 (
@@ -104,6 +152,10 @@ create table card_method
     primary key (card_number)
 );
 
+INSERT INTO `card_method`(`card_number`, `name`, `expiration_date`) VALUES (12340,"caren","2021/03/21");
+INSERT INTO `card_method`(`card_number`, `name`, `expiration_date`) VALUES (11340,"mo","2022/11/10");
+INSERT INTO `card_method`(`card_number`, `name`, `expiration_date`) VALUES (11140,"rob","2023/01/01");
+
 create table chequing
 (
     account_no int,
@@ -111,6 +163,11 @@ create table chequing
     transit_no int,
     primary key (account_no)
 );
+
+INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(1234,"5","6");
+INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(5678,"9","10");
+INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(91011,"12","13");
+
 
 create table subscription_category_loyee
 (
@@ -139,6 +196,12 @@ create table employee
 
 insert into employee(user_name, category)
 values ('carenloyee', 'basic');
+insert into employee(user_name, category)
+values ('mohloyee', 'basic');
+insert into employee(user_name, category)
+values ('amrloyee', 'basic');
+insert into employee(user_name, category)
+values ('robloyee', 'basic');
 
 
 create table post
@@ -149,6 +212,12 @@ create table post
     foreign key (job_id) references job (job_id),
     foreign key (user_name) references employer (user_name)
 );
+
+insert into post (job_id,user_name) values (1,'caren');
+insert into post (job_id,user_name) values (2,'caren');
+insert into post (job_id,user_name) values (3,'caren');
+insert into post (job_id,user_name) values (4,'caren');
+insert into post (job_id,user_name) values (5,'caren');
 
 create table offer
 (
@@ -163,6 +232,9 @@ create table offer
     foreign key (user_name_loyee) references employee (user_name)
 );
 
+insert into offer (job_id, user_name_loyer, user_name_loyee, offer_status, accept_deny) values (1,'caren','carenloyee','Offered','accept');
+insert into offer (job_id, user_name_loyer, user_name_loyee, offer_status, accept_deny) values (2,'caren','carenloyee','Offered','accept');
+insert into offer (job_id, user_name_loyer, user_name_loyee, offer_status, accept_deny) values (3,'caren','carenloyee','Offered','accept');
 create table applies
 (
     job_id             int auto_increment,
@@ -174,6 +246,9 @@ create table applies
     foreign key (user_name) references employee (user_name)
 );
 
+insert into applies(job_id,user_name,application_status,date_applied) values (1,'carenloyee','applied','12/12/2020');
+insert into applies(job_id,user_name,application_status,date_applied) values (2,'carenloyee','applied','12/12/2020');
+insert into applies(job_id,user_name,application_status,date_applied) values (3,'carenloyee','applied','12/12/2020');
 
 create table manages
 (
@@ -188,6 +263,10 @@ insert into manages(user_name, auser_name, activate_deactivate)
 values ('caren', 'bigboss', 'active');
 insert into manages(user_name, auser_name, activate_deactivate)
 values ('carenloyee', 'bigboss', 'active');
+insert into manages(user_name, auser_name, activate_deactivate)
+values ('robloyee', 'bigboss', 'active');
+insert into manages(user_name, auser_name, activate_deactivate)
+values ('mohloyee', 'bigboss', 'active');
 
 create table loyer_credit_pays
 (
@@ -207,6 +286,11 @@ create table loyee_credit_pays
     foreign key (user_name) references employee (user_name)
 );
 
+INSERT INTO `loyee_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("carenloyee",12340,"manual");
+INSERT INTO `loyee_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("carenloyee",11340,"manual");
+INSERT INTO `loyee_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("carenloyee",11140,"automatic");
+
+
 create table loyer_chequing
 (
     account_no       int,
@@ -217,6 +301,12 @@ create table loyer_chequing
     foreign key (user_name) references employer (user_name)
 
 );
+
+INSERT INTO `loyer_chequing`(`user_name`, `account_no`, `automatic_manual`) VALUES ("caren",1234,"manual");
+INSERT INTO `loyer_chequing`(`user_name`, `account_no`, `automatic_manual`) VALUES ("caren",5678,"manual");
+INSERT INTO `loyer_chequing`(`user_name`, `account_no`, `automatic_manual`) VALUES ("caren",91011,"automatic");
+
+
 create table loyee_chequing
 (
     account_no       int,
@@ -226,6 +316,11 @@ create table loyee_chequing
     foreign key (account_no) references chequing (account_no),
     foreign key (user_name) references employee (user_name)
 );
+
+INSERT INTO `loyee_chequing`(`account_no`, `user_name`, `automatic_manual`) VALUES (1234,"carenloyee","automatic");
+INSERT INTO `loyee_chequing`(`account_no`, `user_name`, `automatic_manual`) VALUES (5678,"carenloyee","automatic");
+INSERT INTO `loyee_chequing`(`account_no`, `user_name`, `automatic_manual`) VALUES (1011,"carenloyee","automatic");
+
 SET @@global.event_scheduler = 1;
 
 CREATE TABLE temp_password
@@ -236,6 +331,7 @@ CREATE TABLE temp_password
     PRIMARY KEY (user_name),
     FOREIGN KEY (user_name) REFERENCES all_user (user_name)
 );
+
 CREATE EVENT IF NOT EXISTS remove_temp_password
     ON SCHEDULE EVERY 15 MINUTE
     ON COMPLETION PRESERVE
