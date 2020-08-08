@@ -50,7 +50,7 @@
 <body>
 <div class="row">
     <div class="col-md-4 mr-auto" id="change">
-      <a href="../../inventory/main.php">
+      <a href="\comp-353\main\employer\post_job.php">
         <img src="../png/findAjob.png" width=auto height=70px alt="" width=auto height=50px id ="Logo" position:absolute;>
       </a>
     </div>

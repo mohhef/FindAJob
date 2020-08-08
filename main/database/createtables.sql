@@ -165,9 +165,9 @@ create table chequing
     primary key (account_no)
 );
 
-INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(1234,"5","6");
-INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(5678,"9","10");
-INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(91011,"12","13");
+INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(1234,1,8);
+INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(5678,2,9);
+INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(91011,3,6);
 
 
 create table subscription_category_loyee
@@ -275,8 +275,15 @@ create table loyer_credit_pays
     card_number      int(20),
     automatic_manual varchar(20),
     primary key (user_name, card_number),
-    foreign key (user_name) references employer (user_name)
+    foreign key (user_name) references employer (user_name),
+    foreign key (card_number) references card_method (card_number)
+
 );
+
+INSERT INTO `loyer_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("caren",12340,"manual");
+INSERT INTO `loyer_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("caren",11340,"manual");
+INSERT INTO `loyer_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("caren",11140,"automatic");
+
 
 create table loyee_credit_pays
 (
@@ -284,7 +291,8 @@ create table loyee_credit_pays
     card_number      int(20),
     automatic_manual varchar(20),
     primary key (user_name, card_number),
-    foreign key (user_name) references employee (user_name)
+    foreign key (user_name) references employee (user_name),
+    foreign key (card_number) references card_method (card_number)
 );
 
 INSERT INTO `loyee_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("carenloyee",12340,"manual");
@@ -320,7 +328,7 @@ create table loyee_chequing
 
 INSERT INTO `loyee_chequing`(`account_no`, `user_name`, `automatic_manual`) VALUES (1234,"carenloyee","automatic");
 INSERT INTO `loyee_chequing`(`account_no`, `user_name`, `automatic_manual`) VALUES (5678,"carenloyee","automatic");
-INSERT INTO `loyee_chequing`(`account_no`, `user_name`, `automatic_manual`) VALUES (1011,"carenloyee","automatic");
+INSERT INTO `loyee_chequing`(`account_no`, `user_name`, `automatic_manual`) VALUES (91011,"carenloyee","automatic");
 
 SET @@global.event_scheduler = 1;
 
