@@ -71,6 +71,7 @@ create table employer
 (
     user_name        varchar(20),
     category         varchar(100),
+    telephone_number varchar(20),
     company_name     varchar(50),
     preferred_method int,
     primary key (user_name),
@@ -87,14 +88,6 @@ insert into employer(user_name, category)
 values ('rob', 'prime');
 insert into employer(user_name, category)
 values ('ahmed', 'gold');
-
-create table contact_info
-(
-    telephone_number varchar(20),
-    user_name        varchar(20),
-    primary key (telephone_number),
-    foreign key (user_name) references employer (user_name)
-);
 
 create table representatives
 (
