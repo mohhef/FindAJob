@@ -36,12 +36,12 @@ values ('rep3', 'rep2@hello.com',1000,  '123');
 
 create table category
 (
-    c_name varchar(15),
+    c_name varchar(30),
     primary key (c_name)
 );
 
 insert into category(c_name)
-values ('Sofware Engineering');
+values ('Software Engineering');
 insert into category(c_name)
 values ('Accounting');
 insert into category(c_name)
@@ -123,7 +123,7 @@ create table job
     description     varchar(200),
     date_posted     date,
     employee_needed int,
-    category        varchar(15),
+    category        varchar(30),
     foreign key (category) references category (c_name) on delete cascade,
     primary key (job_id)
 );
