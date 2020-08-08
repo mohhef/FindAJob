@@ -7,7 +7,7 @@
         $type = "employee";
     } else if (isset($_COOKIE['employer_username'])){
         $user_name = $_COOKIE['employer_username'];
-        $payment_type = "loyee_chequing";
+        $payment_type = "loyer_chequing";
         $type = "employer";
     }
     $columns = array('account_no','bank_no', 'transit_no');
