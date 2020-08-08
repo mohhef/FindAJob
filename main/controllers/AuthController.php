@@ -202,7 +202,7 @@ class AuthController
         return false;
     }
 
-    function forgotPasswordAdmin($username, $password)
+    function forgotPasswordAdmin($username)
     {
         $conn = connDB();
         if ($stmt = $conn->prepare("SELECT * FROM admin WHERE user_name = ?")) {
@@ -211,14 +211,29 @@ class AuthController
                 $stmt->store_result();
                 if ($stmt->num_rows > 0) {
                     $stmt->close();
-                    if ($stmt = $conn->prepare("UPDATE admin set password= ? WHERE user_name= ?")) {
-                        $stmt->bind_param("ss", $password, $username);
+                    $uuid = uniqid("", true);
+                    if ($stmt = $conn->prepare("INSERT INTO temp_admin_password(user_name, temp_uuid) VALUE (?, ?)")) {
+                        $stmt->bind_param("ss", $username, $uuid);
                         if ($stmt->execute()) {
-                            return true;
+                            $stmt->close();
+                                $email = "webcareer353@gmail.com";
+                                $mail = connMail();
+                                try {
+                                    $mail->From = "webcareer353@gmail.com";
+                                    $mail->FromName = "Web Career";
+                                    $mail->addAddress($email);
+                                    $mail->Subject = "Web Career Reset Password";
+                                    $mail->Body = "To change password, press on link : " . $_SERVER['HTTP_HOST'] . "/comp-353/main/reset_password_admin.php?token=" . $uuid;
+                                    $mail->send();
+                                    $mail->smtpClose();
+                                    return true;
+                                } catch (Exception $e) {
+                                    echo "Mailer Error : " . $mail->ErrorInfo;
+                                }
+                            }
                         }
                     }
                 }
-            }
         }
         return false;
     }
@@ -237,6 +252,31 @@ class AuthController
                     if ($stmt->execute()) {
                         $stmt->close();
                         if ($stmt = $conn->prepare("DELETE FROM temp_password WHERE user_name = ?")) {
+                            $stmt->bind_param("s", $username);
+                            if ($stmt->execute()) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    function resetAdminPassword($uuid, $password) {
+        $conn = connDB();
+        if ($stmt = $conn->prepare("SELECT user_name FROM temp_admin_password WHERE temp_uuid = ?")) {
+            $stmt->bind_param("s", $uuid);
+            if ($stmt->execute()) {
+                $res = $stmt->get_result();
+                $username = $res->fetch_all()[0][0];
+                $stmt->close();
+                if ($stmt = $conn->prepare("UPDATE admin SET password = ? WHERE user_name = ?")) {
+                    $stmt->bind_param("ss", $password, $username);
+                    if ($stmt->execute()) {
+                        $stmt->close();
+                        if ($stmt = $conn->prepare("DELETE FROM temp_admin_password WHERE user_name = ?")) {
                             $stmt->bind_param("s", $username);
                             if ($stmt->execute()) {
                                 return true;
