@@ -3,9 +3,9 @@
 //create connection
 function connDB()
 {
-	$username = 'user';
-	$password = 'password';
-	$hostname = '127.0.0.1';
+	$username = 'root';
+	$password = 'root';
+	$hostname = 'localhost';
 	$database = 'web_career';
 
 	$conn = mysqli_connect($hostname, $username, $password, $database);
