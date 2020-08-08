@@ -11,12 +11,8 @@
     <h3 class="text_center">Employee Forgot Password</h3>
     <form>
         <div class="form-group">
-            <label for="employee_username_register">Username</label>
+            <label for="employee_username_forgot">Username</label>
             <input type="text" class="form-control" id="employee_username_forgot" aria-describedby="emailHelp" placeholder="Enter Username">
-        </div>
-        <div class="form-group">
-            <label for="employee_password_register">Password</label>
-            <input type="password" class="form-control" id="employee_password_forgot" aria-describedby="passwordHelp" placeholder="Enter Password">
         </div>
         <button type="button" class="btn btn-primary right-align-btn" onclick="employeeForgotPassword()">Submit</button>
     </form>
