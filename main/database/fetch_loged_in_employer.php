@@ -5,16 +5,29 @@ $loggedin_user = $_POST['id'];
 
 $columns = array('user_name', 'company_name', 'telephone_number');
 
-$query1= "SELECT e.user_name, e.company_name, c.telephone_number  FROM employer e,
-contact_info c WHERE e.user_name = c.user_name and e.user_name = '".$loggedin_user."'";
+$query1= "SELECT e.user_name, e.company_name, e.telephone_number  FROM employer e WHERE e.user_name = '".$loggedin_user."'";
+
+if(isset($_POST["order"])){
+  $query1.=' ORDER BY '.$columns[$_POST['order']['0']['column']].' '.$_POST['order']['0']['dir'].'
+';
+}
+else
+{
+ $query1   .= ' ORDER BY job_id DESC ';
+}
+$query2 = '';
+
+if($_POST["length"] != -1)
+{
+ $query2 = 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
+}
 
 
-$result = mysqli_query($conn, $query1); 
+$result = mysqli_query($conn,  $query1 . $query2);
 
 function get_all_data($conn)
 {
-  $query = "SELECT e.user_name, e.company_name, c.telephone_number  FROM employer e,
-contact_info c WHERE e.user_name = c.user_name and e.user_name = '".$_POST['id']."'";
+  $query = " SELECT e.user_name, e.company_name, e.telephone_number  FROM employer e WHERE  e.user_name = '".$_POST['id']."'";
   $result = mysqli_query($conn, $query);
   return mysqli_num_rows($result);
 }

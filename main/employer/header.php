@@ -81,14 +81,17 @@
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="\comp-353\main\employer\profile.php" id="pipeview">Profile</a>
     </div>
+    </div>
+    <div class="frozen">
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="\comp-353\main\employer\rep_dashboard.php" id="pipeview">Representatives</a>
     </div>
+    </div>
+    <div class="frozen">
      <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="\comp-353\main\employer\contact_admin.php" id="pipeview">Contact Admin</a>
     </div>
-  </div>
-
+    </div>
     <div class="col-md-1-auto" id="change4">
       <a class="btn btn-danger" onclick="cookieset_employer();" id="cooks">Logout</a>
     </div>
