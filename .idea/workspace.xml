@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9b6d816-6da5-4570-a787-193642d61384" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89ca7b57-f4ff-42ec-8fdf-fd1a43641187.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89ca7b57-f4ff-42ec-8fdf-fd1a43641187.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/database/balance_deduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/database/balance_deduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/database/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/database/config.php" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/main/helpers/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/helpers/config.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,9 +74,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Database Script.createtables.sql">
-    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
-      <method v="2" />
-    </configuration>
     <configuration name="createtables.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/main/database/createtables.sql" />
       <script-mode>FILE</script-mode>
@@ -119,11 +116,12 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="290" y="1484" width="1397" height="297" key="#SQL_Dialects/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596290277714" />
-    <state x="634" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596896629346">
-      <screen x="67" y="0" width="1853" height="1080" />
+    <state x="634" y="236" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596912206284">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="588" y="1294" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596493332908" />
     <state x="634" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596896629346" />
+    <state x="634" y="236" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1596912206284" />
     <state x="634" y="236" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1596640760907" />
     <state x="726" y="1381" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596285892833">
       <screen x="0" y="1080" width="1920" height="1080" />
@@ -138,26 +136,30 @@
     </state>
     <state x="776" y="1390" width="424" height="484" key="FileChooserDialogImpl/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596456224653" />
     <state x="816" y="329" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1596639583957" />
-    <state width="1291" height="286" key="GridCell.Tab.0.bottom" timestamp="1596910347245">
-      <screen x="67" y="0" width="1853" height="1080" />
+    <state width="1291" height="286" key="GridCell.Tab.0.bottom" timestamp="1596911923415">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1244" height="278" key="GridCell.Tab.0.bottom/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596500933145" />
     <state width="1291" height="286" key="GridCell.Tab.0.bottom/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596910347245" />
-    <state width="1291" height="286" key="GridCell.Tab.0.center" timestamp="1596910347245">
-      <screen x="67" y="0" width="1853" height="1080" />
+    <state width="1291" height="286" key="GridCell.Tab.0.bottom/0.1080.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1596911923415" />
+    <state width="1291" height="286" key="GridCell.Tab.0.center" timestamp="1596911923415">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1244" height="278" key="GridCell.Tab.0.center/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596500933144" />
     <state width="1291" height="286" key="GridCell.Tab.0.center/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596910347245" />
-    <state width="1291" height="286" key="GridCell.Tab.0.left" timestamp="1596910347244">
-      <screen x="67" y="0" width="1853" height="1080" />
+    <state width="1291" height="286" key="GridCell.Tab.0.center/0.1080.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1596911923415" />
+    <state width="1291" height="286" key="GridCell.Tab.0.left" timestamp="1596911923415">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1244" height="278" key="GridCell.Tab.0.left/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596500933144" />
     <state width="1291" height="286" key="GridCell.Tab.0.left/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596910347244" />
-    <state width="1291" height="286" key="GridCell.Tab.0.right" timestamp="1596910347245">
-      <screen x="67" y="0" width="1853" height="1080" />
+    <state width="1291" height="286" key="GridCell.Tab.0.left/0.1080.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1596911923415" />
+    <state width="1291" height="286" key="GridCell.Tab.0.right" timestamp="1596911923415">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1244" height="278" key="GridCell.Tab.0.right/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596500933145" />
     <state width="1291" height="286" key="GridCell.Tab.0.right/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596910347245" />
+    <state width="1291" height="286" key="GridCell.Tab.0.right/0.1080.1920.1080/67.27.1853.1053@67.27.1853.1053" timestamp="1596911923415" />
     <state x="724" y="1352" width="529" height="561" key="NewPhpClassDialog" timestamp="1596493457895">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
