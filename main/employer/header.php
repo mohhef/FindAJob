@@ -50,7 +50,7 @@
 <body>
 <div class="row">
     <div class="col-md-4 mr-auto" id="change">
-      <a href="../../inventory/main.php">
+      <a href="\comp-353\main\employer\post_job.php">
         <img src="../png/findAjob.png" width=auto height=70px alt="" width=auto height=50px id ="Logo" position:absolute;>
       </a>
     </div>
@@ -77,6 +77,7 @@
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="\comp-353\main\employer\subscription.php" id="pipeview">Subscription</a>
     </div>
+    <div class="frozen">
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="\comp-353\main\employer\profile.php" id="pipeview">Profile</a>
     </div>
@@ -86,6 +87,8 @@
      <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="\comp-353\main\employer\contact_admin.php" id="pipeview">Contact Admin</a>
     </div>
+  </div>
+
     <div class="col-md-1-auto" id="change4">
       <a class="btn btn-danger" onclick="cookieset_employer();" id="cooks">Logout</a>
     </div>

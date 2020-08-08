@@ -81,21 +81,15 @@ $(document).ready(function(){
   });
 }
 $("#user_data").on('click', '.offer', function(){
-  var id = $(this).attr("id");
-  console.log(id);
-  $.ajax({
-    url:'../database/get_jobposts.php',
-    method:"POST",
-    data:{id:id},
-    dataType:"json",
-    success:function(data){
-      bootbox.alert({
-        message:"Offer the job '"+id+ "'",
-       callback: function() {
+  var id = $(this).attr("id").split(" ")[0];
+  var employee_name = $(this).attr("id").split(" ")[1];
+      bootbox.confirm("Offer this job "+id, function(result){
+        if(result==true){
+        console.log(result);
           $.ajax({
             url:'../database/offer_job.php',
             method: "POST",
-            data:{id:id,loyee_username:data.user_name},
+            data:{id:id,loyee_username:employee_name},
             success: function(data){
               $('#alert_message').html('<div class="alert alert-success">'+'Job offered'+'</div>');
               $('#user_data').DataTable().ajax.reload(null,false);
@@ -107,10 +101,8 @@ $("#user_data").on('click', '.offer', function(){
           setInterval(function(){
                   $('#alert_message').html('');
                 }, 5000);
-          }
+              }
         });
-        }
-      });
       });
       });
 </script>

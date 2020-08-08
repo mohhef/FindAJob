@@ -26,9 +26,9 @@ window.onload = function() {
        
       if(data == 1){
        
-        if ( document.URL.includes("job_offers.php")) {
+        if ( document.URL.includes("subscription.php")) {
         }else{
-         redirect_to_job_offers();
+         redirect_to_subscription();
         }
         
           var elements = document.getElementsByClassName("frozen");
@@ -40,6 +40,36 @@ window.onload = function() {
      
       }
      
+    }
+   })
+  };
+
+    window.onload = function() {
+    var id = getCookie("employee_username");
+    $.ajax({
+    url:'../database/get_deactivated_account.php',
+    method:"POST",
+    data:{id:id},
+    error: function(xhr, error){
+        console.log(xhr); console.log(error);
+    },
+    success:function(data){
+      
+      if(data == 2){
+       
+        if ( document.URL.includes("subscription.php") || document.URL.includes("payment.php")  || document.URL.includes("chequing_table.php")  || document.URL.includes("card_table.php")) {
+        }else{
+         redirect_to_subscription();
+        }
+        
+          var elements = document.getElementsByClassName("frozen");
+          console.log(elements.length);
+          
+           elements[0].style.display = 'none';
+           elements[1].style.display = 'none';
+           elements[2].style.display = 'none';
+           
+      } 
     }
    })
   };
@@ -61,8 +91,8 @@ function getCookie(cname) {
   return "";
 }
 
-function redirect_to_job_offers(){
-  location.href = "job_offers.php";
+function redirect_to_subscription(){
+  location.href = "subscription.php";
 }
 </script>
 </body>
