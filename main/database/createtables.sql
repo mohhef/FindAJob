@@ -9,6 +9,7 @@ create table all_user
     email     varchar(100),
     balance   int,
     password  varchar(200),
+    last_payment datetime,
     primary key (user_name)
 );
 insert into all_user(user_name, email, password)
@@ -254,12 +255,12 @@ CREATE TABLE temp_admin_password
     PRIMARY KEY (user_name),
     FOREIGN KEY (user_name) REFERENCES admin (user_name)
 );
-CREATE EVENT IF NOT EXISTS remove_temp_password
+CREATE EVENT IF NOT EXISTS remove_temp_admin_password
     ON SCHEDULE EVERY 15 MINUTE
     ON COMPLETION PRESERVE
     ENABLE
     DO
     DELETE
-    FROM temp_password
+    FROM temp_admin_password
     WHERE timestamp < DATE_SUB(NOW(), INTERVAL 15 MINUTE)
 ;
