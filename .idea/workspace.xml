@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c9b6d816-6da5-4570-a787-193642d61384" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/controllers/RepController.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/controllers/RepController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/database/balance_deduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/database/balance_deduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/database/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/database/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/helpers/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/helpers/config.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="email" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,6 +65,9 @@
     </key>
   </component>
   <component name="RunManager" selected="Database Script.createtables.sql">
+    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
+      <method v="2" />
+    </configuration>
     <configuration name="createtables.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/main/database/createtables.sql" />
       <script-mode>FILE</script-mode>
@@ -122,22 +127,26 @@
     </state>
     <state x="776" y="1390" width="424" height="484" key="FileChooserDialogImpl/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596456224653" />
     <state x="816" y="329" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1596639583957" />
-    <state width="1244" height="278" key="GridCell.Tab.0.bottom" timestamp="1596500933145">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state width="1291" height="286" key="GridCell.Tab.0.bottom" timestamp="1596910347245">
+      <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state width="1244" height="278" key="GridCell.Tab.0.bottom/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596500933145" />
-    <state width="1244" height="278" key="GridCell.Tab.0.center" timestamp="1596500933144">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state width="1291" height="286" key="GridCell.Tab.0.bottom/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596910347245" />
+    <state width="1291" height="286" key="GridCell.Tab.0.center" timestamp="1596910347245">
+      <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state width="1244" height="278" key="GridCell.Tab.0.center/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596500933144" />
-    <state width="1244" height="278" key="GridCell.Tab.0.left" timestamp="1596500933144">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state width="1291" height="286" key="GridCell.Tab.0.center/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596910347245" />
+    <state width="1291" height="286" key="GridCell.Tab.0.left" timestamp="1596910347244">
+      <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state width="1244" height="278" key="GridCell.Tab.0.left/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596500933144" />
-    <state width="1244" height="278" key="GridCell.Tab.0.right" timestamp="1596500933145">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state width="1291" height="286" key="GridCell.Tab.0.left/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596910347244" />
+    <state width="1291" height="286" key="GridCell.Tab.0.right" timestamp="1596910347245">
+      <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state width="1244" height="278" key="GridCell.Tab.0.right/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596500933145" />
+    <state width="1291" height="286" key="GridCell.Tab.0.right/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596910347245" />
     <state x="724" y="1352" width="529" height="561" key="NewPhpClassDialog" timestamp="1596493457895">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
@@ -154,10 +163,19 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="828" y="1338" width="606" height="588" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596458713983" />
-    <state x="657" y="793" key="run.anything.popup" timestamp="1596497030336">
+    <state x="741" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596909759597">
+      <screen x="67" y="0" width="1853" height="1080" />
+    </state>
+    <state x="741" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596909759597" />
+    <state x="650" y="147" width="620" height="783" key="find.popup" timestamp="1596906253453">
+      <screen x="67" y="0" width="1853" height="1080" />
+    </state>
+    <state x="650" y="147" width="620" height="783" key="find.popup/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596906253453" />
+    <state x="657" y="793" key="run.anything.popup" timestamp="1596908018060">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="657" y="793" key="run.anything.popup/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596497030336" />
+    <state x="657" y="793" key="run.anything.popup/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596908018060" />
     <state x="656" y="1337" width="672" height="678" key="search.everywhere.popup" timestamp="1596495882649">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
