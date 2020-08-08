@@ -1,6 +1,9 @@
 <?php
     defined('__ROOT__') or define('__ROOT__', dirname(__FILE__));
     require_once(__ROOT__."/../helpers/config.php");
+    require_once(__ROOT__ . "/../helpers/mail.php");
+    require_once(__ROOT__ . "/../vendor/autoload.php");
+
     $conn = connDB();
     if($stmt = $conn->prepare("SELECT * FROM all_user")){
         $stmt->execute();
@@ -66,7 +69,19 @@
             if($stmt = $conn->prepare("UPDATE all_user SET balance = balance - ? WHERE user_name = ?")){
                 $stmt->bind_param("is", $price, $val[0]);
                 if($stmt->execute()){
-                    return;
+                    $mail = connMail();
+                    $email = $val[1];
+                    try {
+                        $mail->From = "webcareer353@gmail.com";
+                        $mail->FromName = "Web Career";
+                        $mail->addAddress($email);
+                        $mail->Subject = "Web Career Charged Your Account";
+                        $mail->Body = "Your account subscription is " . $user_info[1] . " and has been charged " . $price . ". Your remaining balance " . ($val[2] - $price);
+                        $mail->send();
+                        $mail->smtpClose();
+                    } catch (Exception $e) {
+                        echo "Mailer Error : " . $mail->ErrorInfo;
+                    }
                 }
             }
 
