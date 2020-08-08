@@ -1,31 +1,76 @@
 <?php
-    require('config.php');
-    $user = '';
-    if (isset($_COOKIE['employer_username'])) {
-        $user = $_COOKIE['employer_username'];
-        $type = "employer";
-        $subscription_type="subscription_category_loyee";
-    } else if (isset($_COOKIE['employee_username'])) {
-        $user = $_COOKIE['employee_username'];
-        $type = "employee";
-        $subscription_type="subscription_category_loyer";
+    defined('__ROOT__') or define('__ROOT__', dirname(__FILE__));
+    require_once(__ROOT__."/../helpers/config.php");
+    $conn = connDB();
+    if($stmt = $conn->prepare("SELECT * FROM all_user")){
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $arr = $res->fetch_all(MYSQLI_NUM);
+        $stmt->close();
+        foreach($arr as $val){
+            // check whether employee or employer, and get subscription
+            $isEmployee = false;
+            $isEmployer = false;
+            $user_info = null;
+            if($stmt = $conn->prepare("SELECT * FROM employee WHERE user_name = ?")){
+                $stmt->bind_param("s", $val[0]);
+                $stmt->execute();
+                $res = $stmt->get_result();
+                $user_info = $res->fetch_all();
+                if($user_info != null){
+                    $user_info = $user_info[0];
+                    $stmt->close();
+                    $isEmployee = true;
+                }else{
+                    $stmt->close();
+                    if($stmt = $conn->prepare("SELECT * FROM employer WHERE user_name = ?")){
+                        $stmt->bind_param("s", $val[0]);
+                        $stmt->execute();
+                        $res = $stmt->get_result();
+                        $user_info = $res->fetch_all();
+                        if($user_info != null){
+                            $user_info = $user_info[0];
+                            $stmt->close();
+                            $isEmployer = true;
+                        }
+
+                    }
+                }
+            }
+            if($isEmployee){
+                $price = null;
+                if($stmt = $conn->prepare("SELECT price FROM subscription_category_loyee WHERE category = ?")){
+                    $stmt->bind_param("s", $user_info[1]);
+                    $stmt->execute();
+                    $res = $stmt->get_result();
+                    $price = $res->fetch_all();
+                    if($price != null){
+                        $price = str_replace("$", "", $price[0][0]);
+                        $stmt->close();
+                    }
+                }
+            }
+            if($isEmployer){
+                if($stmt = $conn->prepare("SELECT price FROM subscription_category_loyer WHERE category = ?")){
+                    $stmt->bind_param("s", $user_info[1]);
+                    $stmt->execute();
+                    $res = $stmt->get_result();
+                    $price = $res->fetch_all();
+                    if($price != null){
+                        $price = str_replace("$", "", $price[0][0]);
+                        $stmt->close();
+                    }
+                }
+            }
+
+            if($stmt = $conn->prepare("UPDATE all_user SET balance = balance - ? WHERE user_name = ?")){
+                $stmt->bind_param("is", $price, $val[0]);
+                if($stmt->execute()){
+                    return;
+                }
+            }
+
+        }
     }
 
-    $query_user_category = "SELECT category FROM `$type` where user_name='$user'";
-    $category = mysqli_fetch_array(mysqli_query($conn, $query_user_category));
-
-    $query_user_deduction = "SELECT `price` FROM `$subscription_type` WHERE category='$category[0]'";
-    $deduction = mysqli_fetch_array(mysqli_query($conn, $query_user_deduction));
-
-    $query_user_balance = "SELECT `balance` FROM `all_user` WHERE user_name='$user'";
-    $current_balance = mysqli_fetch_array(mysqli_query($conn, $query_user_balance));
-
-    $new_balance = ltrim($current_balance[0],"$") - ltrim($deduction[0],"$");
-    
-    $query_update_balance = "UPDATE `all_user` SET `balance`='$new_balance' WHERE user_name='$user'";
-
-    if(mysqli_query($conn, $query_update_balance)) {
-        echo 'data deleted!';
-    }
-
-?>
+    ?>
