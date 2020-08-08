@@ -1,8 +1,8 @@
 
 <?php
 //create connection
-$username = 'user';
-$password = 'password';
+$username = 'root';
+$password = 'root';
 $hostname = 'localhost';
 $database =  'web_career';
 
