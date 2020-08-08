@@ -12,13 +12,13 @@ $token = $_GET['token'];
 </head>
 <body>
 <div class="container top-margin">
-    <h3 class="text_center">Employer Forgot Password</h3>
+    <h3 class="text_center">Admin Forgot Password</h3>
     <form>
         <div class="form-group">
-            <label for="employer_reset_password">Password</label>
-            <input type="text" class="form-control" id="employer_reset_password" aria-describedby="emailHelp" placeholder="Enter Password">
+            <label for="admin_reset_password">Password</label>
+            <input type="password" class="form-control" id="admin_reset_password" aria-describedby="emailHelp" placeholder="Enter Password">
         </div>
-        <button type="button" class="btn btn-primary right-align-btn" onclick="employerResetPassword()">Submit</button>
+        <button type="button" class="btn btn-primary right-align-btn" onclick="adminResetPassword()">Submit</button>
     </form>
 </div>
 <?php require("./helpers/footer.php"); ?>

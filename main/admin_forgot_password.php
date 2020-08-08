@@ -12,11 +12,7 @@
     <form>
         <div class="form-group">
             <label for="admin_username_forgot">Username</label>
-            <input type="text" class="form-control" id="admin_username_forgot" aria-describedby="emailHelp" placeholder="Enter Username">
-        </div>
-        <div class="form-group">
-            <label for="admin_password_forgot">Password</label>
-            <input type="password" class="form-control" id="admin_password_forgot" aria-describedby="passwordHelp" placeholder="Enter Password">
+            <input type="text" class="form-control" id="admin_username_forgot" aria-describedby="passwordHelp" placeholder="Enter Username">
         </div>
         <button type="button" class="btn btn-primary right-align-btn" onclick="adminForgotPassword()">Submit</button>
     </form>
