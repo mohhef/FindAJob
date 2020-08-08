@@ -145,6 +145,34 @@ $("#profileModal").on('submit','#profileForm', function(event){
   });
 });
 
+$(document).on('click', '.delete',function(){
+  var id=$(this).attr("id");
+      bootbox.prompt({
+        size: "large",
+        title: "Delete",
+        inputType: 'radio',
+        inputOptions: [{
+         text: "Delete the Profile '"+id+ "'",
+         value: '1',
+        }],
+       callback: function(result) {
+          if (result == 1) {
+            $.ajax({
+              url:"../database/delete_profile.php",
+              method: "POST",
+              data: {id:id},
+              success:function(data){
+                cookieset_employee();
+              }
+            });
+            setInterval(function(){
+              $('#alert_message').html('');
+            }, 5000);
+          }
+        }
+      });
+    }
+});
 
 });
 
