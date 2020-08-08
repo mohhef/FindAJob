@@ -14,10 +14,6 @@
             <label for="employer_username_forgot">Username</label>
             <input type="text" class="form-control" id="employer_username_forgot" aria-describedby="emailHelp" placeholder="Enter Username">
         </div>
-        <div class="form-group">
-            <label for="employer_password_forgot">Password</label>
-            <input type="password" class="form-control" id="employer_password_forgot" aria-describedby="passwordHelp" placeholder="Enter Password">
-        </div>
         <button type="button" class="btn btn-primary right-align-btn" onclick="employerForgotPassword()">Submit</button>
     </form>
 </div>
