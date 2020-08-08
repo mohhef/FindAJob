@@ -2,15 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9b6d816-6da5-4570-a787-193642d61384" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/main/reset_password_employer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/service/auth/employer_reset_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/comp-353.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/comp-353.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/controllers/RepController.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/controllers/RepController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employee_forgot_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/employee_forgot_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/employer_forgot_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/employer_forgot_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/forgot.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/js/forgot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/js/resetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/js/resetPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/service/auth/employee_reset_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/service/auth/employee_reset_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/service/auth/employer_forgot.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/service/auth/employer_forgot.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/main/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -18,6 +29,7 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="composer.json" />
       </list>
     </option>
   </component>
@@ -28,6 +40,12 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/main/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/main/vendor/composer" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1fUu2TerLxWtyyCOzF54Xa4kV0P" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -47,19 +65,19 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/main/service/employee" />
-      <recent name="$PROJECT_DIR$/main/js/employer" />
-      <recent name="$PROJECT_DIR$/main/helpers" />
-      <recent name="$PROJECT_DIR$/main/view/employer" />
-      <recent name="$PROJECT_DIR$/main/controllers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/main/service/employer" />
       <recent name="$PROJECT_DIR$/main/js" />
       <recent name="$PROJECT_DIR$/main/view" />
       <recent name="$PROJECT_DIR$/main/sql" />
       <recent name="$PROJECT_DIR$/main/js/auth" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/main/service/employee" />
+      <recent name="$PROJECT_DIR$/main/js/employer" />
+      <recent name="$PROJECT_DIR$/main/helpers" />
+      <recent name="$PROJECT_DIR$/main/view/employer" />
+      <recent name="$PROJECT_DIR$/main/controllers" />
     </key>
   </component>
   <component name="RunManager" selected="Database Script.createtables.sql">
@@ -93,6 +111,7 @@
       <workItem from="1596639587740" duration="1554000" />
       <workItem from="1596663054417" duration="1949000" />
       <workItem from="1596674488829" duration="115000" />
+      <workItem from="1596896555249" duration="882000" />
     </task>
     <servers />
   </component>
@@ -104,10 +123,11 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="290" y="1484" width="1397" height="297" key="#SQL_Dialects/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596290277714" />
-    <state x="634" y="236" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596640760907">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="634" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596896629346">
+      <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="588" y="1294" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596493332908" />
+    <state x="634" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596896629346" />
     <state x="634" y="236" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1596640760907" />
     <state x="726" y="1381" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596285892833">
       <screen x="0" y="1080" width="1920" height="1080" />
@@ -142,10 +162,11 @@
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
     <state x="724" y="1352" width="529" height="561" key="NewPhpClassDialog/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596493457895" />
-    <state x="789" y="1558" width="399" height="149" key="NewPhpFileDialog" timestamp="1596500713428">
-      <screen x="0" y="1080" width="1920" height="1080" />
+    <state x="828" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1596897342891">
+      <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state x="789" y="1558" width="399" height="149" key="NewPhpFileDialog/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596500713428" />
+    <state x="828" y="478" width="399" height="149" key="NewPhpFileDialog/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596897342891" />
     <state x="866" y="1522" width="367" height="248" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1596493167413">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
