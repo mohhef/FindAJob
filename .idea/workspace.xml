@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9b6d816-6da5-4570-a787-193642d61384" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main/reset_password_admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/service/auth/admin_reset_password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/89ca7b57-f4ff-42ec-8fdf-fd1a43641187.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/89ca7b57-f4ff-42ec-8fdf-fd1a43641187.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/admin_forgot_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/admin_forgot_password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/database/createtables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/main/database/createtables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/js/forgot.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/js/forgot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/js/resetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/js/resetPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/reset_password_employer.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/reset_password_employer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/service/auth/admin_forgot.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/service/auth/admin_forgot.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/helpers/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/main/helpers/config.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +101,7 @@
       <workItem from="1596639587740" duration="1554000" />
       <workItem from="1596663054417" duration="1949000" />
       <workItem from="1596674488829" duration="115000" />
-      <workItem from="1596896555249" duration="3083000" />
+      <workItem from="1596896555249" duration="3267000" />
     </task>
     <servers />
   </component>
@@ -141,26 +132,26 @@
     </state>
     <state x="776" y="1390" width="424" height="484" key="FileChooserDialogImpl/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596456224653" />
     <state x="816" y="329" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1596639583957" />
-    <state width="1291" height="286" key="GridCell.Tab.0.bottom" timestamp="1596899403727">
+    <state width="1291" height="286" key="GridCell.Tab.0.bottom" timestamp="1596899694273">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state width="1244" height="278" key="GridCell.Tab.0.bottom/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596500933145" />
-    <state width="1291" height="286" key="GridCell.Tab.0.bottom/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596899403727" />
-    <state width="1291" height="286" key="GridCell.Tab.0.center" timestamp="1596899403727">
+    <state width="1291" height="286" key="GridCell.Tab.0.bottom/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596899694273" />
+    <state width="1291" height="286" key="GridCell.Tab.0.center" timestamp="1596899694271">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state width="1244" height="278" key="GridCell.Tab.0.center/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596500933144" />
-    <state width="1291" height="286" key="GridCell.Tab.0.center/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596899403727" />
-    <state width="1291" height="286" key="GridCell.Tab.0.left" timestamp="1596899403727">
+    <state width="1291" height="286" key="GridCell.Tab.0.center/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596899694271" />
+    <state width="1291" height="286" key="GridCell.Tab.0.left" timestamp="1596899694271">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state width="1244" height="278" key="GridCell.Tab.0.left/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596500933144" />
-    <state width="1291" height="286" key="GridCell.Tab.0.left/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596899403727" />
-    <state width="1291" height="286" key="GridCell.Tab.0.right" timestamp="1596899403727">
+    <state width="1291" height="286" key="GridCell.Tab.0.left/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596899694271" />
+    <state width="1291" height="286" key="GridCell.Tab.0.right" timestamp="1596899694273">
       <screen x="67" y="0" width="1853" height="1080" />
     </state>
     <state width="1244" height="278" key="GridCell.Tab.0.right/0.1080.1920.1080/67.0.1853.1080@0.1080.1920.1080" timestamp="1596500933145" />
-    <state width="1291" height="286" key="GridCell.Tab.0.right/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596899403727" />
+    <state width="1291" height="286" key="GridCell.Tab.0.right/0.1080.1920.1080/67.0.1853.1080@67.0.1853.1080" timestamp="1596899694273" />
     <state x="724" y="1352" width="529" height="561" key="NewPhpClassDialog" timestamp="1596493457895">
       <screen x="0" y="1080" width="1920" height="1080" />
     </state>
