@@ -91,10 +91,16 @@ class AuthController
                     $stmt->bind_param("s", $username);
                     if ($stmt->execute()) {
                         $stmt->close();
-                        return true;
+                        if ($stmt = $conn->prepare("INSERT INTO manages(user_name, auser_name,activate_deactivate) VALUE (?, 'bigboss','active')")){
+                            $stmt->bind_param("s", $username);
+                            if ($stmt->execute()) {
+                                $stmt->close();
+                                return true;
+                            }
                     }
                 }
             }
+        }
         }
         $stmt->close();
         return false;
@@ -111,8 +117,14 @@ class AuthController
                     $stmt->bind_param("s", $username);
                     if ($stmt->execute()) {
                         $stmt->close();
-                        return true;
+                        if ($stmt = $conn->prepare("INSERT INTO manages(user_name, auser_name,activate_deactivate) VALUE (?, 'bigboss','active')")){
+                            $stmt->bind_param("s", $username);
+                            if ($stmt->execute()) {
+                                $stmt->close();
+                                return true;
+                            }
                     }
+                }
                 }
             }
         }
