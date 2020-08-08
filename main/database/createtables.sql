@@ -245,3 +245,21 @@ CREATE EVENT IF NOT EXISTS remove_temp_password
     FROM temp_password
     WHERE timestamp < DATE_SUB(NOW(), INTERVAL 15 MINUTE)
 ;
+
+CREATE TABLE temp_admin_password
+(
+    user_name varchar(20),
+    temp_uuid varchar(255) NOT NULL,
+    timestamp datetime DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (user_name),
+    FOREIGN KEY (user_name) REFERENCES admin (user_name)
+);
+CREATE EVENT IF NOT EXISTS remove_temp_password
+    ON SCHEDULE EVERY 15 MINUTE
+    ON COMPLETION PRESERVE
+    ENABLE
+    DO
+    DELETE
+    FROM temp_password
+    WHERE timestamp < DATE_SUB(NOW(), INTERVAL 15 MINUTE)
+;

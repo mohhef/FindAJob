@@ -40,10 +40,8 @@ const employerForgotPassword = () => {
 
 const adminForgotPassword = () => {
     const username = $('input[id=admin_username_forgot]').val();
-    const password = $('input[id=admin_password_forgot]').val();
     const json = {
         "username": username,
-        "password": password,
     }
     $.post('./service/auth/admin_forgot.php', json, function (data) {
         if (!data) {
@@ -52,7 +50,7 @@ const adminForgotPassword = () => {
         }
         const res = JSON.parse(data);
         if (res.result) {
-            setCookie("admin_username", username, 1);
+            alert("Email has been sent.");
             window.location.replace('index.php');
         } else {
             alert("Username or Password is incorrect.");

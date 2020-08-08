@@ -3,9 +3,10 @@ require("../../controllers/AuthController.php");
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST)) {
-    $username = $_POST['username'];
+    $uuid = $_POST['token'];
+    $password = $_POST['password'];
     $auth = new AuthController();
-    $result = $auth->forgotPasswordAdmin($username);
+    $result = $auth->resetAdminPassword($uuid, $password);
     if($result) {
         echo json_encode(array('result' => true));
     }else{
