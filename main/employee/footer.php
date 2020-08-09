@@ -1,6 +1,12 @@
 <script>
 window.onload = function() {
-    var y = document.cookie.indexOf("employee_username=");
+  check();
+  frozen();
+  deactivate();
+  }
+
+  function check(){
+  var y = document.cookie.indexOf("employee_username=");
     if (y < 0) {
       // if cookie doesn't exist, ask for password
       var input = bootbox.alert({
@@ -8,12 +14,11 @@ window.onload = function() {
         callback: function() {
             location.href = "http://127.0.0.1/comp-353/main/";
           }
-      })
+      });
     }
   }
 
-
-    window.onload = function() {
+  function frozen(){
     var id = getCookie("employee_username");
     $.ajax({
     url:'../database/get_frozen_account.php',
@@ -44,7 +49,7 @@ window.onload = function() {
    })
   };
 
-    window.onload = function() {
+    function deactivate(){
     var id = getCookie("employee_username");
     $.ajax({
     url:'../database/get_deactivated_account.php',
