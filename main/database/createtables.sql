@@ -3,6 +3,7 @@ create database web_career;
 use web_career;
 SET FOREIGN_KEY_CHECKS = 0;
 
+drop table if exists all_user;
 create table all_user
 (
     user_name varchar(20),
@@ -49,6 +50,7 @@ insert into all_user(user_name,email,balance,password) values
 ('moh4','mohhef@gmail',10,'1234'),
 ('moh5','mohhef@gmail',10,'1234');
 
+drop table if exists category;
 
 create table category
 (
@@ -71,6 +73,8 @@ values ('Business studies');
 insert into category(c_name)
 values ('Marketing');
 
+drop table if exists subscription_category_loyer;
+
 create table subscription_category_loyer
 (
     category varchar(100),
@@ -82,6 +86,9 @@ insert into subscription_category_loyer(category, price)
 values ('prime', '$50');
 insert into subscription_category_loyer(category, price)
 values ('gold', '$100');
+
+
+drop table if exists employer;
 
 create table employer
 (
@@ -117,6 +124,8 @@ values ('moh4', 'prime');
 insert into employer(user_name, category)
 values ('moh5', 'prime');
 
+drop table if exists representatives;
+
 create table representatives
 (
     rep_user_name      varchar(20),
@@ -136,6 +145,7 @@ values ('rep4', 'caren');
 insert into representatives(rep_user_name, employer_user_name)
 values ('rep5', 'caren');
 
+drop table if exists job;
 
 create table job
 (
@@ -155,6 +165,7 @@ insert into job(job_id,title,description,date_posted,employee_needed,category) v
 insert into job(job_id,title,description,date_posted,employee_needed,category) values(4,'Java job','professional in Java','2020-01-01',5,'Sofware Engineering');
 insert into job(job_id,title,description,date_posted,employee_needed,category) values(5,'GO job','professional in GO','2020-01-01',5,'Sofware Engineering');
 
+drop table if exists admin;
 
 create table admin
 (
@@ -165,6 +176,8 @@ create table admin
 );
 insert into admin(user_name, password)
 values ('bigboss', '123456');
+
+drop table if exists card_method;
 
 create table card_method
 (
@@ -179,6 +192,8 @@ INSERT INTO `card_method`(`card_number`, `name`, `expiration_date`) VALUES (1134
 INSERT INTO `card_method`(`card_number`, `name`, `expiration_date`) VALUES (11140,"rob","2023/01/01");
 INSERT INTO `card_method`(`card_number`, `name`, `expiration_date`) VALUES (99999,"rob","2023/01/01");
 INSERT INTO `card_method`(`card_number`, `name`, `expiration_date`) VALUES (88888,"rob","2023/01/01");
+
+drop table if exists chequing;
 
 create table chequing
 (
@@ -195,6 +210,8 @@ INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(7890,3,6);
 INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(2345,3,6);
 
 
+drop table if exists subscription_category_loyee;
+
 create table subscription_category_loyee
 (
     category varchar(100),
@@ -207,6 +224,8 @@ insert into subscription_category_loyee(category, price)
 values ('prime', '$10');
 insert into subscription_category_loyee(category, price)
 values ('gold', '$20');
+
+drop table if exists employee;
 
 create table employee
 (
@@ -231,6 +250,7 @@ values ('robloyee', 'basic');
 insert into employee(user_name, category)
 values ('ahmedloyee', 'basic');
 
+drop table if exists post;
 
 create table post
 (
@@ -246,6 +266,8 @@ insert into post (job_id,user_name) values (2,'caren');
 insert into post (job_id,user_name) values (3,'caren');
 insert into post (job_id,user_name) values (4,'caren');
 insert into post (job_id,user_name) values (5,'caren');
+
+drop table if exists offer;
 
 create table offer
 (
@@ -265,6 +287,9 @@ insert into offer (job_id, user_name_loyer, user_name_loyee, offer_status, accep
 insert into offer (job_id, user_name_loyer, user_name_loyee, offer_status, accept_deny) values (3,'caren','carenloyee','Offered','accept');
 insert into offer (job_id, user_name_loyer, user_name_loyee, offer_status, accept_deny) values (4,'caren','carenloyee','Offered','accept');
 insert into offer (job_id, user_name_loyer, user_name_loyee, offer_status, accept_deny) values (5,'caren','carenloyee','Offered','accept');
+
+drop table if exists applies;
+
 create table applies
 (
     job_id             int auto_increment,
@@ -281,6 +306,8 @@ insert into applies(job_id,user_name,application_status,date_applied) values (2,
 insert into applies(job_id,user_name,application_status,date_applied) values (3,'carenloyee','applied','2020-02-02');
 insert into applies(job_id,user_name,application_status,date_applied) values (4,'carenloyee','applied','2020-02-02');
 insert into applies(job_id,user_name,application_status,date_applied) values (5,'carenloyee','applied','2020-02-02');
+
+drop table if exists manages;
 
 create table manages
 (
@@ -312,6 +339,8 @@ values ('moh', 'bigboss', 'active');
 insert into manages(user_name, auser_name, activate_deactivate)
 values ('rob', 'bigboss', 'active');
 
+drop table if exists loyer_credit_pays;
+
 create table loyer_credit_pays
 (
     user_name        varchar(20),
@@ -329,6 +358,7 @@ INSERT INTO `loyer_credit_pays`(`user_name`, `card_number`, `automatic_manual`) 
 INSERT INTO `loyer_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("caren",99999,"automatic");
 INSERT INTO `loyer_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("caren",88888,"automatic");
 
+drop table if exists loyee_credit_pays;
 
 create table loyee_credit_pays
 (
@@ -346,6 +376,7 @@ INSERT INTO `loyee_credit_pays`(`user_name`, `card_number`, `automatic_manual`) 
 INSERT INTO `loyee_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("carenloyee",99999,"automatic");
 INSERT INTO `loyee_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("carenloyee",88888,"automatic");
 
+drop table if exists loyer_chequing;
 
 create table loyer_chequing
 (
@@ -364,6 +395,7 @@ INSERT INTO `loyer_chequing`(`user_name`, `account_no`, `automatic_manual`) VALU
 INSERT INTO `loyer_chequing`(`user_name`, `account_no`, `automatic_manual`) VALUES ("caren",7890,"automatic");
 INSERT INTO `loyer_chequing`(`user_name`, `account_no`, `automatic_manual`) VALUES ("caren",2345,"automatic");
 
+drop table if exists loyee_chequing;
 
 create table loyee_chequing
 (
@@ -383,6 +415,8 @@ INSERT INTO `loyee_chequing`(`account_no`, `user_name`, `automatic_manual`) VALU
 
 SET @@global.event_scheduler = 1;
 
+drop table if exists temp_password;
+
 CREATE TABLE temp_password
 (
     user_name varchar(20),
@@ -401,6 +435,8 @@ CREATE EVENT IF NOT EXISTS remove_temp_password
     FROM temp_password
     WHERE timestamp < DATE_SUB(NOW(), INTERVAL 15 MINUTE)
 ;
+
+drop table if exists temp_admin_password;
 
 CREATE TABLE temp_admin_password
 (
