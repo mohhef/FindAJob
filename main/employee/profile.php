@@ -86,10 +86,10 @@ $(document).ready(function(){
         "orderable": true,
         //  "width":"15%"
       }, {
-        "orderable": true,
+        "orderable": false,
         //  "width":"15%"
       }, {
-        "orderable": true,
+        "orderable": false,
         //  "width":"15%"
       }
     ],
