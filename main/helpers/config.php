@@ -3,12 +3,12 @@
 //create connection
 function connDB()
 {
-	$username = 'root';
-	$password = 'root';
-	$hostname = 'localhost';
-	$database = 'web_career';
+	$servername = "vxc353.encs.concordia.ca";
+	$username = "vxc353_1";
+	$password = "m1h2c3r4";
+	$database = "vxc353_1";
 
-	$conn = mysqli_connect($hostname, $username, $password, $database);
+	$conn = mysqli_connect($servername, $username, $password, $database);
 
 //check connection
 	if (mysqli_connect_errno()) {
