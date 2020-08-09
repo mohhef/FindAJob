@@ -15,23 +15,39 @@ create table all_user
 insert into all_user(user_name, email, balance, password)
 values ('caren', 'c123en@hello.com',1000, '123');
 insert into all_user(user_name, email, balance, password)
+values ('khaled', 'kh@hello.com',-20, '123');
+insert into all_user(user_name, email, balance, password)
 values ('carenloyee', 'c123ee@hello.com',1000,  '123');
 insert into all_user(user_name, email, balance, password)
-values ('rob', 'robs@hello.com', 1000, '123');
+values ('rob', 'robs@hello.com', -10, '123');
 insert into all_user(user_name, email, balance, password)
-values ('robloyee', 'robs@hello.com',1000,  '123');
+values ('robloyee', 'robs@hello.com',-20,  '123');
+insert into all_user(user_name, email, balance, password)
+values ('ahmedloyee', 'robs@hello.com',-20,  '123');
+insert into all_user(user_name, email, balance, password)
+values ('amrloyee', 'robs@hello.com',-20,  '123');
 insert into all_user(user_name, email, balance, password)
 values ('moh', 'mohs@hello.com',1000,  '123');
 insert into all_user(user_name, email, balance, password)
-values ('mohloyee', 'mohs@hello.com',1000,  '123');
+values ('mohloyee', 'mohs@hello.com',-20,  '123');
 insert into all_user(user_name, email, balance, password)
-values ('ahmed', 'ahmed@hello.com',1000,  '123');
+values ('ahmed', 'ahmed@hello.com',-20,  '123');
 insert into all_user(user_name, email, balance, password)
 values ('rep1', 'rep1@hello.com',1000,  '123');
 insert into all_user(user_name, email, balance, password)
 values ('rep2', 'rep2@hello.com',1000,  '123');
 insert into all_user(user_name, email, balance, password)
 values ('rep3', 'rep2@hello.com',1000,  '123');
+insert into all_user(user_name, email, balance, password)
+values ('rep4', 'rep4@hello.com',1000,  '123');
+insert into all_user(user_name, email, balance, password)
+values ('rep5', 'rep5@hello.com',1000,  '123');
+insert into all_user(user_name,email,balance,password) values 
+('moh1','mohhef@gmail',10,'1234'),
+('moh2','mohhef@gmail',10,'1234'),
+('moh3','mohhef@gmail',10,'1234'),
+('moh4','mohhef@gmail',10,'1234'),
+('moh5','mohhef@gmail',10,'1234');
 
 
 create table category
@@ -88,6 +104,18 @@ insert into employer(user_name, category)
 values ('rob', 'prime');
 insert into employer(user_name, category)
 values ('ahmed', 'gold');
+insert into employer(user_name, category)
+values ('khaled', 'gold');
+insert into employer(user_name, category)
+values ('moh1', 'prime');
+insert into employer(user_name, category)
+values ('moh2', 'prime');
+insert into employer(user_name, category)
+values ('moh3', 'prime');
+insert into employer(user_name, category)
+values ('moh4', 'prime');
+insert into employer(user_name, category)
+values ('moh5', 'prime');
 
 create table representatives
 (
@@ -121,11 +149,11 @@ create table job
     primary key (job_id)
 );
 
-insert into job(job_id,title,description,date_posted,employee_needed,category) values(1,'C++ job','professional in C++','1/12/2020',5,'Sofware Engineering');
-insert into job(job_id,title,description,date_posted,employee_needed,category) values(2,'C job','professional in C','1/12/2020',5,'Sofware Engineering');
-insert into job(job_id,title,description,date_posted,employee_needed,category) values(3,'C# job','professional in C#','1/12/2020',5,'Sofware Engineering');
-insert into job(job_id,title,description,date_posted,employee_needed,category) values(4,'Java job','professional in Java','1/12/2020',5,'Sofware Engineering');
-insert into job(job_id,title,description,date_posted,employee_needed,category) values(5,'GO job','professional in GO','1/12/2020',5,'Sofware Engineering');
+insert into job(job_id,title,description,date_posted,employee_needed,category) values(1,'C++ job','professional in C++','2020-01-01',5,'Sofware Engineering');
+insert into job(job_id,title,description,date_posted,employee_needed,category) values(2,'C job','professional in C','2020-01-01',5,'Sofware Engineering');
+insert into job(job_id,title,description,date_posted,employee_needed,category) values(3,'C# job','professional in C#','2020-01-01',5,'Sofware Engineering');
+insert into job(job_id,title,description,date_posted,employee_needed,category) values(4,'Java job','professional in Java','2020-01-01',5,'Sofware Engineering');
+insert into job(job_id,title,description,date_posted,employee_needed,category) values(5,'GO job','professional in GO','2020-01-01',5,'Sofware Engineering');
 
 
 create table admin
@@ -196,6 +224,8 @@ insert into employee(user_name, category)
 values ('amrloyee', 'basic');
 insert into employee(user_name, category)
 values ('robloyee', 'basic');
+insert into employee(user_name, category)
+values ('ahmedloyee', 'basic');
 
 
 create table post
@@ -229,6 +259,8 @@ create table offer
 insert into offer (job_id, user_name_loyer, user_name_loyee, offer_status, accept_deny) values (1,'caren','carenloyee','Offered','accept');
 insert into offer (job_id, user_name_loyer, user_name_loyee, offer_status, accept_deny) values (2,'caren','carenloyee','Offered','accept');
 insert into offer (job_id, user_name_loyer, user_name_loyee, offer_status, accept_deny) values (3,'caren','carenloyee','Offered','accept');
+insert into offer (job_id, user_name_loyer, user_name_loyee, offer_status, accept_deny) values (4,'caren','carenloyee','Offered','accept');
+insert into offer (job_id, user_name_loyer, user_name_loyee, offer_status, accept_deny) values (5,'caren','carenloyee','Offered','accept');
 create table applies
 (
     job_id             int auto_increment,
@@ -240,9 +272,11 @@ create table applies
     foreign key (user_name) references employee (user_name)
 );
 
-insert into applies(job_id,user_name,application_status,date_applied) values (1,'carenloyee','applied','12/12/2020');
-insert into applies(job_id,user_name,application_status,date_applied) values (2,'carenloyee','applied','12/12/2020');
-insert into applies(job_id,user_name,application_status,date_applied) values (3,'carenloyee','applied','12/12/2020');
+insert into applies(job_id,user_name,application_status,date_applied) values (1,'carenloyee','applied','2020-02-02');
+insert into applies(job_id,user_name,application_status,date_applied) values (2,'carenloyee','applied','2020-02-02');
+insert into applies(job_id,user_name,application_status,date_applied) values (3,'carenloyee','applied','2020-02-02');
+insert into applies(job_id,user_name,application_status,date_applied) values (4,'carenloyee','applied','2020-02-02');
+insert into applies(job_id,user_name,application_status,date_applied) values (5,'carenloyee','applied','2020-02-02');
 
 create table manages
 (
@@ -261,6 +295,18 @@ insert into manages(user_name, auser_name, activate_deactivate)
 values ('robloyee', 'bigboss', 'active');
 insert into manages(user_name, auser_name, activate_deactivate)
 values ('mohloyee', 'bigboss', 'active');
+insert into manages(user_name, auser_name, activate_deactivate)
+values ('ahmedloyee', 'bigboss', 'active');
+insert into manages(user_name, auser_name, activate_deactivate)
+values ('amrloyee', 'bigboss', 'active');
+insert into manages(user_name, auser_name, activate_deactivate)
+values ('khaled', 'bigboss', 'active');
+insert into manages(user_name, auser_name, activate_deactivate)
+values ('ahmed', 'bigboss', 'active');
+insert into manages(user_name, auser_name, activate_deactivate)
+values ('moh', 'bigboss', 'active');
+insert into manages(user_name, auser_name, activate_deactivate)
+values ('rob', 'bigboss', 'active');
 
 create table loyer_credit_pays
 (
