@@ -52,7 +52,7 @@ $sub_array = array();
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="user_name">' . $row["user_name"] . '</div>';
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="title">' . $row["email"] . '</div>';
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="employee_needed">' . $row["balance"] . '</div>';
-$sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="date_posted">' . "We need to clarify that" . '</div>';
+$sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="date_posted">' . "N/A" . '</div>';
 
 $data[] = $sub_array;
 }
