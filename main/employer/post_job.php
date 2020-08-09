@@ -33,9 +33,11 @@
         <div class="dropdown">
             <label class="mr-2 font-weight-bold" for="inlineFormCustomSelectO">Category</label>
             <select class="form-control" id="category_sel">
-                <option>Full-time</option>
-                <option>Part-time</option>
-                <option>Intern</option>
+                <option>Engieering</option>
+                <option>Finance</option>
+                <option>Accounting</option>
+                <option>Business</option>
+                <option>Arts</option>
             </select>
         </div>
         </div>
