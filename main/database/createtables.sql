@@ -177,6 +177,8 @@ create table card_method
 INSERT INTO `card_method`(`card_number`, `name`, `expiration_date`) VALUES (12340,"caren","2021/03/21");
 INSERT INTO `card_method`(`card_number`, `name`, `expiration_date`) VALUES (11340,"mo","2022/11/10");
 INSERT INTO `card_method`(`card_number`, `name`, `expiration_date`) VALUES (11140,"rob","2023/01/01");
+INSERT INTO `card_method`(`card_number`, `name`, `expiration_date`) VALUES (99999,"rob","2023/01/01");
+INSERT INTO `card_method`(`card_number`, `name`, `expiration_date`) VALUES (88888,"rob","2023/01/01");
 
 create table chequing
 (
@@ -189,6 +191,8 @@ create table chequing
 INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(1234,1,8);
 INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(5678,2,9);
 INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(91011,3,6);
+INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(7890,3,6);
+INSERT INTO `chequing`(`account_no`, `bank_no`, `transit_no`) VALUES(2345,3,6);
 
 
 create table subscription_category_loyee
@@ -322,6 +326,8 @@ create table loyer_credit_pays
 INSERT INTO `loyer_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("caren",12340,"manual");
 INSERT INTO `loyer_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("caren",11340,"manual");
 INSERT INTO `loyer_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("caren",11140,"automatic");
+INSERT INTO `loyer_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("caren",99999,"automatic");
+INSERT INTO `loyer_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("caren",88888,"automatic");
 
 
 create table loyee_credit_pays
@@ -337,6 +343,8 @@ create table loyee_credit_pays
 INSERT INTO `loyee_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("carenloyee",12340,"manual");
 INSERT INTO `loyee_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("carenloyee",11340,"manual");
 INSERT INTO `loyee_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("carenloyee",11140,"automatic");
+INSERT INTO `loyee_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("carenloyee",99999,"automatic");
+INSERT INTO `loyee_credit_pays`(`user_name`, `card_number`, `automatic_manual`) VALUES ("carenloyee",88888,"automatic");
 
 
 create table loyer_chequing
@@ -353,6 +361,8 @@ create table loyer_chequing
 INSERT INTO `loyer_chequing`(`user_name`, `account_no`, `automatic_manual`) VALUES ("caren",1234,"manual");
 INSERT INTO `loyer_chequing`(`user_name`, `account_no`, `automatic_manual`) VALUES ("caren",5678,"manual");
 INSERT INTO `loyer_chequing`(`user_name`, `account_no`, `automatic_manual`) VALUES ("caren",91011,"automatic");
+INSERT INTO `loyer_chequing`(`user_name`, `account_no`, `automatic_manual`) VALUES ("caren",7890,"automatic");
+INSERT INTO `loyer_chequing`(`user_name`, `account_no`, `automatic_manual`) VALUES ("caren",2345,"automatic");
 
 
 create table loyee_chequing
@@ -368,6 +378,8 @@ create table loyee_chequing
 INSERT INTO `loyee_chequing`(`account_no`, `user_name`, `automatic_manual`) VALUES (1234,"carenloyee","automatic");
 INSERT INTO `loyee_chequing`(`account_no`, `user_name`, `automatic_manual`) VALUES (5678,"carenloyee","automatic");
 INSERT INTO `loyee_chequing`(`account_no`, `user_name`, `automatic_manual`) VALUES (91011,"carenloyee","automatic");
+INSERT INTO `loyee_chequing`(`account_no`, `user_name`, `automatic_manual`) VALUES (7890,"carenloyee","automatic");
+INSERT INTO `loyee_chequing`(`account_no`, `user_name`, `automatic_manual`) VALUES (2345,"carenloyee","automatic");
 
 SET @@global.event_scheduler = 1;
 
