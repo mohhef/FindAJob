@@ -15,6 +15,14 @@ window.onload = function() {
 
     window.onload = function() {
     var id = getCookie("employee_username");
+
+  };
+
+    window.onload = function() {
+    var id = getCookie("employee_username");
+
+    // Check frozen accounts
+
     $.ajax({
     url:'../database/get_frozen_account.php',
     method:"POST",
@@ -42,10 +50,9 @@ window.onload = function() {
      
     }
    })
-  };
 
-    window.onload = function() {
-    var id = getCookie("employee_username");
+    // Check Deactivated accounts
+
     $.ajax({
     url:'../database/get_deactivated_account.php',
     method:"POST",

@@ -12,9 +12,13 @@ window.onload = function() {
     }
   }
 
+
   window.onload = function() {
     var id = getCookie("employer_username");
-    $.ajax({
+
+// Check Frozen Accounts
+
+        $.ajax({
     url:'../database/get_frozen_account.php',
     method:"POST",
     data:{id:id},
@@ -33,16 +37,17 @@ window.onload = function() {
           var elements = document.getElementsByClassName("frozen");
           console.log(elements.length);
           
-           elements[0].style.display = 'none';
+         elements[0].style.display = 'none';
            elements[1].style.display = 'none';
-           elements[2].style.display = 'none';   
+           elements[2].style.display = 'none';
+           elements[3].style.display = 'none';
+           elements[4].style.display = 'none';  
       } 
     }
    })
-  };
 
-  window.onload = function() {
-    var id = getCookie("employer_username");
+
+// Check Deactivated acconts
     $.ajax({
     url:'../database/get_deactivated_account.php',
     method:"POST",
