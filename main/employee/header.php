@@ -72,9 +72,11 @@
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="\comp-353\main\employee\subscription.php" id="pipeview">Subscription</a>
     </div>
+    <div class="frozen">
     <div class="col-md-1-auto" id="change1">
       <a class="btn btn-outline-primary" href="\comp-353\main\employee\profile.php" id="pipeview">Profile</a>
     </div>
+  </div>
     <div class="col-md-1-auto" id="change4">
       <a class="btn btn-danger" onclick="cookieset_employee();" id="cooks">Logout</a>
     </div>

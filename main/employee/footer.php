@@ -13,10 +13,6 @@ window.onload = function() {
   }
 
 
-    window.onload = function() {
-    var id = getCookie("employee_username");
-
-  };
 
     window.onload = function() {
     var id = getCookie("employee_username");
@@ -34,7 +30,7 @@ window.onload = function() {
        
       if(data == 1){
        
-        if ( document.URL.includes("subscription.php")) {
+        if ( document.URL.includes("subscription.php") || document.URL.includes("payment.php")  || document.URL.includes("chequing_table.php")  || document.URL.includes("card_table.php")) {
         }else{
          redirect_to_subscription();
         }
@@ -45,6 +41,7 @@ window.onload = function() {
            elements[0].style.display = 'none';
            elements[1].style.display = 'none';
            elements[2].style.display = 'none';
+            elements[3].style.display = 'none';
      
       }
      
@@ -75,6 +72,7 @@ window.onload = function() {
            elements[0].style.display = 'none';
            elements[1].style.display = 'none';
            elements[2].style.display = 'none';
+           elements[3].style.display = 'none';
            
       } 
     }

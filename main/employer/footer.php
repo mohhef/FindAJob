@@ -41,7 +41,8 @@ window.onload = function() {
            elements[1].style.display = 'none';
            elements[2].style.display = 'none';
            elements[3].style.display = 'none';
-           elements[4].style.display = 'none';  
+           elements[4].style.display = 'none'; 
+           elements[5].style.display = 'none';  
       } 
     }
    })
@@ -71,7 +72,8 @@ window.onload = function() {
            elements[1].style.display = 'none';
            elements[2].style.display = 'none';
            elements[3].style.display = 'none';
-           elements[4].style.display = 'none';   
+           elements[4].style.display = 'none'; 
+           elements[5].style.display = 'none';   
       } 
     }
    })
