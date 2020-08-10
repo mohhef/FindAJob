@@ -1,9 +1,9 @@
 
 <?php
 //create connection
-$username = 'root';
-$password = 'root';
-$hostname = 'localhost';
+$username = 'user';
+$password = 'password';
+$hostname = '127.0.0.1';
 $database =  'web_career';
 
 

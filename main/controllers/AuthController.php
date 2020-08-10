@@ -12,6 +12,24 @@ require_once(__ROOT__ . "/../vendor/autoload.php");
 
 class AuthController
 {
+
+    function getEmployees(){
+        $conn = connDB();
+        if ($stmt = $conn->prepare("SELECT user_name, category, preferred_method, email, balance, last_payment, activate_deactivate FROM employee NATURAL JOIN all_user NATURAL JOIN manages")){
+            $stmt->execute();
+            $res = $stmt->get_result();
+            return $res->fetch_all(MYSQLI_NUM);
+        }
+    }
+    function getEmployers(){
+        $conn = connDB();
+        if($stmt = $conn->prepare("SELECT user_name, category, telephone_number, company_name, preferred_method, email, balance, last_payment, activate_deactivate FROM employer NATURAL JOIN all_user NATURAL JOIN manages")){
+            $stmt->execute();
+            $res = $stmt->get_result();
+            return $res->fetch_all(MYSQLI_NUM);
+        }
+    }
+
     function employeeLogin($username, $password)
     {
         $conn = connDB();
