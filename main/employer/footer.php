@@ -31,7 +31,7 @@ function frozen(){
       
       if(data == 1){
        
-        if ( document.URL.includes("subscription.php") || document.URL.includes("payment.php")  || document.URL.includes("chequing_table.php")  || document.URL.includes("card_table.php")) {
+        if ( document.URL.includes("subscription.php") ||document.URL.includes("profile.php") || document.URL.includes("payment.php")  || document.URL.includes("chequing_table.php")  || document.URL.includes("card_table.php")) {
         }else{
          redirect_to_subscription();
         }
@@ -60,7 +60,7 @@ function deactivate(){
       
       if(data == 2){
        
-        if ( document.URL.includes("subscription.php") || document.URL.includes("payment.php")  || document.URL.includes("chequing_table.php")  || document.URL.includes("card_table.php")) {
+        if ( document.URL.includes("subscription.php") ||document.URL.includes("profile.php") || document.URL.includes("payment.php")  || document.URL.includes("chequing_table.php")  || document.URL.includes("card_table.php")) {
         }else{
          redirect_to_subscription();
         }
