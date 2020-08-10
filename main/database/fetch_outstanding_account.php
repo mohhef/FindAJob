@@ -36,7 +36,7 @@ $result = mysqli_query($conn,  $query1 . $query2);
 
 function get_all_data($conn)
 {
-  $query = "SELECT e.user_name, e.email, e.balance  FROM all_user e WHERE e.balance < 0 ";
+  $query = "SELECT e.user_name, e.email, e.balance, e.last_payment FROM all_user e WHERE e.balance < 0 ";
   $result = mysqli_query($conn, $query);
   return mysqli_num_rows($result);
 }
@@ -48,11 +48,12 @@ $data = array();
 
 while($row = mysqli_fetch_array($result))
 {
+    echo json_encode($row);
 $sub_array = array();
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="user_name">' . $row["user_name"] . '</div>';
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="title">' . $row["email"] . '</div>';
 $sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="employee_needed">' . $row["balance"] . '</div>';
-$sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="date_posted">' . "We need to clarify that" . '</div>';
+$sub_array[] = '<div contenteditable="false" class="update" data-id="'.$row["user_name"].'" data-column="date_posted">' . $row["last_payment"] . '</div>';
 
 $data[] = $sub_array;
 }

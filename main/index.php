@@ -80,8 +80,8 @@
             <div class="card-body">
                 <form action="" method="post">
                     <div class="container">
-                        <label for="uname"><b>Email</b></label>
-                        <input type="text" placeholder="Enter Email" id="admin_username" required>
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" id="admin_username" required>
 
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" id="admin_password" required>
