@@ -11,7 +11,7 @@
     expiration_date = '".$_POST["expiration_date"]."' WHERE card_number = '".$_POST["card_number"]."'";
 
     $updateQuery2 = "UPDATE `$type` SET `automatic_manual`='".$_POST["automatic_manual"]."' WHERE `card_number`= '".$_POST["card_number"]."'";
-    
+    echo($updateQuery2);
     mysqli_query($conn, $updateQuery1);
     mysqli_query($conn, $updateQuery2);
     if(true) {

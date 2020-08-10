@@ -7,10 +7,27 @@ $description_box=$_POST['description_box'];
 $date_posted = date("Y-m-d");
 $user_name=$_COOKIE['employer_username'];
 
-if ($post_job==true){
-    insertJob($job_title,$emp_no,$description_box,$date_posted,$category_sel,$user_name);
+if ($post_job==true) {
+    validateUser($job_title,$emp_no,$description_box,$date_posted,$category_sel,$user_name);
 }
 
+function validateUser($job_title,$emp_no,$description_box,$date_posted,$category_sel,$user_name) {
+    require('config.php');
+    $valid = true;
+    $user_category_query = "SELECT `category` FROM `employer` WHERE user_name='$user_name'";
+    $user_category_result = mysqli_fetch_array(mysqli_query($conn, $user_category_query))[0]; 
+    if ($user_category_result == "prime") {
+        $jobs_count_query = "SELECT count(*) FROM `post` GROUP BY user_name HAVING user_name='$user_name'";
+        $jobs_count_result = mysqli_fetch_array(mysqli_query($conn, $jobs_count_query));
+        if (isset($jobs_count_result) && $jobs_count_result[0] > 4) {
+            echo 'ERROR: Cannot post job..user is prime and already posted 5 jobs';
+            $valid = false;
+        }
+    }
+    if($valid == true) {
+        insertJob($job_title,$emp_no,$description_box,$date_posted,$category_sel,$user_name);
+    }
+}
 
 function insertJob($job_title,$emp_no,$description_box,$date_posted,$category_sel,$user_name){
     require('config.php');
