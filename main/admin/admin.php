@@ -7,6 +7,8 @@ $admin = new AdminController();
 $employees = $auth->getEmployees();
 $employers = $auth->getEmployers();
 $jobs = $admin->getJobs();
+$offers = $admin->getOffers();
+$apps = $admin->getApplications();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -152,6 +154,61 @@ $jobs = $admin->getJobs();
             </div>
         </div>
     </div>
+    <div class="card">
+        <div class="card-header" id="headingSix">
+            <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSix"
+                        aria-expanded="true" aria-controls="collapseFive">
+                    Offers Table
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseSix" class="collapse collapsed" aria-labelledby="headingSix" data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="container">
+                    <table id="offers-table" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Job ID</th>
+                            <th>Title</th>
+                            <th>Employee</th>
+                            <th>Employer</th>
+                            <th>Offer Status</th>
+                            <th>Accepted?</th>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingSeven">
+            <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseSeven"
+                        aria-expanded="true" aria-controls="collapseSeven">
+                    Applications Table
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseSeven" class="collapse collapsed" aria-labelledby="headingSeven" data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="container">
+                    <table id="application-table" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Job ID</th>
+                            <th>Title</th>
+                            <th>User Name</th>
+                            <th>Application Status</th>
+                            <th>Date Applied</th>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
@@ -177,6 +234,18 @@ $jobs = $admin->getJobs();
     $(document).ready(function() {
         $('#jobs-table').DataTable(
             {data: jobs}
+        );
+    })
+    const offers = <?php echo json_encode($offers) ?>;
+    $(document).ready(function() {
+        $('#offers-table').DataTable(
+            {data: offers}
+        );
+    })
+    const applications = <?php echo json_encode($apps) ?>;
+    $(document).ready(function() {
+        $('#application-table').DataTable(
+            {data: applications}
         );
     })
 

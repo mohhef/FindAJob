@@ -72,4 +72,22 @@ class AdminController
         return false;
     }
 
+    function getOffers(){
+        $conn = connDB();
+        if($stmt = $conn->prepare("SELECT job_id, title, user_name_loyee, user_name_loyer, offer_status, accept_deny FROM offer NATURAL JOIN job")){
+            $stmt->execute();
+            $res = $stmt->get_result();
+            return $res->fetch_all(MYSQLI_NUM);
+        }
+    }
+
+    function getApplications(){
+        $conn = connDB();
+        if($stmt = $conn->prepare("SELECT job_id, title, user_name, application_status, date_applied FROM applies NATURAL JOIN job")){
+            $stmt->execute();
+            $res = $stmt->get_result();
+            return $res->fetch_all(MYSQLI_NUM);
+        }
+    }
+
 }
