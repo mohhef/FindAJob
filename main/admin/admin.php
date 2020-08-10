@@ -19,6 +19,12 @@ $apps = $admin->getApplications();
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="justify-content: space-between;">
+    <a class="navbar-brand" href="#">Admin Dashboard</a>
+    <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="logout()">Log Out</button>
+    </form>
+</nav>
 <div class="accordion" id="accordionExample">
     <div class="card">
         <div class="card-header" id="headingOne">
@@ -235,19 +241,19 @@ $apps = $admin->getApplications();
         $('#jobs-table').DataTable(
             {data: jobs}
         );
-    })
+    });
     const offers = <?php echo json_encode($offers) ?>;
     $(document).ready(function() {
         $('#offers-table').DataTable(
             {data: offers}
         );
-    })
+    });
     const applications = <?php echo json_encode($apps) ?>;
     $(document).ready(function() {
         $('#application-table').DataTable(
             {data: applications}
         );
-    })
+    });
 
     function activateUser(){
         const username = $('input[id=admin_username]').val();
@@ -286,4 +292,11 @@ $apps = $admin->getApplications();
             }
         })
     }
+
+    function logout(){
+        setCookie("admin_username", null, -1);
+        location.reload();
+    }
 </script>
+
+<script src="../js/util.js"></script>
