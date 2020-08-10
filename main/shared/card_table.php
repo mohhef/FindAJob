@@ -61,7 +61,7 @@
                             <div class="row">
                                 <div class="form-group col-md-4">
                                     <label for="automatic_manual">Automatic/Manual</label>
-                                    <select id="automatic_manual" class="form-control" name="automatic_manual">
+                                    <select id="automatic_manual1" class="form-control" name="automatic_manual1">
                                         <option selected value="automatic">Automatic</option>
                                         <option value="manual">Manual</option>
                                     </select>
@@ -169,7 +169,7 @@
                     $('#card_number').val(data.card_number);
                     $('#name').val(data.name);
                     $('#expiration_date').val(data.expiration_date);
-                    $('#automatic_manual').val(data.automatic_manual);
+                    $('#automatic_manual1').val(data.automatic_manual);
                     $('.modal-title').html("<i class='fa fa-plus'></i> Update Card Details");
                     $('.submit').html(
                         "<input type='submit' name='save' class='btn btn-info modal-save submit-update-card' value='Save' />"
@@ -213,7 +213,7 @@
             var card_number = jQuery('input[name="card_number"]').val();
             var name = jQuery('input[name="name"]').val();
             var expiration_date = jQuery('input[name="expiration_date"]').val();
-            var automatic_manual = document.getElementById('automatic_manual').value;
+            var automatic_manual = document.getElementById('automatic_manual1').value;
             $.post("../database/create_card.php", {
                 post_card: true,
                 card_number: card_number,
@@ -233,7 +233,8 @@
             var card_number = jQuery('input[name="card_number"]').val();
             var name = jQuery('input[name="name"]').val();
             var expiration_date = jQuery('input[name="expiration_date"]').val();
-            var automatic_manual = document.getElementById('automatic_manual').value;
+            var automatic_manual = document.getElementById('automatic_manual1').value;
+            console.log(automatic_manual);
             var formData = {
                 card_number: card_number,
                 name: name,

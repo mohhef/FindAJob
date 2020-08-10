@@ -34,7 +34,7 @@
         </div>
 
 
-        <div class="col-4 form-group">
+        <div class="col-2 form-group">
           <label for="description" class="control-label">Email</label>
           <textarea   class="form-control"  id="email" name="email"></textarea>
         </div>
@@ -86,10 +86,10 @@ $(document).ready(function(){
         "orderable": true,
         //  "width":"15%"
       }, {
-        "orderable": true,
+        "orderable": false,
         //  "width":"15%"
       }, {
-        "orderable": true,
+        "orderable": false,
         //  "width":"15%"
       }
     ],
@@ -171,7 +171,6 @@ $(document).on('click', '.delete',function(){
           }
         }
       });
-    }
 });
 
 });
