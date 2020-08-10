@@ -9,6 +9,11 @@ function connDB()
 	$database = "vxc353_1";
 
 
+	$servername = "localhost";
+	$username = "root";
+	$password = "root";
+	$database = "web_career";
+	
 	$conn = mysqli_connect($servername, $username, $password, $database);
 
 //check connection
