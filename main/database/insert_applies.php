@@ -12,8 +12,11 @@ function validateUser($id, $user_name, $date_applied) {
     $valid = true;
     $user_category_query = "SELECT `category` FROM `employee` WHERE user_name='$user_name'";
     $user_category_result = mysqli_fetch_array(mysqli_query($conn, $user_category_query)); 
+    echo($user_category_result[0]);
     if (isset($user_category_result) && $user_category_result[0] == "basic") {
         echo 'ERROR: Cannot apply to job..user is basic and should upgrade';
+        $valid = false;
+
     } else if (isset($user_category_result) && $user_category_result[0] == "prime") {
         $jobs_count_query = "SELECT count(*) FROM `applies` GROUP BY user_name HAVING user_name='$user_name'";
         $jobs_count_result = mysqli_fetch_array(mysqli_query($conn, $jobs_count_query));

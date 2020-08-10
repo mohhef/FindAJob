@@ -174,8 +174,8 @@ create table admin
     password  varchar(200),
     primary key (user_name)
 );
-insert into admin(user_name, password)
-values ('bigboss', '123456');
+insert into admin(user_name,telephone, password)
+values ('bigboss','5145352222','123456');
 
 drop table if exists card_method;
 
