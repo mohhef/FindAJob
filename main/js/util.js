@@ -22,7 +22,3 @@ function getCookie(cname) {
     }
     return "";
 }
-
-function deleteCookies(){
-    cookies.remove();
-}

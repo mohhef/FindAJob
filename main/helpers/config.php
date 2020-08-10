@@ -8,6 +8,7 @@ function connDB()
 	$password = "m1h2c3r4";
 	$database = "vxc353_1";
 
+
 	$servername = "localhost";
 	$username = "root";
 	$password = "root";

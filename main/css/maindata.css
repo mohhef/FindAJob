@@ -12,7 +12,7 @@ html, body {
 .table-striped>tbody>tr:nth-child(odd)>td,
 .table-striped>tbody>tr:nth-child(odd)>th {
   /* background-color:#d7e8e3 ; */
-   background-color:#F2F2F2 ; */
+   background-color:#F2F2F2 ;
 
   color: black;
 }
