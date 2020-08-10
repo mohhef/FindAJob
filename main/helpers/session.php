@@ -26,6 +26,6 @@ if(isset($_COOKIE['admin_username'])  && $domain!="admin" ){
     header("Location: http://".$_SERVER['HTTP_HOST'].'/comp-353/main/admin/admin.php');
 }
 
-if($count = 0) {
+if($count == 0) {
 header("Location: http://".$_SERVER['HTTP_HOST'].'/comp-353/main/index.php');
 }
