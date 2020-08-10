@@ -1,6 +1,12 @@
 <script>
 window.onload = function() {
-    var y = document.cookie.indexOf("employer_username=");
+  check();
+  frozen();
+  deactivate();
+  }
+
+function check(){
+  var y = document.cookie.indexOf("employer_username=");
     if (y < 0) {
       // if cookie doesn't exist, ask for password
       var input = bootbox.alert({
@@ -10,9 +16,9 @@ window.onload = function() {
           }
       })
     }
-  }
+}
 
-  window.onload = function() {
+function frozen(){
     var id = getCookie("employer_username");
     $.ajax({
     url:'../database/get_frozen_account.php',
@@ -25,23 +31,23 @@ window.onload = function() {
       
       if(data == 1){
        
-        if ( document.URL.includes("subscription.php") || document.URL.includes("payment.php")  || document.URL.includes("chequing_table.php")  || document.URL.includes("card_table.php")) {
+        if ( document.URL.includes("subscription.php") ||document.URL.includes("profile.php") || document.URL.includes("payment.php")  || document.URL.includes("chequing_table.php")  || document.URL.includes("card_table.php")) {
         }else{
          redirect_to_subscription();
         }
         
           var elements = document.getElementsByClassName("frozen");
-          console.log(elements.length);
+          console.log(elements);
           
            elements[0].style.display = 'none';
            elements[1].style.display = 'none';
            elements[2].style.display = 'none';   
       } 
     }
-   })
-  };
+   });
+}
 
-  window.onload = function() {
+function deactivate(){
     var id = getCookie("employer_username");
     $.ajax({
     url:'../database/get_deactivated_account.php',
@@ -54,19 +60,20 @@ window.onload = function() {
       
       if(data == 2){
        
-        if ( document.URL.includes("subscription.php") || document.URL.includes("payment.php")  || document.URL.includes("chequing_table.php")  || document.URL.includes("card_table.php")) {
+        if ( document.URL.includes("subscription.php") ||document.URL.includes("profile.php") || document.URL.includes("payment.php")  || document.URL.includes("chequing_table.php")  || document.URL.includes("card_table.php")) {
         }else{
          redirect_to_subscription();
         }
         
           var elements = document.getElementsByClassName("frozen");
-          console.log(elements.length);
+          console.log(elements);
           
            elements[0].style.display = 'none';
            elements[1].style.display = 'none';
            elements[2].style.display = 'none';
            elements[3].style.display = 'none';
            elements[4].style.display = 'none';   
+           elements[5].style.display = 'none';   
       } 
     }
    })
