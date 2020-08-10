@@ -33,6 +33,8 @@ function insertJob($job_title,$emp_no,$description_box,$date_posted,$category_se
     require('config.php');
     $query1 ="INSERT INTO job (title,employee_needed,description,date_posted,category) VALUES ('$job_title','$emp_no','$description_box','$date_posted','$category_sel')";
     $query3 ="INSERT INTO post (user_name) VALUES ('$user_name')";
+    echo($query1);
+    echo($query3);
     $result = mysqli_query($conn, $query1);
     $result3 = mysqli_query($conn, $query3);
     if(true)
